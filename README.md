@@ -1,3 +1,5 @@
 # Raconteur
 
-UCSC Masters Thesis 2025
+UCSC Masters Thesis 
+
+Contributors: Cameron Oakley (CJOakley@ucsc.edu)
