@@ -29,8 +29,9 @@ class parquet_dataset():
             df_obj = df(self.parquet_entries)
             df_obj.to_parquet(
                 output_path,
-                compression="gzip",
-                partition_cols=COLUMNS
+                # compression="gzip",
+                # partition_cols=COLUMNS,
+                index=False
             )
         except Exception as e:
             log.error(f"{e}")
