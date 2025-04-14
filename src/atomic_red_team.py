@@ -18,7 +18,7 @@ from _yaml_ import read_yaml
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
 BASE_FILE_PATH: str = (
-    "E:/programming/open-source" + "/atomic-red-team/atomics/"
+    "/home/jbone/malware" + "/atomic-red-team/atomics/"
 )
 DIRS_TO_SKIP: list = ["Indexes", "used_guids.txt"]
 CONVERT_TO_PARQUET_DATASET: list = []
@@ -68,19 +68,18 @@ def parse_atomic_red_team():
     
     
     for yaml_file_path in list_of_yaml_files:
-        yaml_data=read_yaml(yaml_file_path)
+        yaml_data = read_yaml(yaml_file_path)
         parse_yaml(yaml_data)
-        break
     
     # Write parsed data to a parquet file.
     p_db : parquet_dataset = parquet_dataset(CONVERT_TO_PARQUET_DATASET)
-    log.info(p_db.parquet_entries)
+    # log.debug(p_db.parquet_entries)
     p_db.write_parquet_file("atomic-red-team")
     
     return
 
 
-def parse_yaml(yaml_data: dict) -> parquet_entry:
+def parse_yaml(yaml_data: dict):
     """ Function to iterate YAML data and create parquet dataset entries. """
     log.debug("Parsing YAML data!")
     
