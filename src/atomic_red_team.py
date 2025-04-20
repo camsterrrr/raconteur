@@ -11,6 +11,7 @@
 import logging as log
 import os
 from pathlib import Path
+import re
 
 from _parquet_ import *
 from _yaml_ import read_yaml
@@ -18,7 +19,7 @@ from _yaml_ import read_yaml
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
 BASE_FILE_PATH: str = (
-    "/home/jbone/malware" + "/atomic-red-team/atomics/"
+    "/tmp" + "/atomic-red-team/atomics/"
 )
 DIRS_TO_SKIP: list = ["Indexes", "used_guids.txt"]
 CONVERT_TO_PARQUET_DATASET: list = []
@@ -70,7 +71,8 @@ def parse_atomic_red_team():
     for yaml_file_path in list_of_yaml_files:
         yaml_data = read_yaml(yaml_file_path)
         parse_yaml(yaml_data)
-    
+        # break
+        
     # Write parsed data to a parquet file.
     p_db : parquet_dataset = parquet_dataset(CONVERT_TO_PARQUET_DATASET)
     # log.debug(p_db.parquet_entries)
@@ -81,7 +83,7 @@ def parse_atomic_red_team():
 
 def parse_yaml(yaml_data: dict):
     """ Function to iterate YAML data and create parquet dataset entries. """
-    log.debug("Parsing YAML data!")
+    # log.debug("Parsing YAML data!")
     
     if (yaml_data is not None):
         technique_name = yaml_data["attack_technique"]
@@ -100,11 +102,37 @@ def parse_yaml(yaml_data: dict):
                 or yaml_subset.get("executor", {}).get("steps")
                 or None
             )
+            
+            if command:
+                # Normalize special characters in the commands.
+                # log.debug("Stripping special characters.")
+                command = re.sub(r'[ ]{4}+', r'\\t', command)
+                command = re.sub(r'\t+', r'\\t', command)
+                command = command.replace('\r', '\\r') 
+                
+                # Fill in any default values
+                list_of_matches = re.findall(r'#\{[A-Za-z0-9_\-]+\}', command)
+                for match in list_of_matches:
+                    match_stripped = match.strip('#{}')
+                    
+                    default = (
+                        yaml_subset
+                        .get("input_arguments", {})
+                        .get(match_stripped, {})
+                        .get("default")
+                    )
+                    # Normalize to string, handling None or non-str values
+                    default = str(default) if default is not None else ""
+                    
+                    command = command.replace(match, default)
+                    # log.debug(f"Replaced {match} with {default}")
+                    
             shell = (
                 yaml_subset.get("executor", {}).get("name") 
                 or None
             )
             
+            # log.debug(dumps(yaml_data, indent=4))
             # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
             global CONVERT_TO_PARQUET_DATASET
             CONVERT_TO_PARQUET_DATASET.append(

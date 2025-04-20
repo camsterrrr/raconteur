@@ -42,3 +42,9 @@ source /tmp/.venv/bin/activate
 # Install necessary modules.
 python3 -m pip install pandas pyarrow pyyaml
 ```
+
+## Isolating malware from your host machine
+
+These programs parse the datasets containing malware. Reading should not harm your system, especially if using safe functions to read the data.
+
+For an extra layer of security, it is advised to have a Docker container or virtual machine that stores and interacts with the datasets.

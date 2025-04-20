@@ -25,7 +25,7 @@ class parquet_dataset():
         output_path = Path(f"{OUTPUT_DIR}/{file_name}.parquet")
         
         try:
-            log.debug(dumps(self.parquet_entries, indent=4))
+            # log.debug(dumps(self.parquet_entries, indent=4))
             df_obj = df(self.parquet_entries)
             df_obj.to_parquet(
                 output_path,
