@@ -125,6 +125,8 @@ def parse_yaml(yaml_data: dict):
                     default = str(default) if default is not None else ""
                     
                     command = command.replace(match, default)
+                    # There are four descriptions that use these placeholders.
+                    description = description.replace(match, default)
                     # log.debug(f"Replaced {match} with {default}")
                     
             shell = (
