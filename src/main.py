@@ -19,7 +19,7 @@ def main() -> int:
     log.info("Starting main application!")
     
     # parse_atomic_red_team()
-    parse_lolbas()
+    # parse_lolbas()
     # parse_threat_actor_procedure()
     
     return 0
