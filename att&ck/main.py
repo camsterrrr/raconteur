@@ -9,7 +9,7 @@ def isolate_technique_names():
     with open(BASE_FILE_PATH, "r", encoding="utf-8") as csv_data:
         for line in csv_data:
             split_list = line.split(",", 2)[:2]
-            tracked_lines.append(f"{split_list[0]}, {split_list[1]}\n")
+            tracked_lines.append(f"{split_list[0]},{split_list[1]}\n")
     
     log.debug(tracked_lines)
     with open("./att&ck/mitre_technique_names.csv", "w", encoding="utf-8") as csv_data:
