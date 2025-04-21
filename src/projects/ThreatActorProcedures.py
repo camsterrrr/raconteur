@@ -1,11 +1,7 @@
 """
     Author: Cameron Oakley (Oakley.CameronJ@gmail.com)
     Date: April 2025
-    Description: This file consists of logic to parse data from the 
-        atomic-red-team dataset. This dataset shows malicious shell commands
-        and classifies them based on the MITRE ATT&CK framework.
-        
-    atomic-red-team GitHub repo: https://github.com/redcanaryco/atomic-red-team/tree/master
+    Description: 
 """
 
 import logging as log
@@ -19,7 +15,7 @@ from _yaml_ import read_yaml
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
 BASE_FILE_PATH: str = (
-    "/home/jbone/malware" + "/ThreatActorProcedures-MITRE-ATTACK/README.md"
+    "/tmp" + "/ThreatActorProcedures-MITRE-ATTACK/README.md"
 )
 DIRS_TO_SKIP: list = []
 CONVERT_TO_PARQUET_DATASET: list = []

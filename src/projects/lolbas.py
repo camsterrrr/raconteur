@@ -1,0 +1,74 @@
+"""
+    Author: Cameron Oakley (Oakley.CameronJ@gmail.com)
+    Date: April 2025
+    Description: 
+"""
+
+import logging as log
+import os
+from pathlib import Path
+import re
+
+from _json_ import read_json
+from _parquet_ import *
+from _yaml_ import read_yaml
+
+log.getLogger(__name__)  # Set same logging parameters across contexts
+
+BASE_FILE_PATH: str = (
+    "/tmp" + "/lolbas.json"
+)
+DIRS_TO_SKIP: list = []
+CONVERT_TO_PARQUET_DATASET: list = []
+
+def parse_lolbas():
+    """ Main driver for parsing the LOLBAS dataset. """
+    log.info("Parsing LOLBAS dataset!")
+    try: 
+        json_path = Path(BASE_FILE_PATH)
+        json_data = read_json(json_path)
+        # log.debug(dumps(json_data, indent=4))
+        parse_json(json_data)
+        
+    except OSError as os_e:
+        log.error(f"OSError Exception: {os_e}")
+    except Exception as e:
+        log.error(f"General Exception: {e}")
+
+    # Write parsed data to a parquet file.
+    p_db : parquet_dataset = parquet_dataset(CONVERT_TO_PARQUET_DATASET)
+    # log.debug(p_db.parquet_entries)
+    p_db.write_parquet_file("lolbas")
+    
+    return
+
+def parse_json(json_data: dict):
+    
+    for ele in json_data:
+        json_subset = ele.get("Commands")[0]  # Returns list object with one element.
+        # log.debug(dumps(json_subset, indent=4))
+        
+        command = (
+                json_subset.get("Command", str)
+                or None
+            )
+        description = (
+                (json_subset.get("Description", str) 
+                    + " " 
+                    + (ele.get("Description", str) or ''))
+                or None
+            )
+        technique_name = (
+                json_subset.get("MitreID", str)
+                or None
+            )
+        shell = (
+                None
+            )
+        
+        
+        # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
+        global CONVERT_TO_PARQUET_DATASET
+        CONVERT_TO_PARQUET_DATASET.append(
+            parquet_entry(command, description, technique_name, shell).parquet_dict
+        )
