@@ -5,7 +5,16 @@ from pathlib import Path
 
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
-COLUMNS = ["ID", "Command", "Description", "Score", "GoodOrBad", "MitreAttackClassification", "Shell"]
+COLUMNS = [
+    "ID", 
+    "Command", 
+    "Description", 
+    "Risk Score", 
+    "Offensive-Malware-Benign", 
+    "MitreAttackClassification", 
+    "ProgrammingLanguage", 
+    "CMD_Script"
+]
 GLOBAL_ID = 0
 OUTPUT_DIR = "./parquet/"
 
@@ -44,20 +53,21 @@ class parquet_entry():
         command: str,
         description: str,
         mitre_attack_classification: str,
-        shell: str
+        shell: str,
+        cmd_or_script: str
     ):
         global GLOBAL_ID
         GLOBAL_ID += 1
         
-        # "ID", "Command", "Description", "Score", "GoodOrBad", "MitreAttackClassification"
         self.parquet_dict = {
             "ID": GLOBAL_ID,
             "Command": command,
             "Description": description,
-            "Score": None,
-            "GoodOrBad": None,
+            "RiskScore": None,
+            "Offensive-Malware-Benign": None,
             "MitreAttackClassification": mitre_attack_classification,
-            "Shell": shell
+            "ProgrammingLanguage": shell,
+            "CMD_Script": cmd_or_script
         }
         
         # self.id: int = GLOBAL_ID
