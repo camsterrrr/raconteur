@@ -11,6 +11,7 @@ import re
 
 from _parquet_ import *
 from _yaml_ import read_yaml
+from helper import determine_if_cmd_or_script
 
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
@@ -66,11 +67,14 @@ def parse_md(md_data: str):
                 command = line.strip("\n")
                 description = None
                 shell = None
+                cmd_or_script = (
+                    "script" if determine_if_cmd_or_script(command) else "command"
+                )
                 
                 log.debug(f"{command}; {description}; {technique_name}; {shell};")
                 
                 CONVERT_TO_PARQUET_DATASET.append(
-                    parquet_entry(command, description, technique_name, shell).parquet_dict
+                    parquet_entry(command, description, technique_name, shell, cmd_or_script).parquet_dict
                 )
             elif len(matches) > 0:
                 technique_name = matches[0]

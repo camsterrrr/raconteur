@@ -15,6 +15,7 @@ import re
 
 from _parquet_ import *
 from _yaml_ import read_yaml
+from helper import determine_if_cmd_or_script
 
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
@@ -109,6 +110,7 @@ def parse_yaml(yaml_data: dict):
                 command = re.sub(r'[ ]{4}+', r'\\t', command)
                 command = re.sub(r'\t+', r'\\t', command)
                 command = command.replace('\r', '\\r') 
+                command = command.strip()
                 
                 # Fill in any default values
                 list_of_matches = re.findall(r'#\{[A-Za-z0-9_\-]+\}', command)
@@ -134,11 +136,15 @@ def parse_yaml(yaml_data: dict):
                 or None
             )
             
+            cmd_or_script = (
+                "script" if determine_if_cmd_or_script(command) else "command"
+            )
+            
             # log.debug(dumps(yaml_data, indent=4))
-            # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
+            # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n{cmd_or_script}\n")
             global CONVERT_TO_PARQUET_DATASET
             CONVERT_TO_PARQUET_DATASET.append(
-                parquet_entry(command, description, technique_name, shell).parquet_dict
+                parquet_entry(command, description, technique_name, shell, cmd_or_script).parquet_dict
             )
     else: 
         log.debug("There exists no atomic-red-team YAML data!")

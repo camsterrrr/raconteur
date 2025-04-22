@@ -12,6 +12,7 @@ import re
 from _json_ import read_json
 from _parquet_ import *
 from _yaml_ import read_yaml
+from helper import determine_if_cmd_or_script
 
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
@@ -65,10 +66,13 @@ def parse_json(json_data: dict):
         shell = (
                 None
             )
+        cmd_or_script = (
+            "script" if determine_if_cmd_or_script(command) else "command"
+        )
         
         
         # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
         global CONVERT_TO_PARQUET_DATASET
         CONVERT_TO_PARQUET_DATASET.append(
-            parquet_entry(command, description, technique_name, shell).parquet_dict
+            parquet_entry(command, description, technique_name, shell, cmd_or_script).parquet_dict
         )
