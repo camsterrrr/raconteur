@@ -70,11 +70,12 @@ def parse_md(md_data: str):
                 cmd_or_script = (
                     "script" if determine_if_cmd_or_script(command) else "command"
                 )
+                dyn_tested = None
                 
                 log.debug(f"{command}; {description}; {technique_name}; {shell};")
                 
                 CONVERT_TO_PARQUET_DATASET.append(
-                    parquet_entry(command, description, technique_name, shell, cmd_or_script).parquet_dict
+                    parquet_entry(command, description, technique_name, shell, cmd_or_script, dyn_tested).parquet_dict
                 )
             elif len(matches) > 0:
                 technique_name = matches[0]

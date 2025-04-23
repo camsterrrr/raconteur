@@ -13,7 +13,8 @@ COLUMNS = [
     "Offensive-Malware-Benign", 
     "MitreAttackClassification", 
     "ProgrammingLanguage", 
-    "CMD_Script"
+    "CMD_Script",
+    "DynTested"
 ]
 GLOBAL_ID = 0
 OUTPUT_DIR = "./parquet/"
@@ -54,7 +55,8 @@ class parquet_entry():
         description: str,
         mitre_attack_classification: str,
         shell: str,
-        cmd_or_script: str
+        cmd_or_script: str,
+        dyn_tested: str
     ):
         global GLOBAL_ID
         GLOBAL_ID += 1
@@ -67,7 +69,8 @@ class parquet_entry():
             "Offensive-Malware-Benign": None,
             "MitreAttackClassification": mitre_attack_classification,
             "ProgrammingLanguage": shell,
-            "CMD_Script": cmd_or_script
+            "CMD_Script": cmd_or_script,
+            "DynTested": dyn_tested
         }
         
         # self.id: int = GLOBAL_ID

@@ -140,11 +140,13 @@ def parse_yaml(yaml_data: dict):
                 "script" if determine_if_cmd_or_script(command) else "command"
             )
             
+            dyn_tested = None
+            
             # log.debug(dumps(yaml_data, indent=4))
             # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n{cmd_or_script}\n")
             global CONVERT_TO_PARQUET_DATASET
             CONVERT_TO_PARQUET_DATASET.append(
-                parquet_entry(command, description, technique_name, shell, cmd_or_script).parquet_dict
+                parquet_entry(command, description, technique_name, shell, cmd_or_script, dyn_tested).parquet_dict
             )
     else: 
         log.debug("There exists no atomic-red-team YAML data!")

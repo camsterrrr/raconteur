@@ -24,6 +24,8 @@ def read_yaml(file_path_obj: Path) -> dict:
                 
                 # log.debug(file_str)
                 # log.debug(yaml_str)
+                # log.debug(yaml.dump(yaml_str, indent=4))
+                
                 
                 return yaml_str
             except yaml.YAMLError as ye:
