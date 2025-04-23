@@ -1,7 +1,7 @@
 """
-    Author: Cameron Oakley (Oakley.CameronJ@gmail.com)
-    Date: April 2025
-    Description: 
+Author: Cameron Oakley (Oakley.CameronJ@gmail.com)
+Date: April 2025
+Description:
 """
 
 import logging as log
@@ -9,70 +9,61 @@ import os
 from pathlib import Path
 import re
 
-from _json_ import read_json
-from _parquet_ import *
-from _yaml_ import read_yaml
-from helper import determine_if_cmd_or_script
+from src._json_ import read_json
+from src._parquet_ import parquet_dataset, parquet_entry
+from src._yaml_ import read_yaml
+from src.helper import determine_if_script, strip_command_formatting
 
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
-BASE_FILE_PATH: str = (
-    "/tmp" + "/lolbas.json"
-)
+BASE_FILE_PATH: str = "/tmp" + "/lolbas.json"
 DIRS_TO_SKIP: list = []
 CONVERT_TO_PARQUET_DATASET: list = []
 
+
 def parse_lolbas():
-    """ Main driver for parsing the LOLBAS dataset. """
+    """Main driver for parsing the LOLBAS dataset."""
     log.info("Parsing LOLBAS dataset!")
-    try: 
+    try:
         json_path = Path(BASE_FILE_PATH)
         json_data = read_json(json_path)
         # log.debug(dumps(json_data, indent=4))
         parse_json(json_data)
-        
+
     except OSError as os_e:
         log.error(f"OSError Exception: {os_e}")
     except Exception as e:
         log.error(f"General Exception: {e}")
 
     # Write parsed data to a parquet file.
-    p_db : parquet_dataset = parquet_dataset(CONVERT_TO_PARQUET_DATASET)
+    p_db: parquet_dataset = parquet_dataset(CONVERT_TO_PARQUET_DATASET)
     # log.debug(p_db.parquet_entries)
     p_db.write_parquet_file("lolbas")
-    
+
     return
 
+
 def parse_json(json_data: dict):
-    
+
     for ele in json_data:
         json_subset = ele.get("Commands")[0]  # Returns list object with one element.
         # log.debug(dumps(json_subset, indent=4))
-        
-        command = (
-                json_subset.get("Command", str)
-                or None
-            )
+
+        command = json_subset.get("Command", str) or None
         description = (
-                (json_subset.get("Description", str) 
-                    + " " 
-                    + (ele.get("Description", str) or ''))
-                or None
-            )
-        technique_name = (
-                json_subset.get("MitreID", str)
-                or None
-            )
-        shell = (
-                None
-            )
-        cmd_or_script = (
-            "script" if determine_if_cmd_or_script(command) else "command"
-        )
-        dyn_tested = None
-        
+            json_subset.get("Description", str)
+            + " "
+            + (ele.get("Description", str) or "")
+        ) or None
+        technique_name = json_subset.get("MitreID", str) or None
+        shell = None
+        cmd_or_script = "script" if determine_if_script(command) else "command"
+        command = strip_command_formatting(command)
+
         # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
         global CONVERT_TO_PARQUET_DATASET
         CONVERT_TO_PARQUET_DATASET.append(
-            parquet_entry(command, description, technique_name, shell, cmd_or_script, dyn_tested).parquet_dict
+            parquet_entry(
+                command, description, technique_name, shell, cmd_or_script
+            ).parquet_dict
         )

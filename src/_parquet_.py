@@ -6,49 +6,45 @@ from pathlib import Path
 log.getLogger(__name__)  # Set same logging parameters across contexts
 
 COLUMNS = [
-    "ID", 
-    "Command", 
-    "Description", 
-    "Risk Score", 
-    "Offensive-Malware-Benign", 
-    "MitreAttackClassification", 
-    "ProgrammingLanguage", 
+    "ID",
+    "Command",
+    "Description",
+    "Risk Score",
+    "Offensive-Malware-Benign",
+    "MitreAttackClassification",
+    "ProgrammingLanguage",
     "CMD_Script",
-    "DynTested"
+    "DynTested",
 ]
 GLOBAL_ID = 0
-OUTPUT_DIR = "./parquet/"
+OUTPUT_DIR = "./parquet/separated_parquets"
 
 
-class parquet_dataset():
-    
-    def __init__(
-        self,
-        parquet_entries: dict
-    ):
+class parquet_dataset:
+
+    def __init__(self, parquet_entries: dict):
         self.parquet_entries: dict = parquet_entries
-    
-    def write_parquet_file(
-        self,
-        file_name: str
-    ):
-        output_path = Path(f"{OUTPUT_DIR}/{file_name}.parquet")
-        
+
+    def write_parquet_file(self, file_name: str):
+        output_path_parquet = Path(f"{OUTPUT_DIR}/{file_name}.parquet")
+        output_path_json = Path(f"{OUTPUT_DIR}/{file_name}.json")
+
         try:
             # log.debug(dumps(self.parquet_entries, indent=4))
             df_obj = df(self.parquet_entries)
             df_obj.to_parquet(
-                output_path,
+                output_path_parquet,
                 # compression="gzip",
                 # partition_cols=COLUMNS,
-                index=False
+                index=False,
             )
+            df_obj.to_json(output_path_json, orient="records", indent=4)
         except Exception as e:
             log.error(f"{e}")
 
 
-class parquet_entry():
-    
+class parquet_entry:
+
     def __init__(
         self,
         command: str,
@@ -56,11 +52,10 @@ class parquet_entry():
         mitre_attack_classification: str,
         shell: str,
         cmd_or_script: str,
-        dyn_tested: str
     ):
         global GLOBAL_ID
         GLOBAL_ID += 1
-        
+
         self.parquet_dict = {
             "ID": GLOBAL_ID,
             "Command": command,
@@ -70,9 +65,9 @@ class parquet_entry():
             "MitreAttackClassification": mitre_attack_classification,
             "ProgrammingLanguage": shell,
             "CMD_Script": cmd_or_script,
-            "DynTested": dyn_tested
+            "DynTested": None,
         }
-        
+
         # self.id: int = GLOBAL_ID
         # self.command: str = command
         # self.description: str = description
@@ -80,4 +75,3 @@ class parquet_entry():
         # self.good_or_bad: str = None
         # self. mitre_attack_classification: str = mitre_attack_classification
         # self.shell: str = shell
-
