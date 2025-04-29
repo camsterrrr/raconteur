@@ -40,7 +40,7 @@ The commands below will set the Python virtual environment and install the neces
 # Activate the Python virtual environment.
 source /tmp/.venv/bin/activate
 # Install necessary modules.
-python3 -m pip install pandas pyarrow pyyaml
+python3 -m pip install pandas pyarrow pyyaml python-dotenv openai
 ```
 
 ## Isolating malware from your host machine

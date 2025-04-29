@@ -5,3 +5,4 @@ clones
 ParquetViewer.exe
 test_data
 nb.ipynb
+.env
