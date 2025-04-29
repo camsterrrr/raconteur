@@ -1,7 +1,24 @@
+import csv
 import logging as log 
 import re
 
 BASE_FILE_PATH = "./att&ck/mitre_techniques.csv"
+
+def fix_csv():
+    new_csv_data = []
+
+    with open("att&ck/mitre_techniques.csv", encoding='utf-8') as file_data:
+        for line in file_data:
+            temp = line.split(", ", 3)
+            new_line = (
+                f"{temp[0]},{temp[1]},'{temp[2].replace('\n', '')}'\n"
+            )
+            new_csv_data.append(new_line)
+
+    log.debug(new_csv_data)
+    with open("att&ck/mitre_techniques-fixed.csv", "w", encoding="utf-8") as csv_data:
+        csv_data.writelines(new_csv_data)
+
 
 def isolate_technique_names():
     tracked_lines = []
@@ -46,7 +63,8 @@ def normalize_techniques():
         csv_data.writelines(modified_lines)
 
 def main():
-    isolate_technique_names()
+    fix_csv()
+    # isolate_technique_names()
     # normalize_techniques()
 
 if __name__ == "__main__":

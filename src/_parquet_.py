@@ -15,6 +15,7 @@ COLUMNS = [
     "ProgrammingLanguage",
     "CMD_Script",
     "DynTested",
+    "ObfuscationLevel",
 ]
 GLOBAL_ID = 0
 OUTPUT_DIR = "./parquet/separated_parquets"
@@ -66,6 +67,7 @@ class parquet_entry:
             "ProgrammingLanguage": shell,
             "CMD_Script": cmd_or_script,
             "DynTested": None,
+            "ObfuscationLevel": None,
         }
 
         # self.id: int = GLOBAL_ID

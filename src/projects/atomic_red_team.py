@@ -103,7 +103,9 @@ def parse_yaml(yaml_data: dict):
                 or None
             )
             shell = yaml_subset.get("executor", {}).get("name") or None
-            programming_language = determine_programming_language(command, shell)
+            programming_language = (
+                shell  # determine_programming_language(command, shell)
+            )
             cmd_or_script = "script" if determine_if_script(command) else "command"
             command = strip_command_formatting(command)
 

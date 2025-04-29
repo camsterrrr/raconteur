@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import pandas as pd
 import re
+import yaml
 
 from src._json_ import read_json
 from src._parquet_ import parquet_dataset, parquet_entry
@@ -40,8 +41,8 @@ def get_yaml_files() -> list:
                     # log.debug(yaml_path)
 
                     # Skip directories we don't want to parse.
-                    if file in DIRS_TO_SKIP:
-                        # log.debug(f"Skipping {yaml_path}")
+                    if file.split(".")[-1:][0] != "yml":
+                        log.debug(f"Skipping {yaml_path}")
                         continue
                     # Track the given YAML file.
                     elif yaml_path.exists():
@@ -86,9 +87,6 @@ def parse_metta():
 
 
 def parse_yaml(yaml_data: dict):
-    df = pd.read_csv("./att&ck/mitre_technique_names.csv")
-    # log.debug(df)
-
     yaml_subset = yaml_data.get("meta", {})
     # log.debug(yaml.dump(yaml_subset, indent=4))
 
@@ -96,29 +94,46 @@ def parse_yaml(yaml_data: dict):
     shell = None
 
     # This requires some thought, because metta uses old MITRE techniques.
+    #   Metta gives us the technique names, but not the IDs.
     technique_name = yaml_subset.get("mitre_attack_technique", str) or None
 
-    match = df[df["name"] == technique_name]
+    # 1. Try to match the given technique name with the technique ID.
+    mitre_techniques = pd.read_csv("./att&ck/mitre_techniques.csv")
+    match = mitre_techniques[mitre_techniques["name"] == technique_name]
+    # log.debug(match)
     if not match.empty:
+        log.debug(f"Matched {technique_name} with {match["id"].values[0]}!")
         technique_name = match["id"].values[0]
+
+    # 2. If it has a "mitre_link" field, put the last \T{1-9}{4}.
+    #   Note that some entries have this, some don't...
+    # Example: mitre_link: https://attack.mitre.org/wiki/Technique/T1060
+    #   parse the T1060.
+    elif yaml_subset.get("mitre_link", str):
+        mitre_link = yaml_subset.get("mitre_link", str)
+        technique_name = mitre_link.split(
+            "/",
+        )[-1:][0]
+        log.debug(f"Parsed MITRE link {technique_name}!")
+
+    # 3. Else, put some place holder value and worry about later.
     else:
-        technique_name = (
-            technique_name
-            + ": "
-            + (yaml_subset.get("mitre_link", str) or "No mitre link provided")
-        )
+        technique_name = technique_name or None
         log.info("No technique found in up-to-date MITRE ATT&CK techniques.")
 
-    log.debug("Here?")
-    for command in yaml_subset.get("purple_actions", {}).values():
-        log.debug(command)
+    # Some files may or may not have these "purple actions".
+    # Example:
+    #   https://github.com/uber-common/metta/blob/master/MITRE/Adversarial_Simulation/simulation_admin338.yml
+    if yaml_subset.get("purple_actions", {}):
+        for command in yaml_subset.get("purple_actions", {}).values():
+            log.debug(command)
 
-        cmd_or_script = "script" if determine_if_script(command) else "command"
+            cmd_or_script = "script" if determine_if_script(command) else "command"
 
-        # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
-        global CONVERT_TO_PARQUET_DATASET
-        CONVERT_TO_PARQUET_DATASET.append(
-            parquet_entry(
-                command, description, technique_name, shell, cmd_or_script
-            ).parquet_dict
-        )
+            # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
+            global CONVERT_TO_PARQUET_DATASET
+            CONVERT_TO_PARQUET_DATASET.append(
+                parquet_entry(
+                    command, description, technique_name, shell, cmd_or_script
+                ).parquet_dict
+            )
