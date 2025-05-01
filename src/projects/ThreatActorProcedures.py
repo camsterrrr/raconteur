@@ -63,8 +63,8 @@ def parse_md(md_data: str):
             # Create parquet entry for commands.
             elif in_code_block:
                 command = line.strip("\n")
-                description = None
-                shell = None
+                description = ""
+                shell = ""
                 cmd_or_script = "script" if determine_if_script(command) else "command"
                 command = strip_command_formatting(command)
 

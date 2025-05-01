@@ -96,13 +96,13 @@ def parse_yaml(yaml_data: dict):
 
             # Some data may or may not be there... Account for this.
             # None will be translated to "NaN" automatically by Pandas.
-            description = yaml_subset.get("description", {}) or None
+            description = yaml_subset.get("description", {}) or ""
             command = (
                 yaml_subset.get("executor", {}).get("command")
                 or yaml_subset.get("executor", {}).get("steps")
-                or None
+                or ""
             )
-            shell = yaml_subset.get("executor", {}).get("name") or None
+            shell = yaml_subset.get("executor", {}).get("name") or ""
             programming_language = (
                 shell  # determine_programming_language(command, shell)
             )

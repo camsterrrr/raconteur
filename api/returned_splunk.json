@@ -1,0 +1,62 @@
+[
+    {
+        "ID": 1,
+        "Command": "C:\\programdata\\migrate.exe",
+        "Description": "",
+        "Risk Score": "",
+        "Offensive-Malware-Benign": "",
+        "MitreAttackClassification": "T1027.013",
+        "ProgrammingLanguage": "",
+        "CMD_Script": "",
+        "DynTested": "",
+        "ObfuscationLevel": ""
+    },
+    {
+        "ID": 1,
+        "Command": "",
+        "Description": "",
+        "Risk Score": "",
+        "Offensive-Malware-Benign": "",
+        "MitreAttackClassification": "T1027.013",
+        "ProgrammingLanguage": "",
+        "CMD_Script": "",
+        "DynTested": "",
+        "ObfuscationLevel": ""
+    },
+    {
+        "ID": 1,
+        "Command": "",
+        "Description": "",
+        "Risk Score": "",
+        "Offensive-Malware-Benign": "",
+        "MitreAttackClassification": "T1547.006",
+        "ProgrammingLanguage": "",
+        "CMD_Script": "",
+        "DynTested": "",
+        "ObfuscationLevel": ""
+    },
+    {
+        "ID": 1,
+        "Command": "modprobe",
+        "Description": "The 'modprobe' command is used to add or remove modules from the Linux kernel. This action relates to the MITRE ATT&CK technique T1547.006, which involves using kernel modules or system principals to persist malicious code execution.",
+        "Risk Score": "",
+        "Offensive-Malware-Benign": "",
+        "MitreAttackClassification": "T1547.006",
+        "ProgrammingLanguage": "",
+        "CMD_Script": "",
+        "DynTested": "",
+        "ObfuscationLevel": ""
+    },
+    {
+        "ID": 1,
+        "Command": "insmod",
+        "Description": "The 'insmod' command is used to insert a module into the Linux kernel. This action is related to persistence mechanisms, where malicious kernel modules could be inserted.",
+        "Risk Score": "",
+        "Offensive-Malware-Benign": "",
+        "MitreAttackClassification": "T1547.006",
+        "ProgrammingLanguage": "",
+        "CMD_Script": "",
+        "DynTested": "",
+        "ObfuscationLevel": ""
+    }
+]

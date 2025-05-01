@@ -61,19 +61,11 @@ class parquet_entry:
             "ID": GLOBAL_ID,
             "Command": command,
             "Description": description,
-            "RiskScore": None,
-            "Offensive-Malware-Benign": None,
+            "RiskScore": "",
+            "Offensive-Malware-Benign": "",
             "MitreAttackClassification": mitre_attack_classification,
             "ProgrammingLanguage": shell,
             "CMD_Script": cmd_or_script,
-            "DynTested": None,
-            "ObfuscationLevel": None,
+            "DynTested": "",
+            "ObfuscationLevel": "",
         }
-
-        # self.id: int = GLOBAL_ID
-        # self.command: str = command
-        # self.description: str = description
-        # self.score: str = None
-        # self.good_or_bad: str = None
-        # self. mitre_attack_classification: str = mitre_attack_classification
-        # self.shell: str = shell

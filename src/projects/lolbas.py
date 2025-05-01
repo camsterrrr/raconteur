@@ -49,14 +49,14 @@ def parse_json(json_data: dict):
         json_subset = ele.get("Commands")[0]  # Returns list object with one element.
         # log.debug(dumps(json_subset, indent=4))
 
-        command = json_subset.get("Command", str) or None
+        command = json_subset.get("Command", str) or ""
         description = (
             json_subset.get("Description", str)
             + " "
             + (ele.get("Description", str) or "")
-        ) or None
-        technique_name = json_subset.get("MitreID", str) or None
-        shell = None
+        ) or ""
+        technique_name = json_subset.get("MitreID", str) or ""
+        shell = ""
         cmd_or_script = "script" if determine_if_script(command) else "command"
         command = strip_command_formatting(command)
 

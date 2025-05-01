@@ -90,12 +90,12 @@ def parse_yaml(yaml_data: dict):
     yaml_subset = yaml_data.get("meta", {})
     # log.debug(yaml.dump(yaml_subset, indent=4))
 
-    description = yaml_subset.get("description", str) or None
-    shell = None
+    description = yaml_subset.get("description", str) or ""
+    shell = ""
 
     # This requires some thought, because metta uses old MITRE techniques.
     #   Metta gives us the technique names, but not the IDs.
-    technique_name = yaml_subset.get("mitre_attack_technique", str) or None
+    technique_name = yaml_subset.get("mitre_attack_technique", str) or ""
 
     # 1. Try to match the given technique name with the technique ID.
     mitre_techniques = pd.read_csv("./att&ck/mitre_techniques.csv")
@@ -105,20 +105,21 @@ def parse_yaml(yaml_data: dict):
         log.debug(f"Matched {technique_name} with {match["id"].values[0]}!")
         technique_name = match["id"].values[0]
 
-    # 2. If it has a "mitre_link" field, put the last \T{1-9}{4}.
-    #   Note that some entries have this, some don't...
-    # Example: mitre_link: https://attack.mitre.org/wiki/Technique/T1060
-    #   parse the T1060.
-    elif yaml_subset.get("mitre_link", str):
-        mitre_link = yaml_subset.get("mitre_link", str)
-        technique_name = mitre_link.split(
-            "/",
-        )[-1:][0]
-        log.debug(f"Parsed MITRE link {technique_name}!")
+    # # 2. If it has a "mitre_link" field, put the last \T{1-9}{4}.
+    # #   Note that some entries have this, some don't...
+    # # Example: mitre_link: https://attack.mitre.org/wiki/Technique/T1060
+    # #   parse the T1060.
+    # elif yaml_subset.get("mitre_link", str):
+    #     mitre_link = yaml_subset.get("mitre_link", str)
+    #     technique_name = mitre_link.split(   #? Just going to set nothing, see if Taya's RAG can help more.
+    #         "/",
+    #     )[-1:][0]
+    #     log.debug(f"Parsed MITRE link {technique_name}!")
 
     # 3. Else, put some place holder value and worry about later.
     else:
-        technique_name = technique_name or None
+        # technique_name = technique_name or ""  #? Just going to set nothing, see if Taya's RAG can help more.
+        technique_name = ""
         log.info("No technique found in up-to-date MITRE ATT&CK techniques.")
 
     # Some files may or may not have these "purple actions".
