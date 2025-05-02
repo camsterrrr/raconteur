@@ -33,23 +33,23 @@ system_context_parse_dataset = """You will be provided with a GitHub repository 
 
     Your primary goals are:
     1. Identify the **MITRE ATT&CK technique** associated with each entry (this may be inferred from the directory structure).
-    2. Extract the **command or script** that triggered the log entry (this is likely found in the log content).
+    2. Extract the **command or script** and any additional **parameters associated with the command** that triggered the log entry (this is data is found in the log content).
 
     For each log entry, generate a JSON object with the following fields:
-    - `ID` — a unique numeric identifier starting from 1.
-    - `Command` — the command or script that caused the log to be generated.
-    - `Description`: a description of the command, not the event. This should summarize what the command does and explain how it relates to the associated MITRE technique.
-    - `Risk Score` — *leave blank*.
-    - `Offensive-Malware-Benign` — *leave blank*.
-    - `MitreAttackClassification` — the corresponding MITRE ATT&CK technique name or ID.
-    - `ProgrammingLanguage`: if specified in the data, indicate the shell or scripting language used for the command. Do not infer this if it’s not explicitly given.
-    - `CMD_Script` — *leave blank*.
-    - `DynTested` — *leave blank*.
-    - `ObfuscationLevel` — *leave blank*.
+        - `ID` — An incrementing integer starting from 1. Each entry you return should have a unique ID value.
+        - `Command` — The command/script, along with any additional parameters, that likely triggered this log. Additionally, if the description field cannot be filled from the log, leave it blank. 
+        - `Description` — A description of the command’s purpose as it relates to the MITRE technique. The description should only be based on what is explicitly mentioned in the log file, do not guess.
+        - `Risk Score` — Leave blank.
+        - `Offensive-Malware-Benign` — Leave blank.
+        - `MitreAttackClassification` — The MITRE ATT&CK technique ID associated with the command. I provided the file path, use the directory's name, do not guess.
+        - `ProgrammingLanguage` — Indicates the shell language. Include only if it is explicitly stated in the log content.
+        - `CMD_Script` — Leave blank.
+        - `DynTested` — Leave blank.
+        - `ObfuscationLevel` — Leave blank.
 
     At a minimum, each JSON entry must include: `ID`, `Command`, and `MitreAttackClassification`. If `Description` or `ProgrammingLanguage` are present in the data, include them. Do not infer or guess values for fields that are not explicitly stated.
 
-    Your output must be a valid JSON **array** of parsed entries, with no extra commentary."""
+    Your output must be a valid JSON object representing the parsed entry. Include no extra commentary."""
 
 
 LOG_FILE_CONTENT = []  # List of dictionaries, mapping file name to file content.
@@ -122,37 +122,69 @@ def parse_dataset():
         
         Please extract the following fields:
 
-        - `ID` — A unique number you assign (e.g., 1).
-        - `Command` — The command/script that likely triggered this log.
-        - `Description` — A description of the command’s purpose as it relates to the MITRE technique. The description should only be based on what is explicitly mentioned in the log file, do not guess.
+        - `ID` — Assign a unique, incrementing integer ID, starting at 1 and increasing by 1 for each new entry across files I send you. Do not repeat or reset.
+        - `Command` — Extract the full command line that was executed. Include all arguments exactly as shown in the log. Do not infer or guess. 
+        - `Description` — Only include a description if the log explicitly explains the purpose of the command. Do not include generalized threat intel or inferred MITRE technique explanations.
         - `Risk Score` — Leave blank.
         - `Offensive-Malware-Benign` — Leave blank.
-        - `MitreAttackClassification` — Use the directory name ("T1059" in this case).
+        - `MitreAttackClassification` — The MITRE ATT&CK technique ID associated with the command. I provided the file path, use the directory's name, do not guess.
         - `ProgrammingLanguage` — Indicates the shell language. Include only if it is explicitly stated in the log content.
         - `CMD_Script` — Leave blank.
         - `DynTested` — Leave blank.
         - `ObfuscationLevel` — Leave blank.
         
         **Important:**  
-        If you cannot confidently identify a `Command` from the log content, do **not** generate any output for this file. Additionally, if the description field cannot be filled from the log, leave it empty (i.e., ""). 
+        1. If you cannot confidently identify a `Command` from the log content, do **not** generate any output for this file. Additionally, if the description field cannot be filled from the log, leave it blank. 
+        2. Return only one JSON object per file, or an empty dictionary if no command is found."
 
-        Output a single JSON object (not a list). Example format:
+        Here's an example, let's say you were given the following log file:
+        
+        File Path: datasets/attack_techniques/T1020/windows-security.log
+        Content:
+            Process Information:
+                New Process ID:        0x3d4
+                New Process Name:   C:\\Users\\Administrator\\Downloads\\rclone-v1.57.0-windows-amd64\\rclone-v1.57.0-windows-amd64\\rclone.exe
+                Token Elevation Type:    %%1936
+                Mandatory Label:        Mandatory Label\\High Mandatory Level
+                Creator Process ID:    0x1a78
+                Creator Process Name:    C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+                Process Command Line:    "\"C:\\Users\\Administrator\\Downloads\\rclone-v1.57.0-windows-amd64\\rclone-v1.57.0-windows-amd64\\rclone.exe\" mega
 
-        {
-            {
-                "ID": 1,
-                "Command": "...",
-                "Description": "...",
-                "Risk Score": "",
-                "Offensive-Malware-Benign": "",
-                "MitreAttackClassification": "T1059",
-                "ProgrammingLanguage": "bash",
-                "CMD_Script": "",
-                "DynTested": "",
-                "ObfuscationLevel": ""
-            }
-        }
-        """
+        In this example, we could only derive the command and parameters, as well as the MITRE ATT&CK technique. Output a single JSON object. Example format:
+
+        {{
+            "ID": 1,
+            "Command":"\"C:\\Users\\Administrator\\Downloads\\rclone-v1.57.0-windows-amd64\\rclone-v1.57.0-windows-amd64\\rclone.exe\" mega",
+            "Description":"",
+            "RiskScore":"",
+            "Offensive-Malware-Benign":"",
+            "MitreAttackClassification":"T1611",
+            "ProgrammingLanguage": "",
+            "CMD_Script": "",
+            "DynTested": "",
+            "ObfuscationLevel": ""
+        }}
+        
+        I will iteratively send you files, so the next entry would be in the format of:
+        
+        {{
+            "ID": 2,
+            "Command":"bcdedit \\/set testsigning on",
+            "Description":"Allows adversaries to subvert trust controls by modifying the code signing policy, enabling the execution of unsigned drivers.",
+            "RiskScore":"",
+            "Offensive-Malware-Benign":"",
+            "MitreAttackClassification":"T1553.006",
+            "ProgrammingLanguage":"",
+            "CMD_Script": "",
+            "DynTested": "",
+            "ObfuscationLevel": ""
+        }}
+        
+        Again, some log files are just data dumps, so if you can't find a command/script with parameters, don't create an entry for that file. Just return and empty dictionary.
+        {{
+            "":""
+        }}"""
+
         # log.debug(f"\n\n{log_data["Path"]}")
         try:
             response = openai.chat.completions.create(
