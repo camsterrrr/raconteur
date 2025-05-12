@@ -104,10 +104,10 @@ def parse_dataset():
 
     # Log which files we parse, so we don't do double work later on...
     try:
-        if os.path.exists("api/file_paths_parsed.csv"):
-            os.remove("api/file_paths_parsed.csv")
+        if os.path.exists("api/parsed_splunk/file_paths_parsed.csv"):
+            os.remove("api/parsed_splunk/file_paths_parsed.csv")
         with open(
-            "api/file_paths_parsed.csv", "w", encoding="utf-8"
+            "api/parsed_splunk/file_paths_parsed.csv", "w", encoding="utf-8"
         ) as output_log_data:
             output_log_data.writelines(LOG_FILE_NAMES)
     except OSError as os_e:
@@ -221,10 +221,10 @@ def parse_dataset():
     parsed_json_data.append("]")
 
     try:
-        if os.path.exists("api/returned_splunk.json"):
-            os.remove("api/returned_splunk.json")
+        if os.path.exists("api/parsed_splunk/returned_splunk.json"):
+            os.remove("api/parsed_splunk/returned_splunk.json")
         with open(
-            "api/returned_splunk.json", "w", encoding="utf-8"
+            "api/parsed_splunk/returned_splunk.json", "w", encoding="utf-8"
         ) as output_json_data:
             output_json_data.writelines(parsed_json_data)
     except OSError as os_e:
@@ -234,17 +234,23 @@ def parse_dataset():
 
 
 def parse_package():
+    """
+    This function is used to invoke a LLM to determine the package associated with commands.
+        Some of the datasets that we've parsed don't provide the packages necessary to run
+        the commands in a dynamic environment.
+    """
+
     # file_path = Path("./parquet/separated_parquets/atomic-red-team.json")
     file_path = Path("./parquet/separated_parquets/lolbas.json")
     # file_path = Path("./parquet/separated_parquets/sample_lolbas.json")
     # file_path = Path("./parquet/separated_parquets/metta.json")
     # file_path = Path("./parquet/separated_parquets/ThreatActorProcedures.json")
 
-    # output_file_path = Path("./api/atomic-red-team_packages.json")
-    output_file_path = Path("./api/lolbas_packages.json")
-    # output_file_path = Path("./api/sample_lolbas_packages.json")
-    # output_file_path = Path("./api/metta_packages.json")
-    # output_file_path = Path("./api/ThreatActorProcedures_packages.json")
+    # output_file_path = Path("./api/parsed_packages/atomic-red-team_packages.json")
+    output_file_path = Path("./api/parsed_packages/lolbas_packages.json")
+    # output_file_path = Path("./api/parsed_packages/sample_lolbas_packages.json")
+    # output_file_path = Path("./api/parsed_packages/etta_packages.json")
+    # output_file_path = Path("./api/parsed_packages/ThreatActorProcedures_packages.json")
 
     parsed_json_data = ["[\n"]
 
