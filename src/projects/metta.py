@@ -102,7 +102,7 @@ def parse_yaml(yaml_data: dict):
     match = mitre_techniques[mitre_techniques["name"] == technique_name]
     # log.debug(match)
     if not match.empty:
-        log.debug(f"Matched {technique_name} with {match["id"].values[0]}!")
+        # log.debug(f"Matched {technique_name} with {match["id"].values[0]}!")
         technique_name = match["id"].values[0]
 
     # # 2. If it has a "mitre_link" field, put the last \T{1-9}{4}.

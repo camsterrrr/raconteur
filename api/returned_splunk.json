@@ -1,40 +1,23 @@
 [
-    {
-        "ID": 1,
-        "Command": "C:\\programdata\\migrate.exe",
-        "Description": "",
-        "RiskScore": "",
-        "Offensive-Malware-Benign": "",
-        "MitreAttackClassification": "T1027.013",
-        "ProgrammingLanguage": "",
-        "CMD_Script": "",
-        "DynTested": "",
-        "ObfuscationLevel": ""
-    },
-    {},
-    {},
-    {
-        "ID": 1,
-        "Command": "/usr/bin/kmod modprobe",
-        "Description": "",
-        "RiskScore": "",
-        "Offensive-Malware-Benign": "",
-        "MitreAttackClassification": "T1547.006",
-        "ProgrammingLanguage": "",
-        "CMD_Script": "",
-        "DynTested": "",
-        "ObfuscationLevel": ""
-    },
-    {
-        "ID": 1,
-        "Command": "exe=/usr/bin/kmod",
-        "Description": "",
-        "Risk Score": "",
-        "Offensive-Malware-Benign": "",
-        "MitreAttackClassification": "T1547.006",
-        "ProgrammingLanguage": "",
-        "CMD_Script": "",
-        "DynTested": "",
-        "ObfuscationLevel": ""
-    }
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{
+    "ID": 1,
+    "Command": "C:\\Windows\\system32\\reg.exe Modify HKU\\S-1-5-21-2591002240-1708275938-4037827222-500\\Environment\\COMPlus_ETWEnabled",
+    "Description": "",
+    "RiskScore": "",
+    "Offensive-Malware-Benign": "",
+    "MitreAttackClassification": "T1562.006",
+    "ProgrammingLanguage": "",
+    "CMD_Script": "",
+    "DynTested": "",
+    "ObfuscationLevel": ""
+},
+{},
 ]

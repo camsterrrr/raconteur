@@ -7,10 +7,12 @@ Description: This file organizes different functions that make API calls
 
 import argparse
 from dotenv import load_dotenv
+import json
 import logging as log
 import openai
 import os
 from pathlib import Path
+import random
 
 
 # Read in API key as an environment variable.
@@ -114,7 +116,9 @@ def parse_dataset():
         log.error(f"General exception caught in parse_dataset: {e}")
 
     # Send the file path and file data to OpenAI model.
-    for i, log_data in enumerate(LOG_FILE_CONTENT[:5]):
+    global LOG_FILE_CONTENT
+    random.shuffle(LOG_FILE_CONTENT)
+    for i, log_data in enumerate(LOG_FILE_CONTENT[:10]):
         user_prompt = f"""Please parse the following log file and extract structured information based on the instructions. This log is part of a dataset of MITRE ATT&CK techniques.
         
         File path: {log_data['Path']}
@@ -188,7 +192,7 @@ def parse_dataset():
         # log.debug(f"\n\n{log_data["Path"]}")
         try:
             response = openai.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 messages=[
                     {
                         "role": "system",
@@ -229,6 +233,95 @@ def parse_dataset():
         log.error(f"General exception caught in parse_dataset: {e}")
 
 
+def parse_package():
+    # file_path = Path("./parquet/separated_parquets/atomic-red-team.json")
+    file_path = Path("./parquet/separated_parquets/lolbas.json")
+    # file_path = Path("./parquet/separated_parquets/sample_lolbas.json")
+    # file_path = Path("./parquet/separated_parquets/metta.json")
+    # file_path = Path("./parquet/separated_parquets/ThreatActorProcedures.json")
+
+    # output_file_path = Path("./api/atomic-red-team_packages.json")
+    output_file_path = Path("./api/lolbas_packages.json")
+    # output_file_path = Path("./api/sample_lolbas_packages.json")
+    # output_file_path = Path("./api/metta_packages.json")
+    # output_file_path = Path("./api/ThreatActorProcedures_packages.json")
+
+    parsed_json_data = ["[\n"]
+
+    # Load the JSON data from the file
+    with open(file_path, "r") as file:
+        file_data = json.load(file)
+
+    # I was hitting rate limits, so decided to chunk the data.
+    chunk_size = 25
+    # Split the data into chunks with 25 entries each.
+    chunks = [
+        file_data[i : i + chunk_size] for i in range(0, len(file_data), chunk_size)
+    ]
+
+    for i, chunk in enumerate(chunks):
+        print(f"Sending chunk {i + 1} with {len(chunk)} entries:")
+        print(json.dumps(chunk, indent=4))
+        print("\n\n")
+
+        # Send the file path and file data to OpenAI model.
+        user_prompt = f"""I am pasting in a JSON array of command-line execution techniques or living-off-the-land binaries.
+
+        Your task is to analyze each JSON entry, identify the primary executable or tool being invoked, and return the JSON entry with two additional fields:
+
+        - Preserve all original fields exactly as-is.
+        - `Tool` – The name of the binary or primary executable used in the command field (e.g., "rundll32.exe" or "python.exe").
+        - `Package` – The name of the software package or feature that installs this binary. Use clean package names, not install commands. 
+            - Use package names (e.g., git, python3, Microsoft RSAT).
+            - Use "Native" if it comes with Windows.
+            - Use "Unknown" if you're not sure.
+            - Note: The package listed can be used on Windows or other operating systems depending on the context and configuration.
+
+        **Important:**
+        🔁 Return the same JSON structure as input and follow the same order as the input fields, but with "Tool" and "Package" fields added to each entry.
+        ✅ Do not remove, reformat, or omit any original fields.
+        ✅ Do not include explanatory text, just output the updated JSON array.
+
+        Here's the JSON data: {json.dumps(chunk, indent=4)}"""
+
+        # log.debug(f"\n\n{log_data["Path"]}")
+        try:
+            response = openai.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {
+                        "role": "user",
+                        "content": user_prompt,
+                    },
+                ],
+            )
+
+            response_text = response.choices[0].message.content
+            # response_text = response_text.replace("`", "")
+            # response_text = response_text.split("json\n")[1]
+            # response_text = response_text.strip("\n")
+            response_text = response_text + ",\n"
+
+            log.info("Response from model: " + response_text)
+            parsed_json_data.append(response_text)
+
+        except Exception as e:
+            log.error(e)
+
+    # The last step to make it an actual JSON file.
+    parsed_json_data.append("]")
+
+    try:
+        if os.path.exists(output_file_path):
+            os.remove(output_file_path)
+        with open(output_file_path, "w", encoding="utf-8") as output_json_data:
+            output_json_data.writelines(parsed_json_data)
+    except OSError as os_e:
+        log.error(f"OS Error caught in parse_dataset: {os_e}")
+    except Exception as e:
+        log.error(f"General exception caught in parse_dataset: {e}")
+
+
 def test_api_key():
     """
     This function is used to test the API key and ensure we can invoke an API
@@ -250,4 +343,5 @@ def test_api_key():
 if __name__ == "__main__":
 
     # test_api_key()
-    parse_dataset()
+    # parse_dataset()
+    parse_package()
