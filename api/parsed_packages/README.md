@@ -8,15 +8,13 @@ These are the unique packages OpenAI models have found after parsing the followi
 Unique packages are as follows:
 
 ```
-	.NET Core,
-	.NET Framework,
-	.NET,
 	Active Directory Domain Services,
 	Active Directory Module for Windows PowerShell,
 	coreutils,
 	Google Chrome,
+    Microsoft .NET,
+	Microsoft .NET Core,
 	Microsoft .NET Framework,
-	Microsoft .Net Framework,
 	Microsoft App-V,
 	Microsoft Azure,
 	Microsoft Build Tools,
@@ -27,7 +25,6 @@ Unique packages are as follows:
 	Microsoft Publisher,
 	Microsoft Silverlight,
 	Microsoft SQL Server,
-	Microsoft SQL,
 	Microsoft Teams,
 	Microsoft Test Authoring and Execution Framework,
 	Microsoft Visual Studio,
@@ -44,13 +41,9 @@ Unique packages are as follows:
 	Remote Server Administration Tools,
 	SysInternals Suite,
 	Unknown,
-	Visual Studio 2022,
-	Visual Studio,
-	VS/VScode,
 	Windows Defender,
 	Windows Package Manager,
 	Windows SDK,
-	Windows Server,
 	Windows Subsystem for Linux
 ```
 
