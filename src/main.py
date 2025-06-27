@@ -13,6 +13,7 @@ from src.helper import *
 from src.projects.atomic_red_team import parse_atomic_red_team
 from src.projects.lolbas import parse_lolbas
 from src.projects.metta import parse_metta
+from src.projects.PowerPeeler import parse_powerpeeler
 from src.projects.ThreatActorProcedures import parse_threat_actor_procedure
 
 log.getLogger(__name__)  # Set same logging parameters across contexts
@@ -24,6 +25,7 @@ def main() -> int:
     # parse_atomic_red_team()
     # parse_lolbas()
     # parse_metta()
+    parse_powerpeeler()
     # parse_threat_actor_procedure()
 
     return 0

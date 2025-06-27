@@ -256,7 +256,10 @@ def strip_command_formatting(command: str) -> str:
     """
     # log.debug("Stripping special characters.")
 
-    command = re.sub(r"[ ]{4}+", r"\\t", command)
+    try:
+        command = re.sub(r"[ ]{4,}", r"\\t", command)
+    except Exception as e:
+        log.error(e)
     command = re.sub(r"\t+", r"\\t", command)
     command = command.replace("\r", "\\r")
     command = command.strip()

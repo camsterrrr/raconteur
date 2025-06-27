@@ -1,6 +1,7 @@
 __pycache__
 .venv
 backup
+classification_doc
 clones
 ParquetViewer.exe
 test_data
